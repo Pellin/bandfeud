@@ -1,0 +1,39 @@
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI_PROD, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true
+});
+
+const Band = mongoose.model('Band', {
+  name: {
+    type: String,
+    unique: true
+  },
+  url: {
+    type: String
+  }
+});
+
+const Highscore = mongoose.model('Highscore', {
+  score: {
+    type: Number,
+    required: true,
+    minlength: 1,
+    trim: true
+  },
+  player: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Number,
+    default: null
+  },
+});
+
+module.exports = {
+  Band,
+  Highscore
+};
