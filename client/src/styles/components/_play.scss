@@ -1,0 +1,71 @@
+.view-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  background: transparent;
+  margin: 27rem 0 0 0;
+  height: 35rem;
+  width: 100%;
+  position: fixed;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: 33rem 0 0 0;
+  }
+
+  @media (max-width: 568px) {
+    margin: 25rem 0 0 0;
+  }
+
+  @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    margin: 30rem 0 0 0;
+  }
+}
+
+.band-list {
+  height: 40rem;
+}
+
+.footer {
+  background: $off-black;
+  position: fixed;
+  height: 5rem;
+  bottom: 1rem;
+  background: transparent;
+  width: 100vw;
+  border-top: 1px solid $off-white;
+  z-index: 1000;
+
+  @media (min-width: $desktop-breakpoint) {
+    height: 7rem;
+  }
+}
+
+.submit-band {
+  background: $off-black;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.message-box {
+  background: transparent;
+  font-size: 1.5rem;
+  height: 1.5rem;
+  margin: auto;
+  bottom: 2rem;
+  position: absolute;
+  text-align: center;
+  width: 100vw;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 2rem;
+    height: 2rem;
+  }
+}

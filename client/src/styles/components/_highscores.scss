@@ -1,0 +1,83 @@
+.highscore-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  position: fixed;
+  top: $mobile-top;
+  left: 0;
+  right: 0;
+
+  @media (min-width: $desktop-breakpoint) {
+    top: $desktop-top;
+  }
+
+  @media (min-height: 800px) {
+    top: 25rem;
+  }
+}
+
+.highscore-title {
+  color: $mustard;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  @media (max-height: 568px) {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.hs-index {
+  margin: 0;
+  font-size: 1.5rem;
+  color: $orange;
+  position: relative;
+
+  @media (max-height: 568px) {
+    font-size: 1rem;
+  }
+}
+
+.hs-player {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: $yellow;
+  position: relative;
+
+  @media (max-height: 568px) {
+    font-size: 1rem;
+  }
+}
+
+.hs-score {
+  text-align: right;
+  margin: 0;
+  font-size: 1.5rem;
+  color: $red;
+  position: relative;
+
+  @media (max-height: 568px) {
+    font-size: 1rem;
+  }
+}
+
+.hs-date {
+  margin: 0;
+  font-size: 1.5rem;
+  color: $pink;
+  position: relative;
+
+  @media (max-height: 568px) {
+    font-size: 1rem;
+  }
+}
+
+.load-message {
+  color: $mustard;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+}

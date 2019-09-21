@@ -1,0 +1,53 @@
+.footer-counter-container {
+  background: $off-black;
+  text-align: center;
+  height: 4rem;
+  position: absolute;
+  left: 1rem;
+  width: 4rem;
+}
+
+.band-input-form {
+  margin: 0;
+  width: 100vw;
+}
+
+.band-input-form-ios {
+  margin: 0;
+  width: 105.5vw;
+}
+
+::-webkit-input-placeholder {
+  color: $mustard;
+}
+
+.band-input {
+  background: $off-black;
+  caret-color: $off-white;
+  color: $off-white;
+  display: inline-block;
+  width: 100vw;
+  height: 3rem;
+  font-size: 1.8rem;
+  outline: none;
+  border: none;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-breakpoint) {
+    height: 4rem;
+    font-size: 2.2rem;
+  }
+}
+
+.previous {
+  background: $off-black;
+  color: $off-white;
+  font-size: 2rem;
+  position: relative;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 3rem;
+  }
+}

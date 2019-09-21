@@ -1,0 +1,59 @@
+.submit-view {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  top: 40%;
+  width: 40rem;
+  height: 30rem;
+  position: absolute;
+}
+
+.highscore-message {
+  font-size: 2rem;
+  margin: 1rem 0 1rem;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.submit-label {
+  font-size: 3rem;
+  margin: 2rem;
+}
+
+.submit-input {
+  background: $off-black;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+  outline: none;
+  text-transform: uppercase;
+  width: 98%;
+}
+
+.highscore-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.link-button {
+  border: 1px solid white;
+  border-radius: 20px;
+  background: $mustard;
+  color: black;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 2rem;
+  padding: 1rem;
+  text-decoration: none;
+  outline: none;
+  width: 12rem;
+}

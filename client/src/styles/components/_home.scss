@@ -1,0 +1,33 @@
+.new-game-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  margin-top: $desktop-top;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: 30rem;
+  }
+}
+
+.new-game-button {
+  background: $off-black;
+  border: 2px solid $red;
+  border-radius: 50px;
+  box-shadow: 0 2px red, 0 2px inset black;
+  color: $mustard;
+  cursor: pointer;
+  font-size: 1.9rem;
+  outline: none;
+  width: 9rem;
+  height: 9rem;
+  padding: 0;
+  position: fixed;
+  text-shadow: 0 1px black;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 2.6rem;
+    width: 10rem;
+    height: 10rem;
+  }
+}

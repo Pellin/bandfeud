@@ -1,7 +1,7 @@
 require('./config/config');
 
 const express = require('express');
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 
 const checkBand = require('./utils/checkband');
 const treatChecked = require('./utils/treatchecked');
@@ -42,7 +42,7 @@ app.get('/api/getimg', async (req, res) => {
   try {
     const url = await getImg(req.query.name);
     res.status(200).json(url);
-  } catch (e){
+  } catch (e) {
     console.log(e);
     res.status(204).send();
   }
@@ -72,6 +72,15 @@ app.get('/api/gethighscores', async (_req, res) => {
   res.json(highscores);
 });
 
-app.listen(port, () => {
-  console.log(`Started on port ${port}`);
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+  app.get('*', (_req, res) => {
+    res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+app.listen(PORT, () => {
+  console.log(`Started on port ${PORT}`);
 });

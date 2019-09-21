@@ -1,0 +1,88 @@
+.band-item {
+  align-items: center;
+  display: flex;
+  max-height: 20rem;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5rem;
+  width: 20rem;
+}
+
+.image-container {
+  align-items: center;
+  display: flex;
+  height: 23rem;
+  justify-content: center;
+  margin: 0 0 3.5rem;
+
+  @media (min-width: $desktop-breakpoint) {
+    height: 22rem;
+    margin: 0 0 1rem;
+  }
+
+  @media (max-width: 568px) {
+    height: 21rem;
+  }
+}
+
+.band-item-image {
+  border-radius: 5px;
+  width: 18rem;
+
+  @media (min-width: $desktop-breakpoint) {
+    width: 20rem;
+  }
+
+  @media (max-width: 568px) {
+    width: 16rem;
+  }
+}
+
+.img {
+  width: 100%;
+  // height: auto;
+  max-height: 23rem;
+  border-radius: 5px;
+
+  @media (min-width: $desktop-breakpoint) {
+    max-height: 30rem;
+  }
+}
+
+.title-flow {
+  margin-top: 18rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: $desktop-top;
+  }
+
+  @media (max-width: 568px) {
+    margin-top: 12rem;
+  }
+}
+
+.band-item-title-container {
+  height: 5rem;
+  width: 20rem;
+  margin-top: 3.5rem;
+  text-align: center;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: 2rem;
+  }
+}
+
+.band-item-title {
+  font-family: 'Righteous', cursive;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 2.5rem;
+  }
+}
