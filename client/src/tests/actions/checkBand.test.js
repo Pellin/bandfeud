@@ -62,7 +62,7 @@ it('should dispatch expected actions if "band" matches', async () => {
 
   await store.dispatch(getBand(band, previous, used, bandBank, score));
   jest.runAllTimers();
- 
+
   expect(store.getActions()).toEqual(expectedActions);
 });
 
@@ -79,17 +79,20 @@ it("should dispatch expected actions if 'band' doesn't match", async () => {
   const checkbandURL = `/api/checkband?name=${band}`;
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
 
-  const expectedActions = [ { type: 'SUBMITTED:_TRUE' },
-  { type: 'SET_MESSAGE', payload: 'Checking...' },
-  { type: 'SET_MESSAGE', payload: 'Not in database! GAME OVER.' },
-  { type: 'RESET_USED' },
-  { type: 'RESET_BANDS' } ]
+  const expectedActions = [
+    { type: 'SUBMITTED:_TRUE' },
+    { type: 'SET_MESSAGE', payload: 'Checking...' },
+    { type: 'SET_MESSAGE', payload: 'Not in database! GAME OVER.' },
+    { type: 'SHOW_GAME_OVER' },
+    { type: 'RESET_USED' },
+    { type: 'RESET_BANDS' }
+  ];
 
   fetchMock.post(checkbandURL, 200).get(checkhighscoreURL, 204);
 
   await store.dispatch(getBand(band, previous, used, bandBank, score));
   jest.runAllTimers();
- 
+
   expect(store.getActions()).toEqual(expectedActions);
 });
 
@@ -107,6 +110,7 @@ it('should dispatch game over if band was already used', async () => {
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: "Already used! You're out, Einstein" },
+    { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' },
     { type: 'RESET_BANDS' }
   ];
@@ -135,6 +139,7 @@ it('should dispatch game over if band has incorrect first letter', async () => {
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Wrong letter! You lose, punk' },
+    { type: 'SHOW_GAME_OVER'},
     { type: 'RESET_USED' },
     { type: 'RESET_BANDS' }
   ];
@@ -163,6 +168,7 @@ it('should dispatch expected actions if highscore', async () => {
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Wrong letter! You lose, punk' },
+    { type: 'SHOW_GAME_OVER'},
     { type: 'RESET_USED' },
     { type: 'RESET_BANDS' }
   ];

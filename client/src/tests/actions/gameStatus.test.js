@@ -35,9 +35,12 @@ it('(gameOver) should dispatch expected actions', async () => {
   const score = 123;
   const expectedActions = [
     { type: 'SET_MESSAGE', payload: message },
+    { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' },
     { type: 'RESET_BANDS' },
+   
     { type: 'SET_MESSAGE', payload: '' },
+    { type: 'HIDE_GAME_OVER' },
     { type: 'GAME_OVER' },
     { type: 'RESET_SCORE' },
     { type: 'RESET_BANDBANK' },
@@ -57,8 +60,10 @@ it('(gameOver) should dispatch expected actions if highscore === true', async ()
   const score = 123;
   const expectedActions = [
     { type: 'SET_MESSAGE', payload: 'a message from test' },
+    { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' },
     { type: 'RESET_BANDS' },
+    { type: 'HIDE_GAME_OVER' },
     { type: 'HIGHSCORE:_TRUE' }
   ];
 
