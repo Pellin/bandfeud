@@ -1,6 +1,6 @@
 .footer-counter-container {
   background: $off-black;
-  text-align: center;
+  // text-align: center;
   height: 4rem;
   position: absolute;
   left: 1rem;
@@ -8,8 +8,14 @@
 }
 
 .band-input-form {
-  margin: 0;
-  width: 100vw;
+  background: $off-black;
+  // margin: 0;
+  // text-align: center;
+  width: 101vw;
+
+  @media(min-width: $desktop-breakpoint) {
+    width: 100.2vw;
+  }
 }
 
 .band-input-form-ios {
@@ -46,6 +52,7 @@
   color: $off-white;
   font-size: 2rem;
   position: relative;
+  text-align: center;
 
   @media (min-width: $desktop-breakpoint) {
     font-size: 3rem;

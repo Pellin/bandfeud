@@ -45,7 +45,7 @@ const HighscoreList = ({ highscores }) => {
   ];
   return (
     <div>
-      <ReactTable showPagination={false} data={highscores} columns={columns} />
+      <ReactTable showPagination={false} showPaginationBottom={false} sortable={false} data={highscores} columns={columns} />
     </div>
   );
 };

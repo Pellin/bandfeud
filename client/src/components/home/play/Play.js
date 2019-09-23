@@ -10,6 +10,11 @@ export class Play extends Component {
   render() {
     return (
       <div className="view-holder">
+        {this.props.showGameOver && (
+          <div className="game-over-svg">
+            <img src="/images/bandFeud_gameOver.svg" alt="Game Over" />
+          </div>
+        )}
         {this.props.isHighscore ? (
           <SubmitHighscore
             history={this.props.history}
@@ -29,8 +34,8 @@ export class Play extends Component {
                 <MessageBox message={this.props.message} />
               ) : (
                 <div className="submit-band">
-                  {!this.props.submitted &&
-                    this.props.inGame &&
+                  {this.props.inGame &&
+                    !this.props.submitted &&
                     !this.props.message && (
                       <SubmitBand
                         bandBank={this.props.bandBank}
@@ -62,6 +67,7 @@ const mapStateToProps = state => ({
   isHighscore: state.isHighscore,
   difficulty: state.difficulty,
   score: state.score,
+  showGameOver: state.showGameOver,
   bands: state.bands,
   message: state.message,
   os: state.os

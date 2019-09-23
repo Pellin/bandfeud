@@ -10,7 +10,7 @@ const addBand = (name, url, turn) => async dispatch => {
   }
 
   if (url.match(/^.*spacer\.gif$/)) {
-    url = '/images/bandFeud_logo2.svg';
+    url = '/images/bandFeud_logo.svg';
   }
 
   if (turn === 'computer') {

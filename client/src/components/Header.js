@@ -39,7 +39,7 @@ export const Header = ({
           )}
         </div>
         <div className="header-logo">
-          <img src="/images/bandFeud_logo2.svg" alt="bandFeud_logo2.svg" />
+          <img src="/images/bandFeud_logo.svg" alt="BandFeud" />
         </div>
         <div className="link-container">
           {!inGame && (
