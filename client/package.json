@@ -5,6 +5,7 @@
   "dependencies": {
     "http-proxy-middleware": "^0.20.0",
     "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -20,6 +21,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
