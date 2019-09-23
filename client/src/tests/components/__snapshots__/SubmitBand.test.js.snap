@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component correctly 1`] = `
+<Fragment>
+  <div
+    className="footer-counter-container"
+  >
+    <Connect(Counter)
+      difficulty={20}
+      score={23}
+      used={
+        Array [
+          "two",
+          "three",
+          "four",
+        ]
+      }
+    />
+  </div>
+  <form
+    className="band-input-form"
+    onSubmit={[Function]}
+  >
+    <input
+      autoCapitalize="none"
+      autoComplete="off"
+      autoCorrect="off"
+      autoFocus={false}
+      className="band-input"
+      inputMode="email"
+      maxLength="25"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="press to type"
+      type="text"
+      value=""
+    />
+  </form>
+  <div
+    className="previous"
+  >
+    O
+  </div>
+</Fragment>
+`;
+
+exports[`should render component correctly with value for previous2 1`] = `
+<Fragment>
+  <div
+    className="footer-counter-container"
+  >
+    <Connect(Counter)
+      difficulty={20}
+      score={23}
+      used={
+        Array [
+          "two",
+          "three",
+          "four",
+        ]
+      }
+    />
+  </div>
+  <form
+    className="band-input-form"
+    onSubmit={[Function]}
+  >
+    <input
+      autoCapitalize="none"
+      autoComplete="off"
+      autoCorrect="off"
+      autoFocus={false}
+      className="band-input"
+      inputMode="email"
+      maxLength="25"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="press to type"
+      type="text"
+      value=""
+    />
+  </form>
+  <div
+    className="previous"
+  >
+    13 or N
+  </div>
+</Fragment>
+`;
+
+exports[`should update state.band and rerender input value when band-input changes 1`] = `
+<Fragment>
+  <div
+    className="footer-counter-container"
+  >
+    <Connect(Counter)
+      difficulty={20}
+      score={23}
+      used={
+        Array [
+          "two",
+          "three",
+          "four",
+        ]
+      }
+    />
+  </div>
+  <form
+    className="band-input-form"
+    onSubmit={[Function]}
+  >
+    <input
+      autoCapitalize="none"
+      autoComplete="off"
+      autoCorrect="off"
+      autoFocus={false}
+      className="band-input"
+      inputMode="email"
+      maxLength="25"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="press to type"
+      type="text"
+      value="one"
+    />
+  </form>
+  <div
+    className="previous"
+  >
+    O
+  </div>
+</Fragment>
+`;

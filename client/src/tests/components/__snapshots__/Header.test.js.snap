@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly when inGame is false 1`] = `
+<div
+  className="header-container"
+>
+  <div
+    className="flex-counter"
+  />
+  <div
+    className="header-center"
+  >
+    <div
+      className="link-container"
+    >
+      <div
+        className="link"
+      >
+        <NavLink
+          activeClassName="active-link"
+          exact={true}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </div>
+    </div>
+    <div
+      className="header-logo"
+    >
+      <img
+        alt="BandFeud"
+        src="/images/bandFeud_logo.svg"
+      />
+    </div>
+    <div
+      className="link-container"
+    >
+      <div
+        className="link"
+      >
+        <NavLink
+          activeClassName="active-link"
+          to="/highscores/"
+        >
+          Highscores
+        </NavLink>
+      </div>
+    </div>
+  </div>
+  <div
+    className="flex-score"
+  />
+</div>
+`;
+
+exports[`should render Header correctly when inGame is true 1`] = `
+<div
+  className="header-container"
+>
+  <div
+    className="flex-counter"
+  />
+  <div
+    className="header-center"
+  >
+    <div
+      className="link-container"
+    />
+    <div
+      className="header-logo"
+    >
+      <img
+        alt="BandFeud"
+        src="/images/bandFeud_logo.svg"
+      />
+    </div>
+    <div
+      className="link-container"
+    />
+  </div>
+  <div
+    className="flex-score"
+  >
+    <div
+      className="score"
+    >
+      Score: 
+    </div>
+  </div>
+</div>
+`;

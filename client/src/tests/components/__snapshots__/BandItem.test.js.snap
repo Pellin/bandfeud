@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render BandItem correctly 1`] = `
+<div
+  className="band-item"
+>
+  <div
+    className="image-container"
+  >
+    <div
+      className="band-item-image"
+    >
+      <img
+        alt="\\"[object Object]\\""
+        className="img"
+        src="www.1img.com"
+      />
+    </div>
+  </div>
+  <div
+    className="title-flow"
+  >
+    <div
+      className="band-item-title-container"
+    >
+      <div
+        className="band-item-title"
+      >
+        one
+      </div>
+    </div>
+  </div>
+</div>
+`;

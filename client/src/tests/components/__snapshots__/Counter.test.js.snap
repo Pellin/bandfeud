@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly with different difficulty props 1`] = `
+<div
+  className="counter"
+>
+  20
+</div>
+`;
+
+exports[`should render correctly with different difficulty props 2`] = `
+<div
+  className="counter"
+>
+  15
+</div>
+`;
+
+exports[`should start counting when mounted 1`] = `
+<div
+  className="counter"
+>
+  19
+</div>
+`;
+
+exports[`should start counting when mounted 2`] = `
+<div
+  className="counter"
+>
+  9
+</div>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with <Play /> when inGame is true 1`] = `
+<div>
+  <Connect(Header) />
+  <Connect(Play) />
+</div>
+`;
+
+exports[`should render with <button> when inGame is false 1`] = `
+<div>
+  <Connect(Header) />
+  <div
+    className="new-game-button-container"
+  >
+    <button
+      className="new-game-button"
+      onClick={[Function]}
+    >
+      PLAY
+    </button>
+  </div>
+</div>
+`;
