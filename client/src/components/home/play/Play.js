@@ -7,53 +7,75 @@ import MessageBox from '../MessageBox';
 import SubmitHighscore from '../../highscores/SubmitHighscore';
 
 export class Play extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFirefox: false
+    };
+  }
+  componentDidMount = () => {
+    const fireReg = new RegExp('Firefox');
+    this.setState(() => ({ isFirefox: fireReg.test(navigator.userAgent) }));
+  };
   render() {
     return (
-      <div className="view-holder">
-        {this.props.showGameOver && (
-          <div className="game-over-svg">
-            <img src="/images/bandFeud_gameOver.svg" alt="Game Over" />
+      <>
+        {this.props.showGameOver ? (
+          <div className="game-over-container">
+            <div className="game-over-svg">
+              <img src="/images/bandFeud_gameOver.svg" alt="Game Over" />
+            </div>
+            <MessageBox message={this.props.message} />
           </div>
-        )}
-        {this.props.isHighscore ? (
-          <SubmitHighscore
-            history={this.props.history}
-            submitted={this.props.submitted}
-            inGame={this.props.inGame}
-            used={this.props.used}
-            difficulty={this.props.difficulty}
-            score={this.props.score}
-          />
         ) : (
-          <div className="game-container">
-            <div className="band-list">
-              <BandList bands={this.props.bands} />
-            </div>
-            <div className="footer">
-              {this.props.message ? (
-                <MessageBox message={this.props.message} />
-              ) : (
-                <div className="submit-band">
-                  {this.props.inGame &&
-                    !this.props.submitted &&
-                    !this.props.message && (
-                      <SubmitBand
-                        bandBank={this.props.bandBank}
-                        difficulty={this.props.difficulty}
-                        inGame={this.props.inGame}
-                        previous={this.props.previous}
-                        score={this.props.score}
-                        submitted={this.props.submitted}
-                        used={this.props.used}
-                        os={this.props.os}
-                      />
-                    )}
+          <div className="view-holder">
+            {this.props.isHighscore ? (
+              <SubmitHighscore
+                history={this.props.history}
+                submitted={this.props.submitted}
+                inGame={this.props.inGame}
+                used={this.props.used}
+                difficulty={this.props.difficulty}
+                score={this.props.score}
+              />
+            ) : (
+              <div
+                className={
+                  this.state.isFirefox
+                    ? 'game-container-firefox'
+                    : 'game-container'
+                }
+              >
+                <div className="band-list">
+                  <BandList bands={this.props.bands} />
                 </div>
-              )}
-            </div>
+                <div className="footer">
+                  {this.props.message ? (
+                    <MessageBox message={this.props.message} />
+                  ) : (
+                    <div className="submit-band">
+                      {this.props.inGame &&
+                        !this.props.submitted &&
+                        !this.props.message && (
+                          <SubmitBand
+                            bandBank={this.props.bandBank}
+                            difficulty={this.props.difficulty}
+                            inGame={this.props.inGame}
+                            previous={this.props.previous}
+                            score={this.props.score}
+                            submitted={this.props.submitted}
+                            used={this.props.used}
+                            os={this.props.os}
+                          />
+                        )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         )}
-      </div>
+      </>
     );
   }
 }

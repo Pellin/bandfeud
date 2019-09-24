@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.game-over-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .game-over-svg {
   margin: auto;
   position: relative;
@@ -34,6 +39,23 @@
   @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
     margin: 30rem 0 0 0;
   }
+}
+
+.game-container-firefox {
+  background: transparent;
+  margin: 10rem 0 0 0;
+  height: 35rem;
+  width: 100%;
+  position: relative;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: 15rem 0 0 0;
+  }
+
+  @media (max-width: 568px) {
+    margin: 10rem 0 0 0;
+  }
+
 }
 
 .band-list {
