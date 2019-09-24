@@ -1,3 +1,3 @@
 ## Bandfeud
 
-Bandname-dropping game built with React and Node.js
+Band-dropping game built with React and Node.js
