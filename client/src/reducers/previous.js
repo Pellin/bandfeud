@@ -7,7 +7,7 @@ export default (state = { previous1: letter, previous2: '' }, action) => {
 
   if (action.type === 'SET_PREVIOUS' && action.payload.length > 1) {
     if (
-      action.payload[action.payload.length - 2].match(/[0-9]/) &&
+      action.payload[action.payload.length - 2].match(/1/) &&
       action.payload[action.payload.length - 1].match(/[0-9]/)
     ) {
       switch (
