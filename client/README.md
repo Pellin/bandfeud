@@ -28,8 +28,8 @@ Later in the game, the available time decreases, first to 15 seconds, then to 10
 ### Game Over
 <strong>The game is over if:</strong>
 <ul>
-  <li>your submitted band or artist name is not in the Discogs database
   <li>the counter reaches 0 
+  <li>your submitted band or artist name is not in the Discogs database
   <li>your submitted band name begins with the wrong letter
   <li>your submitted band or artist name has already been used in the current round 
 </ul>
