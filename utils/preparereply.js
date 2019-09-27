@@ -73,7 +73,7 @@ const prepareReply = async (albums, previous, used) => {
       index === self.findIndex(b => b.name === bandArray.name)
   );
 
-  //Remove stupid contributions
+  //Remove faulty contributions
   for (let i = bandArray.length - 1; i >= 0; i--) {
     if (
       bandArray[i].name === 'elvis' ||
@@ -84,6 +84,7 @@ const prepareReply = async (albums, previous, used) => {
       bandArray[i].name === 'bowie' ||
       bandArray[i].name === 'nile' ||
       bandArray[i].name === 'neil' ||
+      bandArray[i].name === 'petshopboys' ||
       bandArray[i].name === 'rollingstones' ||
       bandArray[i].name === 'ubu' ||
       bandArray[i].name === 'englandneworder' ||
