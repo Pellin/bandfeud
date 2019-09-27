@@ -14,7 +14,6 @@ const gameOver = (message, score) => async dispatch => {
   dispatch(setMessage(message));
   dispatch({ type: 'SHOW_GAME_OVER' });
   dispatch({ type: 'RESET_USED' });
-  dispatch({ type: 'RESET_BANDS' });
   const highscore = await checkIfHighscore(score);
   if (highscore) {
     setTimeout(() => {
@@ -26,6 +25,7 @@ const gameOver = (message, score) => async dispatch => {
       dispatch(setMessage(''));
       dispatch({ type: 'HIDE_GAME_OVER' });
       dispatch({ type: 'GAME_OVER' });
+      dispatch({ type: 'RESET_BANDS' });
       dispatch({ type: 'RESET_SCORE' });
       dispatch({ type: 'RESET_BANDBANK' });
       dispatch({ type: 'RESET_DIFFICULTY' });

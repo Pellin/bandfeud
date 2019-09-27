@@ -31,12 +31,13 @@ export class Play extends Component {
           <div className="view-holder">
             {this.props.isHighscore ? (
               <SubmitHighscore
-                history={this.props.history}
-                submitted={this.props.submitted}
-                inGame={this.props.inGame}
-                used={this.props.used}
+                bands={this.props.bands}
                 difficulty={this.props.difficulty}
+                history={this.props.history}
+                inGame={this.props.inGame}
                 score={this.props.score}
+                submitted={this.props.submitted}
+                used={this.props.used}     
               />
             ) : (
               <div

@@ -29,8 +29,14 @@ const Highscore = mongoose.model('Highscore', {
   },
   date: {
     type: Number,
+    required: true,
     default: null
   },
+  bands: {
+    type: Array,
+    required: true,
+    default: []
+  }
 });
 
 module.exports = {

@@ -60,7 +60,7 @@ app.get('/api/checkhighscore', async (req, res) => {
 
 app.post('/api/sethighscore', async (req, res) => {
   try {
-    await addHighscore(req.query.score, req.query.player, req.query.date);
+    await addHighscore(req.query.score, req.query.player, req.query.date, req.query.bands);
     res.status(200).send();
   } catch (e) {
     res.status(400).send();

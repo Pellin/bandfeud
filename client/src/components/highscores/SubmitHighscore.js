@@ -23,7 +23,7 @@ class SubmitHighscore extends Component {
     try {
       const date = new Date().getTime();
       const setHighscore = await fetch(
-        `/api/sethighscore?score=${this.props.score}&player=${this.state.name}&date=${date}`,
+        `/api/sethighscore?score=${this.props.score}&player=${this.state.name}&date=${date}&bands=${JSON.stringify(this.props.bands)}`,
         {
           method: 'POST'
         }

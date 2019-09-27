@@ -15,12 +15,13 @@ const checkTop20 = async score => {
   }
 };
 
-const addHighscore = async (score, player, date) => {
+const addHighscore = async (score, player, date, bands) => {
   try {
     let highscore = new Highscore({
       score,
       player,
-      date
+      date,
+      bands
     });
 
     await highscore.save();

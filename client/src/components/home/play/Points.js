@@ -4,13 +4,19 @@ class Points extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: true
+      show: true,
+      timeout: undefined
     };
   }
   componentDidMount = () => {
-    setTimeout(() => {
-      this.setState(() => ({ show: false }));
-    }, 500);
+    this.setState(() => ({
+      timeout: setTimeout(() => {
+        this.setState(() => ({ show: false }));
+      }, 400)
+    }));
+  };
+  componentWillUnmount = () => {
+    clearTimeout(this.state.timeout);
   };
   render() {
     return (

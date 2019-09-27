@@ -11,13 +11,12 @@ const BandItem = ({ name, url, points }) => {
           <img className="img" src={url} alt={'"' + { name } + '"'} />
         </div>
       </div>
-      <div className={isFirefox ? "title-flow-firefox" : "title-flow"}>
+      <div className={isFirefox ? 'title-flow-firefox' : 'title-flow'}>
         <div className="band-item-title-container">
           <div className="band-item-title">{name}</div>
         </div>
-       <Points points={points} />
+        {points && <Points points={points} />}
       </div>
-      
     </div>
   );
 };
