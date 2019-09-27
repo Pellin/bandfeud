@@ -2,9 +2,9 @@
 
 <strong><em>Band-dropping game built with React and Node.js</em></strong>
 
-Uses the <a href="https://www.discogs.com/developers"><strong>Discogs API</strong></a> to check if the user's band exists and to fetch a new band
+Uses the <a href="https://www.discogs.com/developers" target="_blank"><strong>Discogs API</strong></a> to check if the user's band exists and to fetch a new band
 
-Uses <a href="https://www.mongodb.com/cloud/atlas"><strong>Mongodb Atlas</strong></a> to store highscores and a backup bands database
+Uses <a href="https://www.mongodb.com/cloud/atlas" target="_blank"><strong>Mongodb Atlas</strong></a> to store highscores and a backup bands database
 
 ## How to play
 
