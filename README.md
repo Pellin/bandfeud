@@ -35,4 +35,4 @@ Later in the game, the available time decreases, first to 15 seconds, then to 10
 </ul>
 
 ### Highscores
-If your score is among the top 20, you get a <strong>highscore</strong> and your name (if you submit it) and score will be visible to everyone that plays <strong>Bandfeud</strong>
+If your score is among the top 20, you get a <strong>highscore</strong> and your name (if you submit it) and score will be visible to everyone that plays <strong>Bandfeud</strong>.
