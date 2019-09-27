@@ -163,4 +163,4 @@ const prepareReply = async (albums, previous, used) => {
   return reply;
 };
 
-module.exports = { prepareReply };
+module.exports = prepareReply;

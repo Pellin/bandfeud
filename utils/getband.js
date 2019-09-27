@@ -1,7 +1,7 @@
 const request = require('request');
 
 const letterGenerator = require('./serverutils/letterGenerator');
-const { prepareReply } = require('./preparereply');
+const prepareReply = require('./preparereply');
 
 const getBand = async (previous, used) => {
   let letters = letterGenerator();
