@@ -49,7 +49,7 @@ class BandList extends Component {
         }}
       >
         {this.props.bands.map(band => (
-          <BandItem key={band.name} name={band.name} url={band.url} />
+          <BandItem key={band.name} name={band.name} url={band.url} points={band.points}/>
         ))}
       </div>
     );

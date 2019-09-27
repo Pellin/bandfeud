@@ -15,11 +15,15 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
 
   if (used.includes(band)) {
     return setTimeout(() => {
+      const state = getState();
+      console.log(state.bands);
       dispatch(gameOver("Already used! You're out, Einstein", score));
     }, 250);
   }
   if (band[0] !== previous.previous1 && band[0] !== previous.previous2) {
     return setTimeout(() => {
+      const state = getState();
+      console.log(state.bands);
       dispatch(gameOver('Wrong letter! You lose, punk', score));
     }, 250);
   }
@@ -35,9 +39,10 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     const previous = checkedBand.name[checkedBand.name.length - 1];
     const state = getState();
     const extraPoints = calcExtraPoints(checkedBand.name, difficulty);
-    dispatch(addToScore(state.currentPoints + extraPoints));
+    const totalPoints = state.currentPoints + extraPoints
+    dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
-    dispatch(addBand(checkedBand.name, checkedBand.imgUrl, 'user'));
+    dispatch(addBand(checkedBand.name, checkedBand.imgUrl, 'user', totalPoints));
     return;
   } catch (e) {
     return setTimeout(() => {

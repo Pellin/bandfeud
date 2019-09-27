@@ -1,6 +1,6 @@
 import setMessage from './setMessage';
 
-const addBand = (name, url, turn) => async dispatch => {
+const addBand = (name, url, turn, points) => async dispatch => {
   if (turn === 'computer') {
     const response = await fetch(`/api/getimg?name=${name}`);
     let imageUrl = await response.json();
@@ -23,7 +23,7 @@ const addBand = (name, url, turn) => async dispatch => {
     }, 1);
   } else {
     return setTimeout(() => {
-      dispatch({ type: 'ADD_BAND', name, url });
+      dispatch({ type: 'ADD_BAND', name, url, points });
       setTimeout(() => {
         dispatch(setMessage('Correct!'));
         setTimeout(() => {

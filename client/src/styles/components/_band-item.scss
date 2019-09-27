@@ -49,11 +49,12 @@
 }
 
 .title-flow {
-  margin-top: 20rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  justify-content: center;
+  margin-top: 20rem;
   position: absolute;
 
   @media (min-width: $desktop-breakpoint) {
@@ -66,12 +67,13 @@
 }
 
 .title-flow-firefox {
-  margin-top: 32rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  justify-content: center;
   position: absolute;
+  margin-top: 32rem;
 }
 
 .band-item-title-container {
@@ -93,4 +95,20 @@
   @media (min-width: $desktop-breakpoint) {
     font-size: 2.5rem;
   }
+}
+
+.points {
+  color: $yellow;
+  font-size: 2.5rem;
+  opacity: 1;
+  position: absolute;
+  top: 6rem;
+  transition: opacity, 1.5s;
+}
+
+.points-hide {
+  opacity: 0;
+  position: absolute;
+  top: 6rem;
+  transition: opacity, 1.5s;
 }

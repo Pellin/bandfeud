@@ -5,7 +5,8 @@ export default (state = [], action) => {
         ...state,
         {
           name: action.name,
-          url: action.url
+          url: action.url,
+          points: action.points
         }
       ];
     case 'RESET_BANDS':

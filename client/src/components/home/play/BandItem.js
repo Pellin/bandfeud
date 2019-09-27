@@ -1,6 +1,7 @@
 import React from 'react';
+import Points from '../play/Points';
 
-const BandItem = ({ name, url }) => {
+const BandItem = ({ name, url, points }) => {
   const fireReg = new RegExp('Firefox');
   const isFirefox = fireReg.test(navigator.userAgent);
   return (
@@ -14,7 +15,9 @@ const BandItem = ({ name, url }) => {
         <div className="band-item-title-container">
           <div className="band-item-title">{name}</div>
         </div>
+       <Points points={points} />
       </div>
+      
     </div>
   );
 };
