@@ -4,7 +4,7 @@
 
 Uses the <a href="https://www.discogs.com/developers"><strong>Discogs API</strong></a> to check if the user's band exists and to fetch a new band
 
-Uses Mongodb Atlas to store highscores and a backup bands database
+Uses <a href="https://www.mongodb.com/cloud/atlas"><strong>Mongodb Atlas</strong></a> to store highscores and a backup bands database
 
 ## How to play
 
@@ -15,7 +15,7 @@ Band or artist names must contain at least two letters or numbers. It must begin
 
 Wait while the app checks if the name exists in the Discogs database.
 
-If correct, your score increases. The longer the band name, the more points you get.
+If the name exists, your score increases. The longer the band name, the more points you get.
 Extra points are awarded for certain first letters. Q, X, Y and Z, for example, gets you 5 extra points
 
 ### App turn
