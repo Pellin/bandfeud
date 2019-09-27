@@ -13,10 +13,10 @@ Type in a band or an artist <strong>beginning with the letter visible under the 
 
 Band or artist names must contain at least two letters or numbers. It must begin and end with a letter between a and z or a number
 
-Wait while the app checks if it exists in the Discogs database.
+Wait while the app checks if the name exists in the Discogs database.
 
 If correct, your score increases. The longer the band name, the more points you get.
-Extra points are awarded for certain letters. Q, X, Y and Z, for example, gets you 5 extra points
+Extra points are awarded for certain first letters. Q, X, Y and Z, for example, gets you 5 extra points
 
 ### App turn
 Next, the app will present a band or an artist. 
