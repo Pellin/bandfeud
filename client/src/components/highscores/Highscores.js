@@ -17,8 +17,6 @@ class Highscores extends Component {
     if (!this.props.highscores.length) {
       this.props.onGetHighscores();
     }
-    console.log(this.props.highscores);
-    
   };
   render() {
     return (

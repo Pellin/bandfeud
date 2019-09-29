@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
+import ShowBandlistModal from '../highscores/ShowBandlistModal';
+
 const HighscoreList = ({ highscores }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [bands, setBands] = useState([]);
+  const [playerInfo, setPlayerInfo] = useState({
+    index: 0,
+    player: '',
+    date: null,
+    score: 0
+  });
+  const closeModal = () => {
+    setShowModal(false);
+    setBands([]);
+  };
+  const onHighscoreClick = (_state, rowInfo) => {
+    return {
+      onClick: () => {
+        setPlayerInfo({
+          index: rowInfo.index,
+          player: rowInfo.original.player,
+          date: rowInfo.original.date,
+          score: rowInfo.original.score
+        });
+        setBands(rowInfo.original.bands);
+        setShowModal(true);
+      }
+    };
+  };
   const columns = [
     {
       id: 'index',
@@ -45,7 +73,20 @@ const HighscoreList = ({ highscores }) => {
   ];
   return (
     <div>
-      <ReactTable showPagination={false} showPaginationBottom={false} sortable={false} data={highscores} columns={columns} />
+      <ReactTable
+        getTrProps={onHighscoreClick}
+        showPagination={false}
+        showPaginationBottom={false}
+        sortable={false}
+        data={highscores}
+        columns={columns}
+      />
+      <ShowBandlistModal
+        bands={bands}
+        playerInfo={playerInfo}
+        closeModal={closeModal}
+        showModal={showModal}
+      />
     </div>
   );
 };

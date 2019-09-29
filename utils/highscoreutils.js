@@ -8,6 +8,8 @@ const checkTop20 = async score => {
     highscores = highscores.sort((a, b) => (a.score > b.score ? -1 : 1));
     if (score > highscores[highscores.length - 1].score) {
       return true;
+    } else if (highscores.length < 20) {
+      return true;
     }
     return false;
   } catch (e) {
@@ -21,7 +23,7 @@ const addHighscore = async (score, player, date, bands) => {
       score,
       player,
       date,
-      bands
+      bands: JSON.parse(bands)
     });
 
     await highscore.save();

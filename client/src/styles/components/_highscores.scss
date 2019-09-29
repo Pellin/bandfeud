@@ -34,6 +34,7 @@
   margin: 0;
   font-size: 1.5rem;
   color: $orange;
+  cursor: pointer;
   position: relative;
 
   @media (max-height: 568px) {
@@ -42,6 +43,7 @@
 }
 
 .hs-player {
+  cursor: pointer;
   margin: 0;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -53,7 +55,12 @@
   }
 }
 
+.hs-player:hover {
+  font-size: 1.7rem;
+}
+
 .hs-score {
+  cursor: pointer;
   text-align: right;
   margin: 0;
   font-size: 1.5rem;
@@ -66,6 +73,7 @@
 }
 
 .hs-date {
+  cursor: pointer;
   margin: 0;
   font-size: 1.5rem;
   color: $pink;
