@@ -22,15 +22,17 @@ const ShowBandlistModal = props => {
       closeTimeoutMS={200}
       className="modal"
     >
-      <div className="modal-header">
-        <div className="header-date">
-          {moment(props.playerInfo.date).format('DD/MM/YYYY')}{' '}
-        </div>{' '}
-        <div className="header-player">
-          {props.playerInfo.index}. {props.playerInfo.player}
-        </div>{' '}
-        <div className="header-points">{props.playerInfo.score} points</div>
-      </div>
+      {props.playerInfo && (
+        <div className="modal-header">
+          <div className="header-date">
+            {moment(props.playerInfo.date).format('DD/MM/YYYY')}{' '}
+          </div>{' '}
+          <div className="header-player">
+            {props.playerInfo.index}. {props.playerInfo.player}
+          </div>{' '}
+          <div className="header-points">{props.playerInfo.score} points</div>
+        </div>
+      )}
       {props.showModal &&
         props.bands.map(band => (
           <div className="band-info" key={band.name}>

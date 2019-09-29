@@ -40,7 +40,6 @@ class SubmitHighscore extends Component {
   };
   goToPlay = () => {
     this.props.onHighscoreSet();
-    this.props.onResetBands();
     this.props.onResetUsed();
     this.props.onResetScore();
     this.props.onResetBandBank();
@@ -49,7 +48,6 @@ class SubmitHighscore extends Component {
   };
   goToHighscores = () => {
     this.props.onHighscoreSet();
-    this.props.onResetBands();
     this.props.onResetUsed();
     this.props.onResetScore();
     this.props.onResetBandBank();
