@@ -4,14 +4,60 @@ exports[`should render with <Play /> when inGame is true 1`] = `
 <div>
   <Connect(Header) />
   <Connect(Play) />
+  <ShowBandlistModal
+    closeModal={[Function]}
+    showModal={false}
+  />
 </div>
 `;
 
-exports[`should render with <button> when inGame is false 1`] = `
+exports[`should render with PLAY <button> and Review... <button> when inGame is false and bands.length > 0 1`] = `
 <div>
   <Connect(Header) />
   <div
-    className="new-game-button-container"
+    className="buttons-container"
+  >
+    <button
+      className="new-game-button"
+      onClick={[Function]}
+    >
+      PLAY
+    </button>
+    <button
+      className="show-modal-button"
+      onClick={[Function]}
+    >
+      REVIEW LAST ROUND
+    </button>
+  </div>
+  <ShowBandlistModal
+    bands={
+      Array [
+        Object {
+          "name": "one",
+          "url": "www.1img.com",
+        },
+        Object {
+          "name": "two",
+          "url": "www.2img.com",
+        },
+        Object {
+          "name": "three",
+          "url": "www.3img.com",
+        },
+      ]
+    }
+    closeModal={[Function]}
+    showModal={false}
+  />
+</div>
+`;
+
+exports[`should render with PLAY <button> when inGame is false 1`] = `
+<div>
+  <Connect(Header) />
+  <div
+    className="buttons-container"
   >
     <button
       className="new-game-button"
@@ -20,5 +66,10 @@ exports[`should render with <button> when inGame is false 1`] = `
       PLAY
     </button>
   </div>
+  <ShowBandlistModal
+    bands={Array []}
+    closeModal={[Function]}
+    showModal={false}
+  />
 </div>
 `;

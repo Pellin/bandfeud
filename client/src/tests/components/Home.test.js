@@ -3,18 +3,39 @@ import { shallow } from 'enzyme';
 
 import { Home } from '../../components/home/Home';
 
-let onGetHighscoresSpy, onSetMessageSpy, onGameOnSpy, onSetOsSpy;
+let onGetHighscoresSpy, onSetMessageSpy, onGameOnSpy, onSetOsSpy, bands;
 
 beforeEach(() => {
   onGetHighscoresSpy = jest.fn();
   onSetMessageSpy = jest.fn();
   onGameOnSpy = jest.fn();
   onSetOsSpy = jest.fn();
+  bands = [
+    { name: 'one', url: 'www.1img.com' },
+    { name: 'two', url: 'www.2img.com' },
+    { name: 'three', url: 'www.3img.com' }
+  ];
 });
 
-it('should render with <button> when inGame is false', () => {
+it('should render with PLAY <button> when inGame is false', () => {
   const wrapper = shallow(
     <Home
+      bands={[]}
+      inGame={false}
+      onGetHighscores={onGetHighscoresSpy}
+      onSetMessage={onSetMessageSpy}
+      onSetOs={onSetOsSpy}
+      onGameOn={onGameOnSpy}
+      window={window}
+    />
+  );
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render with PLAY <button> and Review... <button> when inGame is false and bands.length > 0', () => {
+  const wrapper = shallow(
+    <Home
+      bands={bands}
       inGame={false}
       onGetHighscores={onGetHighscoresSpy}
       onSetMessage={onSetMessageSpy}
@@ -29,6 +50,7 @@ it('should render with <button> when inGame is false', () => {
 it('should call onGetHighscores and onSetOs when rendered', () => {
   shallow(
     <Home
+      bands={[]}
       inGame={false}
       onGetHighscores={onGetHighscoresSpy}
       onSetMessage={onSetMessageSpy}
@@ -44,6 +66,7 @@ it('should call onSetMessage and onGameOn correctly when "PLAY" button is clicke
   jest.useFakeTimers();
   const wrapper = shallow(
     <Home
+      bands={[]}
       inGame={false}
       onGetHighscores={onGetHighscoresSpy}
       onSetMessage={onSetMessageSpy}
@@ -58,7 +81,7 @@ it('should call onSetMessage and onGameOn correctly when "PLAY" button is clicke
   expect(onSetMessageSpy).toHaveBeenCalledWith('Get ready...');
   expect(onGameOnSpy).toHaveBeenCalled();
   expect(onSetMessageSpy).toHaveBeenCalledWith('');
-  
+
   jest.useRealTimers();
 });
 

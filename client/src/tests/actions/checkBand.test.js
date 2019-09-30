@@ -48,12 +48,12 @@ it('should dispatch expected actions if "band" matches', async () => {
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Checking...' },
     { type: 'ADD_TO_SCORE', payload: 19 },
-    { type: 'ADD_BAND', name: 'seven', url: 'www.7img.com' },
+    { type: 'ADD_BAND', name: 'seven', points: 19, url: 'www.7img.com' },
     { type: 'SET_MESSAGE', payload: 'Correct!' },
     { type: 'SET_MESSAGE', payload: 'Get ready...' }
   ];
   fetchMock
-    .post(checkbandURL, { name: 'seven', imgUrl: 'www.7img.com' })
+    .get(checkbandURL, { name: 'seven', imgUrl: 'www.7img.com' })
     .get(checkhighscoreURL, 204)
     .get(
       `/api/getband?previous=n&used=${JSON.stringify([...used, band])}`,
@@ -84,11 +84,10 @@ it("should dispatch expected actions if 'band' doesn't match", async () => {
     { type: 'SET_MESSAGE', payload: 'Checking...' },
     { type: 'SET_MESSAGE', payload: 'Not in database! GAME OVER.' },
     { type: 'SHOW_GAME_OVER' },
-    { type: 'RESET_USED' },
-    { type: 'RESET_BANDS' }
+    { type: 'RESET_USED' }
   ];
 
-  fetchMock.post(checkbandURL, 200).get(checkhighscoreURL, 204);
+  fetchMock.get(checkbandURL, 200).get(checkhighscoreURL, 204);
 
   await store.dispatch(getBand(band, previous, used, bandBank, score));
   jest.runAllTimers();
@@ -111,8 +110,7 @@ it('should dispatch game over if band was already used', async () => {
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: "Already used! You're out, Einstein" },
     { type: 'SHOW_GAME_OVER' },
-    { type: 'RESET_USED' },
-    { type: 'RESET_BANDS' }
+    { type: 'RESET_USED' }
   ];
 
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
@@ -140,8 +138,7 @@ it('should dispatch game over if band has incorrect first letter', async () => {
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Wrong letter! You lose, punk' },
     { type: 'SHOW_GAME_OVER'},
-    { type: 'RESET_USED' },
-    { type: 'RESET_BANDS' }
+    { type: 'RESET_USED' }
   ];
 
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
@@ -169,8 +166,7 @@ it('should dispatch expected actions if highscore', async () => {
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Wrong letter! You lose, punk' },
     { type: 'SHOW_GAME_OVER'},
-    { type: 'RESET_USED' },
-    { type: 'RESET_BANDS' }
+    { type: 'RESET_USED' }
   ];
 
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;

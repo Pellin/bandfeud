@@ -207,5 +207,18 @@ exports[`should render HighscoreList correctly 1`] = `
     style={Object {}}
     subRowsKey="_subRows"
   />
+  <ShowBandlistModal
+    bands={Array []}
+    closeModal={[Function]}
+    playerInfo={
+      Object {
+        "date": null,
+        "index": 0,
+        "player": "",
+        "score": 0,
+      }
+    }
+    showModal={false}
+  />
 </div>
 `;

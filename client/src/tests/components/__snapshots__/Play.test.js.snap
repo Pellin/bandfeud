@@ -60,6 +60,26 @@ exports[`should show SubmitHighscore instead if state is right 1`] = `
     className="view-holder"
   >
     <Connect(SubmitHighscore)
+      bands={
+        Array [
+          Object {
+            "name": "one",
+            "url": "www.1img.com",
+          },
+          Object {
+            "name": "two",
+            "url": "www.2img.com",
+          },
+          Object {
+            "name": "three",
+            "url": "www.3img.com",
+          },
+          Object {
+            "name": "four",
+            "url": "www.4img.com",
+          },
+        ]
+      }
       difficulty={20}
       history={[Function]}
       inGame={true}

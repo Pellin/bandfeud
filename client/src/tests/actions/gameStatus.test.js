@@ -23,11 +23,11 @@ afterEach(() => {
 
 it('(gameOn) should dispatch expected actions', async () => {
   await store.dispatch(gameOn());
-
-  expect(store.getActions()[0].type).toMatch('SET_PREVIOUS');
-  expect(store.getActions()[0].payload).toMatch(/[a-z]/);
-  expect(store.getActions()[1].type).toMatch('GAME_ON');
-  expect(store.getActions()[2].type).toMatch('SUBMITTED:_FALSE');
+  expect(store.getActions()[0].type).toMatch('RESET_BANDS');
+  expect(store.getActions()[1].type).toMatch('SET_PREVIOUS');
+  expect(store.getActions()[1].payload).toMatch(/[a-z]/);
+  expect(store.getActions()[2].type).toMatch('GAME_ON');
+  expect(store.getActions()[3].type).toMatch('SUBMITTED:_FALSE');
 });
 
 it('(gameOver) should dispatch expected actions', async () => {
@@ -37,8 +37,6 @@ it('(gameOver) should dispatch expected actions', async () => {
     { type: 'SET_MESSAGE', payload: message },
     { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' },
-    { type: 'RESET_BANDS' },
-   
     { type: 'SET_MESSAGE', payload: '' },
     { type: 'HIDE_GAME_OVER' },
     { type: 'GAME_OVER' },
@@ -62,7 +60,6 @@ it('(gameOver) should dispatch expected actions if highscore === true', async ()
     { type: 'SET_MESSAGE', payload: 'a message from test' },
     { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' },
-    { type: 'RESET_BANDS' },
     { type: 'HIDE_GAME_OVER' },
     { type: 'HIGHSCORE:_TRUE' }
   ];
