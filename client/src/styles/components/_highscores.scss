@@ -46,29 +46,33 @@
   cursor: pointer;
   margin: 0;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: $yellow;
   position: relative;
 
-  @media (max-height: 568px) {
-    font-size: 1rem;
+  @media (min-height: $desktop-breakpoint) {
+    font-size: 1.7rem;
   }
 }
 
 .hs-player:hover {
   font-size: 1.7rem;
+
+  @media (min-height: $desktop-breakpoint) {
+    font-size: 2rem;
+  }
 }
 
 .hs-score {
   cursor: pointer;
   text-align: right;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: $red;
   position: relative;
 
-  @media (max-height: 568px) {
-    font-size: 1rem;
+  @media (min-height: $desktop-breakpoint) {
+    font-size: 1.8rem;
   }
 }
 

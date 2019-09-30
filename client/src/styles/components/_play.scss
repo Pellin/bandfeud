@@ -1,4 +1,5 @@
 .view-holder {
+  background: yellow;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +14,7 @@
   margin: auto;
   position: relative;
   top: 20rem;
-  width: 40rem;
+  width: 30rem;
 
   img {
     width: 100%;
@@ -22,7 +23,10 @@
 }
 
 .game-container {
-  background: transparent;
+  align-items: space-between;
+  background: pink;
+  display: flex;
+  justify-content: space-between;
   margin: 27rem 0 0 0;
   height: 35rem;
   width: 100%;
@@ -35,9 +39,19 @@
   @media (max-width: 568px) {
     margin: 25rem 0 0 0;
   }
-
+  //iphone 11 pro & iphone X & iphone Xs
   @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-    margin: 30rem 0 0 0;
+    margin: 27rem 0 20rem 0;
+  }
+  //iphone 11 & iphone XR
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    margin: 27rem 0 20rem 0;
+  }
+
+  //iphone 11 pro max & iphone Xs Max
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+    height: 30rem;
+    margin: 27rem 0 0 0;
   }
 }
 
@@ -55,7 +69,6 @@
   @media (max-width: 568px) {
     margin: 10rem 0 0 0;
   }
-
 }
 
 .band-list {
@@ -63,13 +76,14 @@
 }
 
 .footer {
-  background: $off-black;
+  background: blue;
+  bottom: 2rem;
   position: fixed;
-  height: 5rem;
-  bottom: 1rem;
+  height: 4rem;
   background: transparent;
   width: 100vw;
   border-top: 1px solid $off-white;
+  padding-bottom: 1rem;
   z-index: 1000;
 
   @media (min-width: $desktop-breakpoint) {
@@ -78,7 +92,7 @@
 }
 
 .submit-band {
-  background: $off-black;
+  background: green;
   align-items: center;
   font-size: 2rem;
   justify-content: center;
