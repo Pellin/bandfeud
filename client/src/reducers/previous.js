@@ -43,7 +43,7 @@ export default (state = { previous1: letter, previous2: '' }, action) => {
           previous2 = 'e';
           break;
         case '6':
-          previous2 = 'o';
+          previous2 = 'x';
           break;
         case '7':
           previous2 = 'n';
