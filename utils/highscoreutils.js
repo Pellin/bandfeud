@@ -23,7 +23,7 @@ const addHighscore = async (score, player, date, bands) => {
       score,
       player,
       date,
-      bands: JSON.parse(bands)
+      bands
     });
 
     await highscore.save();

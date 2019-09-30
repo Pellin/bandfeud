@@ -14,8 +14,9 @@ const {
 } = require('./utils/highscoreutils');
 
 const app = express();
+app.use(express.json());
 
-app.post('/api/checkband', async (req, res) => {
+app.get('/api/checkband', async (req, res) => {
   try {
     const bands = await checkBand(req.query.name);
     const parsedBands = JSON.parse(bands);
@@ -29,8 +30,7 @@ app.post('/api/checkband', async (req, res) => {
 
 app.get('/api/getband', async (req, res) => {
   try {
-    const used = JSON.parse(req.query.used);
-    const reply = await getBand(req.query.previous, used);
+    const reply = await getBand(req.query.previous, req.query.used);
     res.json(reply);
   } catch (e) {
     console.log(e);
@@ -58,15 +58,6 @@ app.get('/api/checkhighscore', async (req, res) => {
   }
 });
 
-app.post('/api/sethighscore', async (req, res) => {
-  try {
-    await addHighscore(req.query.score, req.query.player, req.query.date, req.query.bands);
-    res.status(200).send();
-  } catch (e) {
-    res.status(400).send();
-  }
-});
-
 app.get('/api/gethighscores', async (_req, res) => {
   const highscores = await getHighscores();
   res.json(highscores);
@@ -80,6 +71,21 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
   });
 }
+
+app.post('/api/sethighscore', async (req, res) => {
+  try {
+    await addHighscore(
+      req.body.score,
+      req.body.player,
+      req.body.date,
+      req.body.bands
+    );
+    res.status(200).send();
+  } catch (e) {
+    console.log(e.message);
+    res.status(400).send(e.message);
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Started on port ${PORT}`);

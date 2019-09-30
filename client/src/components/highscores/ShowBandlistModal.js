@@ -28,7 +28,7 @@ const ShowBandlistModal = props => {
             {moment(props.playerInfo.date).format('DD/MM/YYYY')}{' '}
           </div>{' '}
           <div className="header-player">
-            {props.playerInfo.index}. {props.playerInfo.player}
+            {props.playerInfo.index + 1}. {props.playerInfo.player}
           </div>{' '}
           <div className="header-points">{props.playerInfo.score} points</div>
         </div>

@@ -21,13 +21,19 @@ class SubmitHighscore extends Component {
     this.setState(() => ({ nameSubmitted: true }));
 
     try {
-      const date = new Date().getTime();
-      const setHighscore = await fetch(
-        `/api/sethighscore?score=${this.props.score}&player=${this.state.name}&date=${date}&bands=${JSON.stringify(this.props.bands)}`,
-        {
-          method: 'POST'
-        }
-      );
+      const data = {
+        bands: this.props.bands,
+        date: new Date().getTime(),
+        player: this.state.name,
+        score: this.props.score
+      };
+      const setHighscore = await fetch(`/api/sethighscore`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
       if (setHighscore.status === 200) {
         this.setState(() => ({ highscoreSet: true }));
         this.props.onGetHighscores();

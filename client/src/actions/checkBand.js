@@ -15,27 +15,24 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
 
   if (used.includes(band)) {
     return setTimeout(() => {
-      const state = getState();
-      console.log(state.bands);
       dispatch(gameOver("Already used! You're out, Einstein", score));
     }, 250);
   }
   if (band[0] !== previous.previous1 && band[0] !== previous.previous2) {
     return setTimeout(() => {
-      const state = getState();
-      console.log(state.bands);
       dispatch(gameOver('Wrong letter! You lose, punk', score));
     }, 250);
   }
 
   dispatch(setMessage('Checking...'));
-  used.push(band);
-
+ 
   try {
-    const reply = await fetch(`/api/checkband?name=${band}`, {
-      method: 'POST'
-    });
+    const reply = await fetch(`/api/checkband?name=${band}`);
     const checkedBand = await reply.json();
+    used.push(band);
+    if (checkedBand.name !== band) {
+      used.push(checkedBand.name);
+    }
     const previous = checkedBand.name[checkedBand.name.length - 1];
     const state = getState();
     const extraPoints = calcExtraPoints(checkedBand.name, difficulty);
