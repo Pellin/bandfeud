@@ -13,7 +13,11 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
   dispatch({ type: 'SUBMITTED:_TRUE' });
   previous = theFix(band, previous);
 
-  if (used.includes(band)) {
+  if (
+    used.includes(band) ||
+    used.includes(`the ${band}`) ||
+    used.includes(band.slice(4))
+  ) {
     return setTimeout(() => {
       dispatch(gameOver("Already used! You're out, Einstein", score));
     }, 250);
@@ -25,7 +29,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
   }
 
   dispatch(setMessage('Checking...'));
- 
+
   try {
     const reply = await fetch(`/api/checkband?name=${band}`);
     const checkedBand = await reply.json();
@@ -33,13 +37,16 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     if (checkedBand.name !== band) {
       used.push(checkedBand.name);
     }
+    console.log(used);
     const previous = checkedBand.name[checkedBand.name.length - 1];
     const state = getState();
     const extraPoints = calcExtraPoints(checkedBand.name, difficulty);
-    const totalPoints = state.currentPoints + extraPoints
+    const totalPoints = state.currentPoints + extraPoints;
     dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
-    dispatch(addBand(checkedBand.name, checkedBand.imgUrl, 'user', totalPoints));
+    dispatch(
+      addBand(checkedBand.name, checkedBand.imgUrl, 'user', totalPoints)
+    );
     return;
   } catch (e) {
     return setTimeout(() => {
