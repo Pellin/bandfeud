@@ -1,5 +1,5 @@
 .view-holder {
-  background: yellow;
+  background: $off-black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .game-container {
   align-items: space-between;
-  background: pink;
+  background: $off-black;
   display: flex;
   justify-content: space-between;
   margin: 27rem 0 0 0;
@@ -34,6 +34,10 @@
 
   @media (min-width: $desktop-breakpoint) {
     margin: 33rem 0 0 0;
+  }
+
+  @media (max-height: 640px) and (min-width: 570px) {
+    margin: 28rem 0 0 0;
   }
 
   @media (max-width: 568px) {
@@ -56,7 +60,7 @@
 }
 
 .game-container-firefox {
-  background: transparent;
+  background: $off-black;
   margin: 10rem 0 0 0;
   height: 35rem;
   width: 100%;
@@ -64,6 +68,10 @@
 
   @media (min-width: $desktop-breakpoint) {
     margin: 15rem 0 0 0;
+  }
+
+  @media (max-height: 640px) and (min-width: 570px) {
+    margin: 12rem 0 0 0;
   }
 
   @media (max-width: 568px) {
@@ -76,11 +84,10 @@
 }
 
 .footer {
-  background: blue;
+  background: $off-black;
   bottom: 2rem;
   position: fixed;
   height: 4rem;
-  background: transparent;
   width: 100vw;
   border-top: 1px solid $off-white;
   padding-bottom: 1rem;
@@ -89,10 +96,14 @@
   @media (min-width: $desktop-breakpoint) {
     height: 7rem;
   }
+
+  @media (max-height: 640px) and (min-width: 570px) {
+    height: 5rem;
+  }
 }
 
 .submit-band {
-  background: green;
+  background: $off-black;
   align-items: center;
   font-size: 2rem;
   justify-content: center;
@@ -103,7 +114,7 @@
 }
 
 .message-box {
-  background: transparent;
+  background: $off-black;
   font-size: 1.5rem;
   height: 1.5rem;
   margin: auto;

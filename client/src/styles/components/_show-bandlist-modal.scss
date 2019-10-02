@@ -6,7 +6,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
   z-index: 200;
 }
 
@@ -24,10 +24,11 @@
   border: 1px solid $off-white;
   border-radius: 4px;
   color: $yellow;
+  cursor: default;
   display: flex;
   flex-direction: row;
   outline: none;
-  overflow: scroll;
+  overflow: auto;
   padding: 3rem 0;
   text-align: center;
 }
@@ -43,33 +44,48 @@
   }
 
 .header-date {
+  align-self: flex-start;
   color: white;
   font-size: 1.2rem;
+  margin-top: 1rem;
   width: 17rem;
   text-align: center;
 
   @media(min-width: $desktop-breakpoint) {
     font-size: 1.8rem;
+    
     width: 20rem;
   }
 }
 
 .header-player {
   color: $yellow;
-  font-size: 1.8rem;
-  margin: 0 2rem;
+  font-size: 2.2rem;
   text-align: center;
+  text-shadow: 1px 1px 6px, -1px -1px 6px;
   width: 25rem;
 
   @media(min-width: $desktop-breakpoint) {
     font-size: 3rem;
     width: 25rem;
   }
+
+  p {
+    color: white;
+    font-size: 0.8rem;
+    text-shadow: none;
+
+    @media (min-width: $desktop-breakpoint) {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .header-points {
+  align-self: flex-start;
   color: white;
   font-size: 1.2rem;
+  margin-top: 1rem;
   text-align: center;
   width: 17rem;
 
@@ -80,12 +96,11 @@
 }
 
 .band-info {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 5rem 0 1rem;
+  margin: 7rem 0 1rem;
   padding: 1rem;
   width: 20rem;
 }
@@ -139,6 +154,7 @@
 }
 
 .band-image {
+  cursor: pointer;
   width: 100%;
   height: auto;
 }

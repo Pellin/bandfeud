@@ -5,87 +5,104 @@
   justify-content: center;
   margin: auto;
   position: fixed;
-  top: $mobile-top;
+  top: 11rem;
   left: 0;
   right: 0;
 
   @media (min-width: $desktop-breakpoint) {
-    top: $desktop-top;
+    top: $desktop-top + 2rem;
   }
 
-  @media (min-height: 800px) {
-    top: 25rem;
+  @media (min-height: 820px) {
+    top: 23rem;
+  }
+
+  @media (max-height: 640px) and (min-width: 570px) {
+    top: $desktop-top - 4rem;
   }
 }
 
 .highscore-title {
-  color: $mustard;
-  font-size: 2rem;
+  color: $off-white;
+  cursor: default;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 9px;
   margin-bottom: 1.5rem;
+  padding-left: 9px;
   text-align: center;
 
   @media (max-height: 568px) {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-}
-
-.hs-index {
-  margin: 0;
-  font-size: 1.5rem;
-  color: $orange;
-  cursor: pointer;
-  position: relative;
-
-  @media (max-height: 568px) {
-    font-size: 1rem;
-  }
-}
-
-.hs-player {
-  cursor: pointer;
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  color: $yellow;
-  position: relative;
-
-  @media (min-height: $desktop-breakpoint) {
     font-size: 1.7rem;
+    margin-bottom: 1rem;
+    letter-spacing: 7px;
+    padding-left: 7px;
   }
-}
 
-.hs-player:hover {
-  font-size: 1.7rem;
-
-  @media (min-height: $desktop-breakpoint) {
+  @media (max-height: 640px) and (min-width: 570px) {
     font-size: 2rem;
   }
+
+  @media (min-height: 820px) {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 10px;
+    padding-left: 10px;
+  }
 }
 
-.hs-score {
+.highscore-body {
+  background: transparent;
   cursor: pointer;
-  text-align: right;
-  margin: 0;
-  font-size: 1.3rem;
-  color: $red;
   position: relative;
+}
 
-  @media (min-height: $desktop-breakpoint) {
+.hs-row {
+  font-size: 1.3rem;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 1.7rem;
+  }
+
+  @media (max-height: 640px) and (min-width: 570px) {
+    font-size: 1.3rem;
+  }
+
+  @media (min-height: 820px) {
+    font-size: 1.8rem;
+  }
+
+  //iphone 11 pro & iphone X & iphone Xs
+  @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    font-size: 1.4rem;
+  }
+  //iphone 11 & iphone XR
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
     font-size: 1.8rem;
   }
 }
 
-.hs-date {
-  cursor: pointer;
+.hs-player {
   margin: 0;
-  font-size: 1.5rem;
-  color: $pink;
-  position: relative;
+  text-transform: uppercase;
+  width: 17rem;
 
-  @media (max-height: 568px) {
-    font-size: 1rem;
+  color: $yellow;
+  transition: 200ms color;
+
+  @media (min-width: $desktop-breakpoint) {
+    width: 20rem;
   }
+}
+
+.hs-player:hover {
+  color: lighten($yellow, 20%);
+}
+
+.hs-score {
+  text-align: right;
+  margin: 0;
+  color: $red;
 }
 
 .load-message {
