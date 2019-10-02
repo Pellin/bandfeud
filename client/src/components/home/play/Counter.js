@@ -30,7 +30,7 @@ export class Counter extends Component {
         this.setState(() => ({ timeLeft: this.state.timeLeft - 1 }));
       } else {
         this.props.onGameOver(
-          "Time's up, snailfoot. And the game is over.",
+          "Time's up, snailfinger.",
           this.props.score
         );
         clearInterval(timer);
