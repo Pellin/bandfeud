@@ -1,212 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render HighscoreList correctly 1`] = `
-<div>
-  <ReactTable
-    AggregatedComponent={[Function]}
-    ExpanderComponent={[Function]}
-    FilterComponent={[Function]}
-    LoadingComponent={[Function]}
-    NoDataComponent={[Function]}
-    PadRowComponent={[Function]}
-    PaginationComponent={[Function]}
-    PivotValueComponent={[Function]}
-    ResizerComponent={[Function]}
-    TableComponent={[Function]}
-    TbodyComponent={[Function]}
-    TdComponent={[Function]}
-    TfootComponent={[Function]}
-    ThComponent={[Function]}
-    TheadComponent={[Function]}
-    TrComponent={[Function]}
-    TrGroupComponent={[Function]}
-    aggregatedKey="_aggregated"
-    className=""
-    collapseOnDataChange={true}
-    collapseOnPageChange={true}
-    collapseOnSortingChange={true}
-    column={
-      Object {
-        "Aggregated": undefined,
-        "Cell": undefined,
-        "Expander": undefined,
-        "Filter": undefined,
-        "Footer": undefined,
-        "Header": undefined,
-        "Pivot": undefined,
-        "PivotValue": undefined,
-        "Placeholder": undefined,
-        "aggregate": undefined,
-        "className": "",
-        "filterAll": false,
-        "filterMethod": undefined,
-        "filterable": undefined,
-        "footerClassName": "",
-        "footerStyle": Object {},
-        "getFooterProps": [Function],
-        "getHeaderProps": [Function],
-        "getProps": [Function],
-        "headerClassName": "",
-        "headerStyle": Object {},
-        "minResizeWidth": 11,
-        "minWidth": 100,
-        "resizable": undefined,
-        "show": true,
-        "sortMethod": undefined,
-        "sortable": undefined,
-        "style": Object {},
-      }
-    }
-    columns={
-      Array [
-        Object {
-          "Cell": [Function],
-          "className": "hs-index",
-          "id": "index",
-          "style": Object {
-            "margin": 0,
-            "padding": 0,
-          },
-          "width": 30,
-        },
-        Object {
-          "Cell": [Function],
-          "accessor": "player",
-          "className": "hs-player",
-          "style": Object {
-            "margin": 0,
-            "padding": 0,
-          },
-          "width": 130,
-        },
-        Object {
-          "Cell": [Function],
-          "accessor": "score",
-          "className": "hs-score",
-          "style": Object {
-            "margin": 0,
-            "padding": "0 15px 0 0",
-          },
-          "width": 60,
-        },
-        Object {
-          "Cell": [Function],
-          "accessor": [Function],
-          "className": "hs-date",
-          "id": "scoreDate",
-          "style": Object {
-            "margin": 0,
-            "padding": 0,
-          },
-          "width": 80,
-        },
-      ]
-    }
-    data={
-      Array [
-        Object {
-          "date": 1567247152162,
-          "player": "falle",
-          "score": 97,
-        },
-        Object {
-          "date": 1568387025126,
-          "player": "babs",
-          "score": 118,
-        },
-        Object {
-          "date": 1568447073138,
-          "player": "mob pete",
-          "score": 123,
-        },
-        Object {
-          "date": 1568734844461,
-          "player": "krille k",
-          "score": 147,
-        },
-      ]
-    }
-    defaultExpanded={Object {}}
-    defaultFilterMethod={[Function]}
-    defaultFiltered={Array []}
-    defaultPage={0}
-    defaultPageSize={20}
-    defaultResized={Array []}
-    defaultSortDesc={false}
-    defaultSortMethod={[Function]}
-    defaultSorted={Array []}
-    expanderDefaults={
-      Object {
-        "filterable": false,
-        "resizable": false,
-        "sortable": false,
-        "width": 35,
-      }
-    }
-    filterable={false}
-    freezeWhenExpanded={false}
-    getLoadingProps={[Function]}
-    getNoDataProps={[Function]}
-    getPaginationProps={[Function]}
-    getProps={[Function]}
-    getResizerProps={[Function]}
-    getTableProps={[Function]}
-    getTbodyProps={[Function]}
-    getTdProps={[Function]}
-    getTfootProps={[Function]}
-    getTfootTdProps={[Function]}
-    getTfootTrProps={[Function]}
-    getTheadFilterProps={[Function]}
-    getTheadFilterThProps={[Function]}
-    getTheadFilterTrProps={[Function]}
-    getTheadGroupProps={[Function]}
-    getTheadGroupThProps={[Function]}
-    getTheadGroupTrProps={[Function]}
-    getTheadProps={[Function]}
-    getTheadThProps={[Function]}
-    getTheadTrProps={[Function]}
-    getTrGroupProps={[Function]}
-    getTrProps={[Function]}
-    groupedByPivotKey="_groupedByPivot"
-    indexKey="_index"
-    loading={false}
-    loadingText="Loading..."
-    multiSort={true}
-    nestingLevelKey="_nestingLevel"
-    nextText="Next"
-    noDataText="No rows found"
-    ofText="of"
-    onFetchData={[Function]}
-    originalKey="_original"
-    pageJumpText="jump to page"
-    pageSizeOptions={
-      Array [
-        5,
-        10,
-        20,
-        25,
-        50,
-        100,
-      ]
-    }
-    pageText="Page"
-    pivotDefaults={Object {}}
-    pivotIDKey="_pivotID"
-    pivotValKey="_pivotVal"
-    previousText="Previous"
-    resizable={true}
-    resolveData={[Function]}
-    rowsSelectorText="rows per page"
-    rowsText="rows"
-    showPageJump={true}
-    showPageSizeOptions={true}
-    showPagination={false}
-    showPaginationBottom={false}
-    showPaginationTop={false}
-    sortable={false}
-    style={Object {}}
-    subRowsKey="_subRows"
-  />
+<Fragment>
+  <div
+    className="highscore-title"
+  >
+    HALL OF FAME
+  </div>
+  <table>
+    <tbody
+      className="highscore-body"
+    >
+      <tr
+        className="hs-row"
+        key="one"
+        onClick={[Function]}
+      >
+        <td
+          className="hs-player"
+        >
+          falle
+        </td>
+        <td
+          className="hs-score"
+        >
+          97
+        </td>
+      </tr>
+      <tr
+        className="hs-row"
+        key="two"
+        onClick={[Function]}
+      >
+        <td
+          className="hs-player"
+        >
+          babs
+        </td>
+        <td
+          className="hs-score"
+        >
+          118
+        </td>
+      </tr>
+      <tr
+        className="hs-row"
+        key="three"
+        onClick={[Function]}
+      >
+        <td
+          className="hs-player"
+        >
+          mob pete
+        </td>
+        <td
+          className="hs-score"
+        >
+          123
+        </td>
+      </tr>
+      <tr
+        className="hs-row"
+        key="four"
+        onClick={[Function]}
+      >
+        <td
+          className="hs-player"
+        >
+          krille k
+        </td>
+        <td
+          className="hs-score"
+        >
+          147
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <ShowBandlistModal
     bands={Array []}
     closeModal={[Function]}
@@ -220,5 +90,5 @@ exports[`should render HighscoreList correctly 1`] = `
     }
     showModal={false}
   />
-</div>
+</Fragment>
 `;
