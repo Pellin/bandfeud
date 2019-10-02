@@ -8,7 +8,9 @@ const BandList = ({ bands }) => {
     setLeft(window.innerWidth / 2 - bands.length * 210 + 105 + 'px');
   };
   useEffect(() => {
-    setCenter();
+    if (bands.length < 1) {
+      setCenter();
+    }
   });
   useEffect(() => {
     window.addEventListener('resize', setCenter);
