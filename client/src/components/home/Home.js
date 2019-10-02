@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../Header';
@@ -10,61 +10,61 @@ import setMessage from '../../actions/setMessage';
 import setOs from '../../actions/setOs';
 import { gameOn } from '../../actions/gameStatus';
 
-export class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: false
-    };
-  }
-  componentDidMount = () => {
-    this.props.onSetOs(navigator.userAgent);
-    this.props.onGetHighscores();
-  };
-  startGame = () => {
-    this.props.onSetMessage('Get ready...');
-    this.props.onGameOn();
+export const Home = ({
+  bands,
+  history,
+  inGame,
+  onSetMessage,
+  onGetHighscores,
+  onGameOn,
+  onSetOs
+}) => {
+  useEffect(() => {
+    onSetOs(navigator.userAgent);
+    onGetHighscores();
+  });
+  const [showModal, setShowModal] = useState(false);
+  const startGame = () => {
+    onSetMessage('Get ready...');
+    onGameOn();
     setTimeout(() => {
-      this.props.onSetMessage('');
+      onSetMessage('');
     }, 2000);
   };
-  openModal = () => {
-    this.setState(() => ({ showModal: true }));
+  const openModal = () => {
+    setShowModal(true);
   };
-  closeModal = () => {
-    this.setState(() => ({ showModal: false }));
+  const closeModal = () => {
+    setShowModal(false);
   };
-  render() {
-    return (
-      <div>
-        <Header />
-        {!this.props.inGame && (
-          <div className="buttons-container">
-            <button className="new-game-button" onClick={this.startGame}>
-              PLAY
+  return (
+    <div>
+      <Header />
+      {!inGame && (
+        <div className="buttons-container">
+          <button className="new-game-button" onClick={startGame}>
+            PLAY
+          </button>
+          {bands.length > 0 && (
+            <button className="show-modal-button" onClick={openModal}>
+              REVIEW LAST ROUND
             </button>
-            {this.props.bands.length > 0 && (
-              <button className="show-modal-button" onClick={this.openModal}>
-                REVIEW LAST ROUND
-              </button>
-            )}
-          </div>
-        )}
-        {this.props.inGame && <Play history={this.props.history} />}
-        <ShowBandlistModal
-          bands={this.props.bands}
-          closeModal={this.closeModal}
-          showModal={this.state.showModal}
-        />
-      </div>
-    );
-  }
-}
+          )}
+        </div>
+      )}
+      {inGame && <Play history={history} />}
+      <ShowBandlistModal
+        bands={bands}
+        closeModal={closeModal}
+        showModal={showModal}
+      />
+    </div>
+  );
+};
 
 const mapStateToProps = state => ({
   bands: state.bands,
-  inGame: state.inGame,
-  highscores: state.highscores
+  inGame: state.inGame
 });
 
 const mapDispatchToProps = dispatch => ({
