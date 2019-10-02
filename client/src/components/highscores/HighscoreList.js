@@ -24,7 +24,6 @@ const HighscoreList = ({ highscores }) => {
     setBands(highscore.bands);
     setShowModal(true);
   };
-  console.log(highscores[0]);
   return (
     <>
       <div className="highscore-title">HALL OF FAME</div>
