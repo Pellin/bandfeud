@@ -17,8 +17,8 @@
     top: 23rem;
   }
 
-  @media (max-height: 640px) and (min-width: 570px) {
-    top: $desktop-top - 4rem;
+  @media (max-height: 740px) and (min-width: 570px) {
+    top: $desktop-top - 3rem;
   }
 }
 
