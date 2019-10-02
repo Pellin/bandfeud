@@ -23,7 +23,7 @@ class Highscores extends Component {
       <div>
         <Header />
         <div className="highscore-container">
-          <div className="highscore-title">HIGHSCORES</div>
+        
           {this.props.highscores.length ? (
             <HighscoreList highscores={this.props.highscores} />
           ) : (

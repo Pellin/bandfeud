@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import moment from 'moment';
-import ReactTable from 'react-table';
-import 'react-table/react-table.css';
 
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
 
@@ -18,76 +15,40 @@ const HighscoreList = ({ highscores }) => {
     setShowModal(false);
     setBands([]);
   };
-  const onHighscoreClick = (_state, rowInfo) => {
-    return {
-      onClick: () => {
-        setPlayerInfo({
-          index: rowInfo.index,
-          player: rowInfo.original.player,
-          date: rowInfo.original.date,
-          score: rowInfo.original.score
-        });
-        setBands(rowInfo.original.bands);
-        setShowModal(true);
-      }
-    };
+  const onHighscoreCLick = highscore => {
+    setPlayerInfo({
+      player: highscore.player,
+      date: highscore.date,
+      score: highscore.score
+    });
+    setBands(highscore.bands);
+    setShowModal(true);
   };
-  const columns = [
-    {
-      id: 'index',
-      Cell: row => {
-        return <div>{row.index + 1}</div>;
-      },
-      className: 'hs-index',
-      width: 30,
-      style: { padding: 0, margin: 0 }
-    },
-    {
-      Cell: row => {
-        return <div>{row.value}</div>;
-      },
-      accessor: 'player',
-      className: 'hs-player',
-      width: 130,
-      style: { padding: 0, margin: 0 }
-    },
-    {
-      Cell: row => {
-        return <div style={{ padding: 0 }}>{row.value}</div>;
-      },
-      accessor: 'score',
-      className: 'hs-score',
-      width: 60,
-      style: { padding: '0 15px 0 0', margin: 0 }
-    },
-    {
-      Cell: row => {
-        return <div>{row.value}</div>;
-      },
-      id: 'scoreDate',
-      accessor: d => moment(d.date).format('YYYY-MM-DD'),
-      className: 'hs-date',
-      width: 80,
-      style: { padding: 0, margin: 0 }
-    }
-  ];
+  console.log(highscores[0]);
   return (
-    <div>
-      <ReactTable
-        getTrProps={onHighscoreClick}
-        showPagination={false}
-        showPaginationBottom={false}
-        sortable={false}
-        data={highscores}
-        columns={columns}
-      />
+    <>
+      <div className="highscore-title">HALL OF FAME</div>
+      <table>
+        <tbody className="highscore-body">
+          {highscores.map(highscore => (
+            <tr
+              className="hs-row"
+              onClick={() => onHighscoreCLick(highscore)}
+              key={highscore._id}
+            >
+              <td className="hs-player">{highscore.player}</td>
+              <td className="hs-score">{highscore.score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <ShowBandlistModal
         bands={bands}
         playerInfo={playerInfo}
         closeModal={closeModal}
         showModal={showModal}
       />
-    </div>
+    </>
   );
 };
 
