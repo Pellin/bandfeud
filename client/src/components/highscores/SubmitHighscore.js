@@ -1,31 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import getHighscores from '../../actions/getHighscores';
 
-class SubmitHighscore extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      highscoreSet: false,
-      nameSubmitted: false
-    };
-  }
-  onTextChange = event => {
-    let name = event.target.value;
-    this.setState(() => ({ name }));
+const SubmitHighscore = props => {
+  const [name, setName] = useState('');
+  const [highscoreSet, setHighscoreSet] = useState(false);
+  const [nameSubmitted, setNameSubmitted] = useState(false);
+
+  const onTextChange = event => {
+    setName(event.target.value);
   };
-  onSubmit = async e => {
+  const onSubmit = async e => {
     e.preventDefault();
-    this.setState(() => ({ nameSubmitted: true }));
+    setNameSubmitted(true);
 
     try {
       const data = {
-        bands: this.props.bands,
+        bands: props.bands,
         date: new Date().getTime(),
-        player: this.state.name,
-        score: this.props.score
+        player: name,
+        score: props.score
       };
       const setHighscore = await fetch(`/api/sethighscore`, {
         method: 'POST',
@@ -35,8 +30,8 @@ class SubmitHighscore extends Component {
         body: JSON.stringify(data)
       });
       if (setHighscore.status === 200) {
-        this.setState(() => ({ highscoreSet: true }));
-        this.props.onGetHighscores();
+        setHighscoreSet(true);
+        props.onGetHighscores();
       } else {
         console.log("Couldn't set highscore");
       }
@@ -44,63 +39,61 @@ class SubmitHighscore extends Component {
       console.log(e.message);
     }
   };
-  goToPlay = () => {
-    this.props.onHighscoreSet();
-    this.props.onResetUsed();
-    this.props.onResetScore();
-    this.props.onResetBandBank();
-    this.props.onResetDifficulty();
-    this.props.onGameOver();
+  const goToPlay = () => {
+    props.onHighscoreSet();
+    props.onResetUsed();
+    props.onResetScore();
+    props.onResetBandBank();
+    props.onResetDifficulty();
+    props.onGameOver();
   };
-  goToHighscores = () => {
-    this.props.onHighscoreSet();
-    this.props.onResetUsed();
-    this.props.onResetScore();
-    this.props.onResetBandBank();
-    this.props.onResetDifficulty();
-    this.props.onGameOver();
-    this.props.history.push('/highscores');
+  const goToHighscores = () => {
+    props.onHighscoreSet();
+    props.onResetUsed();
+    props.onResetScore();
+    props.onResetBandBank();
+    props.onResetDifficulty();
+    props.onGameOver();
+    props.history.push('/highscores');
   };
-  render() {
-    return (
-      <div className="submit-view">
-        {!this.state.highscoreSet ? (
-          this.state.nameSubmitted ? (
-            <div className="highscore-message">Setting highscore...</div>
-          ) : (
-            <>
-              <div className="highscore-message">
-                {this.props.score} points! That's a highscore.
-              </div>
-              <form className="submit-form" onSubmit={this.onSubmit}>
-                <label className="submit-label">Enter your name:</label>
-                <input
-                  className="submit-input"
-                  type="text"
-                  autoFocus
-                  maxLength="10"
-                  onChange={this.onTextChange}
-                />
-              </form>
-            </>
-          )
+  return (
+    <div className="submit-view">
+      {!highscoreSet ? (
+        nameSubmitted ? (
+          <div className="highscore-message">Setting highscore...</div>
         ) : (
           <>
-            <div className="highscore-message">Highscore set!</div>
-            <div className="highscore-link-container">
-              <div className="link-button" onClick={this.goToPlay}>
-                Ok
-              </div>
-              <div className="link-button" onClick={this.goToHighscores}>
-                Go to highscores
-              </div>
+            <div className="highscore-message">
+              {props.score} points! That's a highscore.
             </div>
+            <form className="submit-form" onSubmit={onSubmit}>
+              <label className="submit-label">Enter your name:</label>
+              <input
+                className="submit-input"
+                type="text"
+                autoFocus
+                maxLength="10"
+                onChange={onTextChange}
+              />
+            </form>
           </>
-        )}
-      </div>
-    );
-  }
-}
+        )
+      ) : (
+        <>
+          <div className="highscore-message">Highscore set!</div>
+          <div className="highscore-link-container">
+            <div className="link-button" onClick={goToPlay}>
+              Ok
+            </div>
+            <div className="link-button" onClick={goToHighscores}>
+              Go to highscores
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 const mapStateToProps = state => ({
   score: state.score,
