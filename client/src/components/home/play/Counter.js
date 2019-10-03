@@ -1,51 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { gameOver } from '../../../actions/gameStatus';
 import setCurrentPoints from '../../../actions/setCurrentPoints';
 
-export class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      timeLeft: 0,
-      intervals: []
-    };
-  }
-  componentDidMount() {
-    this.setState(() => ({ timeLeft: this.props.difficulty }));
-    this.startCount();
-  }
-  componentWillUnmount = async () => {
-    this.props.onSetCurrentPoints(this.state.timeLeft);
-    clearInterval(this.state.intervals);
-  };
-  startCount = () => {
-    const timer = setInterval(async () => {
-      if (
-        this.state.timeLeft > 0 &&
-        this.props.inGame &&
-        !this.props.submitted
-      ) {
-        this.setState(() => ({ timeLeft: this.state.timeLeft - 1 }));
+export const Counter = ({
+  difficulty,
+  inGame,
+  score,
+  submitted,
+  onGameOver,
+  onSetCurrentPoints
+}) => {
+  const [timeLeft, setTimeLeft] = useState(0);
+  useEffect(() => {
+    setTimeLeft(difficulty);
+  }, [difficulty]);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (timeLeft > 0 && inGame && !submitted) {
+        setTimeLeft(timeLeft - 1);
       } else {
-        this.props.onGameOver(
-          "Time's up, snailfinger.",
-          this.props.score
-        );
+        onGameOver("Time's up, snailfinger.", score);
         clearInterval(timer);
       }
     }, 1000);
-    this.setState(() => ({ intervals: [...this.state.intervals, timer] }));
-  };
-  render() {
-    return (
-      <div className="counter">
-        {this.state.timeLeft > 0 && this.state.timeLeft}
-      </div>
-    );
-  }
-}
+    return () => {
+      clearInterval(timer);
+      onSetCurrentPoints(timeLeft);
+    };
+  });
+  return <div className="counter">{timeLeft > 0 && timeLeft}</div>;
+};
 
 const mapDispatchToProps = dispatch => ({
   onGameOver: (message, score) => dispatch(gameOver(message, score)),
