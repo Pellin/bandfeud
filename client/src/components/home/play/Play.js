@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import SubmitBand from './SubmitBand';
@@ -6,80 +6,71 @@ import BandList from './BandList';
 import MessageBox from '../MessageBox';
 import SubmitHighscore from '../../highscores/SubmitHighscore';
 
-export class Play extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFirefox: false
-    };
-  }
-  componentDidMount = () => {
+export const Play = (props) => {
+  const [isFirefox, setIsFirefox] = useState(false);
+  useEffect(() => {
     const fireReg = new RegExp('Firefox');
-    this.setState(() => ({ isFirefox: fireReg.test(navigator.userAgent) }));
-  };
-  render() {
-    return (
-      <>
-        {this.props.showGameOver ? (
-          <div className="game-over-container">
-            <div className="game-over-message">
-              GAME OVER
-            </div>
-            <MessageBox message={this.props.message} />
-          </div>
-        ) : (
-          <div className="view-holder">
-            {this.props.isHighscore ? (
-              <SubmitHighscore
-                bands={this.props.bands}
-                difficulty={this.props.difficulty}
-                history={this.props.history}
-                inGame={this.props.inGame}
-                score={this.props.score}
-                submitted={this.props.submitted}
-                used={this.props.used}     
-              />
-            ) : (
-              <div
-                className={
-                  this.state.isFirefox
-                    ? 'game-container-firefox'
-                    : 'game-container'
-                }
-              >
-                <div className="band-list">
-                  <BandList bands={this.props.bands} />
-                </div>
-                <div className="footer">
-                  {this.props.message ? (
-                    <MessageBox message={this.props.message} />
-                  ) : (
-                    <div className="submit-band">
-                      {this.props.inGame &&
-                        !this.props.submitted &&
-                        !this.props.message && (
-                          <SubmitBand
-                            bandBank={this.props.bandBank}
-                            difficulty={this.props.difficulty}
-                            inGame={this.props.inGame}
-                            previous={this.props.previous}
-                            score={this.props.score}
-                            submitted={this.props.submitted}
-                            used={this.props.used}
-                            os={this.props.os}
-                          />
-                        )}
-                    </div>
-                  )}
-                </div>
+    setIsFirefox(fireReg.test(navigator.userAgent));
+  }, []);
+  return (
+    <>
+      {props.showGameOver ? (
+        <div className="game-over-container">
+          <div className="game-over-message">GAME OVER</div>
+          <MessageBox message={props.message} />
+        </div>
+      ) : (
+        <div className="view-holder">
+          {props.isHighscore ? (
+            <SubmitHighscore
+              bands={props.bands}
+              difficulty={props.difficulty}
+              history={props.history}
+              inGame={props.inGame}
+              score={props.score}
+              submitted={props.submitted}
+              used={props.used}
+            />
+          ) : (
+            <div
+              className={
+                isFirefox
+                  ? 'game-container-firefox'
+                  : 'game-container'
+              }
+            >
+              <div className="band-list">
+                <BandList bands={props.bands} />
               </div>
-            )}
-          </div>
-        )}
-      </>
-    );
-  }
-}
+              <div className="footer">
+                {props.message ? (
+                  <MessageBox message={props.message} />
+                ) : (
+                  <div className="submit-band">
+                    {props.inGame &&
+                      !props.submitted &&
+                      !props.message && (
+                        <SubmitBand
+                          bandBank={props.bandBank}
+                          difficulty={props.difficulty}
+                          inGame={props.inGame}
+                          previous={props.previous}
+                          score={props.score}
+                          submitted={props.submitted}
+                          used={props.used}
+                          os={props.os}
+                        />
+                      )}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+};
 
 const mapStateToProps = state => ({
   bandBank: state.bandBank,
