@@ -11,7 +11,8 @@ const getBand = async (previous, used) => {
     url: `https://api.discogs.com/database/search?q=${letters}&page=${page}&per_page=100&type=release&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`,
     headers: {
       'User-Agent': 'Bandfeud',
-      Accept: 'application/vnd.discogs.v2.discogs+json'
+      Accept: 'application/vnd.discogs.v2.discogs+json',
+      SameSite: 'None'
     }
   };
 
