@@ -22,8 +22,8 @@ export class Play extends Component {
       <>
         {this.props.showGameOver ? (
           <div className="game-over-container">
-            <div className="game-over-svg">
-              <img src="/images/bandFeud_gameOver.svg" alt="Game Over" />
+            <div className="game-over-message">
+              GAME OVER
             </div>
             <MessageBox message={this.props.message} />
           </div>

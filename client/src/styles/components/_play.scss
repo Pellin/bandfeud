@@ -6,20 +6,19 @@
 }
 
 .game-over-container {
+  border: 1px solid yellow;
   display: flex;
   flex-direction: column;
 }
 
-.game-over-svg {
+.game-over-message {
+  color: $mustard;
+  font-size: 10vw;
   margin: auto;
-  position: relative;
-  top: 20rem;
-  width: 30rem;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
+  position: absolute;
+  text-align: center;
+  top: 25rem;
+  width: 100vw;
 }
 
 .game-container {
