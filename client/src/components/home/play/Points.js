@@ -1,34 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Points extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: true,
-      timeout: undefined
+const Points = ({ points }) => {
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShow(false);
+    }, 400);
+    return () => {
+      clearTimeout(timeout);
     };
-  }
-  componentDidMount = () => {
-    this.setState(() => ({
-      timeout: setTimeout(() => {
-        this.setState(() => ({ show: false }));
-      }, 400)
-    }));
-  };
-  componentWillUnmount = () => {
-    clearTimeout(this.state.timeout);
-  };
-  render() {
-    return (
-      <>
-        {this.props.points && (
-          <div className={this.state.show ? 'points' : 'points-hide'}>
-            +{this.props.points}
-          </div>
-        )}
-      </>
-    );
-  }
-}
+  });
+  return (
+    <>
+      {points && (
+        <div className={show ? 'points' : 'points-hide'}>+{points}</div>
+      )}
+    </>
+  );
+};
 
 export default Points;
