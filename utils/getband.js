@@ -12,7 +12,7 @@ const getBand = async (previous, used) => {
     headers: {
       'User-Agent': 'Bandfeud',
       Accept: 'application/vnd.discogs.v2.discogs+json',
-      SameSite: 'None'
+      SameSite: 'None',
     }
   };
 
