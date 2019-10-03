@@ -29,6 +29,7 @@ app.get('/api/checkband', async (req, res) => {
 });
 
 app.get('/api/getband', async (req, res) => {
+  res.clearCookie();
   try {
     const reply = await getBand(req.query.previous, req.query.used);
     res.json(reply);
