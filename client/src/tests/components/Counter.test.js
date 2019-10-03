@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 import { Counter } from '../../components/home/play/Counter';
 
@@ -16,88 +17,112 @@ afterEach(() => {
 });
 
 it('should render correctly with different difficulty props', () => {
-  let wrapper = shallow(
-    <Counter
-      onGameOver={onGameOverSpy}
-      onSetCurrentPoints={onSetCurrentPointsSpy}
-      difficulty={20}
-      inGame={true}
-      submitted={false}
-    />
-  );
-
+  let wrapper;
+  act(() => {
+    wrapper = mount(
+      <Counter
+        onGameOver={onGameOverSpy}
+        onSetCurrentPoints={onSetCurrentPointsSpy}
+        difficulty={20}
+        inGame={true}
+        submitted={false}
+      />
+    );
+  });
   expect(wrapper).toMatchSnapshot();
-  expect(wrapper.state().timeLeft).toBe(20);
+  expect(wrapper.find('.counter').text()).toBe('20');
+
   wrapper.unmount();
 
-  wrapper = shallow(
-    <Counter
-      onGameOver={onGameOverSpy}
-      onSetCurrentPoints={onSetCurrentPointsSpy}
-      difficulty={15}
-      inGame={true}
-      submitted={false}
-    />
-  );
+  act(() => {
+    wrapper = mount(
+      <Counter
+        onGameOver={onGameOverSpy}
+        onSetCurrentPoints={onSetCurrentPointsSpy}
+        difficulty={15}
+        inGame={true}
+        submitted={false}
+      />
+    );
+  });
+  expect(onSetCurrentPointsSpy).toHaveBeenCalled();
   expect(wrapper).toMatchSnapshot();
-  expect(wrapper.state().timeLeft).toBe(15);
+  expect(wrapper.find('.counter').text()).toBe('15');
   wrapper.unmount();
 });
 
 it('should start counting when mounted', () => {
-  const wrapper = shallow(
-    <Counter
-      submitted={false}
-      inGame={true}
-      onGameOver={onGameOverSpy}
-      difficulty={20}
-      onSetCurrentPoints={onSetCurrentPointsSpy}
-    />
-  );   
-  expect(wrapper.state().timeLeft).toBe(20);
+  let wrapper;
+  act(() => {
+    wrapper = mount(
+      <Counter
+        submitted={false}
+        inGame={true}
+        onGameOver={onGameOverSpy}
+        difficulty={20}
+        onSetCurrentPoints={onSetCurrentPointsSpy}
+      />
+    );
+  });
 
-  jest.advanceTimersByTime(1000);
+  expect(wrapper.find('.counter').text()).toBe('20');
 
-  expect(wrapper.state().timeLeft).toBe(19);
+  act(() => {
+    jest.advanceTimersByTime(1000);
+  });
+
+  expect(wrapper.find('.counter').text()).toBe('19');
   expect(wrapper).toMatchSnapshot();
- 
-  jest.advanceTimersByTime(10000);
 
-  expect(wrapper.state().timeLeft).toBe(9);
+  act(() => {
+    jest.advanceTimersByTime(10000);
+  });
+
+  expect(wrapper.find('.counter').text()).toBe('9');
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should dispatch gameOver when time is out', () => {
-  const wrapper = shallow(
-    <Counter
-      submitted={false}
-      inGame={true}
-      onGameOver={onGameOverSpy}
-      difficulty={20}
-      onSetCurrentPoints={onSetCurrentPointsSpy}
-    />
-  );
-  expect(wrapper.state().timeLeft).toBe(20);
+  let wrapper;
+  act(() => {
+    wrapper = mount(
+      <Counter
+        submitted={false}
+        inGame={true}
+        onGameOver={onGameOverSpy}
+        difficulty={20}
+        onSetCurrentPoints={onSetCurrentPointsSpy}
+      />
+    );
+  })
 
-  jest.runAllTimers();
+  expect(wrapper.find('.counter').text()).toBe('20');
 
-  expect(wrapper.state().timeLeft).toBe(0);
+  act(() => {
+    jest.runAllTimers();
+  })
+  
   expect(onGameOverSpy).toHaveBeenCalled();
 });
 
 it('should set current points before unmounting', () => {
-  const wrapper = shallow(
-    <Counter
-      submitted={false}
-      inGame={true}
-      onGameOver={onGameOverSpy}
-      difficulty={20}
-      onSetCurrentPoints={onSetCurrentPointsSpy}
-    />
-  );
-  jest.advanceTimersByTime(4000);
+  let wrapper;
 
-  expect(wrapper.state().timeLeft).toBe(16);
+  act(() => {
+    wrapper = mount(
+      <Counter
+        submitted={false}
+        inGame={true}
+        onGameOver={onGameOverSpy}
+        difficulty={20}
+        onSetCurrentPoints={onSetCurrentPointsSpy}
+      />
+    );
+    jest.advanceTimersByTime(4000);
+  })
+
+
+  expect(wrapper.find('.counter').text()).toBe('16');
 
   wrapper.unmount();
 

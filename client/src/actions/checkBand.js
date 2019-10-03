@@ -37,7 +37,6 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     if (checkedBand.name !== band) {
       used.push(checkedBand.name);
     }
-    console.log(used);
     const previous = checkedBand.name[checkedBand.name.length - 1];
     const state = getState();
     const extraPoints = calcExtraPoints(checkedBand.name, difficulty);

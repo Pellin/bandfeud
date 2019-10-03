@@ -1,33 +1,211 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly with different difficulty props 1`] = `
-<div
-  className="counter"
+<Counter
+  difficulty={20}
+  inGame={true}
+  onGameOver={[MockFunction]}
+  onSetCurrentPoints={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  submitted={false}
 >
-  20
-</div>
+  <div
+    className="counter"
+  />
+</Counter>
 `;
 
 exports[`should render correctly with different difficulty props 2`] = `
-<div
-  className="counter"
+<Counter
+  difficulty={15}
+  inGame={true}
+  onGameOver={[MockFunction]}
+  onSetCurrentPoints={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          0,
+        ],
+        Array [
+          20,
+        ],
+        Array [
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  submitted={false}
 >
-  15
-</div>
+  <div
+    className="counter"
+  />
+</Counter>
 `;
 
 exports[`should start counting when mounted 1`] = `
-<div
-  className="counter"
+<Counter
+  difficulty={20}
+  inGame={true}
+  onGameOver={[MockFunction]}
+  onSetCurrentPoints={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          0,
+        ],
+        Array [
+          20,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  submitted={false}
 >
-  19
-</div>
+  <div
+    className="counter"
+  />
+</Counter>
 `;
 
 exports[`should start counting when mounted 2`] = `
-<div
-  className="counter"
+<Counter
+  difficulty={20}
+  inGame={true}
+  onGameOver={[MockFunction]}
+  onSetCurrentPoints={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          0,
+        ],
+        Array [
+          20,
+        ],
+        Array [
+          19,
+        ],
+        Array [
+          18,
+        ],
+        Array [
+          17,
+        ],
+        Array [
+          16,
+        ],
+        Array [
+          15,
+        ],
+        Array [
+          14,
+        ],
+        Array [
+          13,
+        ],
+        Array [
+          12,
+        ],
+        Array [
+          11,
+        ],
+        Array [
+          10,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  submitted={false}
 >
-  9
-</div>
+  <div
+    className="counter"
+  />
+</Counter>
 `;
