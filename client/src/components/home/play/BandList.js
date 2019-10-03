@@ -10,7 +10,7 @@ const BandList = ({ bands }) => {
   useEffect(() => {
     if (bands.length < 1) {
       setCenter();
-    }
+    }        
   });
   useEffect(() => {
     window.addEventListener('resize', setCenter);
