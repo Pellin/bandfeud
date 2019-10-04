@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component correctly with highscores 1`] = `
+<div>
+  <Connect(Header) />
+  <div
+    className="highscore-container"
+  >
+    <HighscoreList
+      highscores={
+        Array [
+          Object {
+            "_id": "one",
+            "date": 1567247152162,
+            "player": "falle",
+            "score": 97,
+          },
+          Object {
+            "_id": "two",
+            "date": 1568387025126,
+            "player": "babs",
+            "score": 118,
+          },
+          Object {
+            "_id": "three",
+            "date": 1568447073138,
+            "player": "mob pete",
+            "score": 123,
+          },
+          Object {
+            "_id": "four",
+            "date": 1568734844461,
+            "player": "krille k",
+            "score": 147,
+          },
+        ]
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`should render component correctly without highscores 1`] = `
+<div>
+  <Connect(Header) />
+  <div
+    className="highscore-container"
+  >
+    <div
+      className="load-message"
+    >
+      Loading highscores...
+    </div>
+  </div>
+</div>
+`;

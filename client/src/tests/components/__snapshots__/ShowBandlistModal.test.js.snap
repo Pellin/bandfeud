@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component correctly 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={200}
+  contentLabel="BandList"
+  isOpen={true}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    className="modal-header"
+  >
+    <div
+      className="header-date"
+    >
+      04/10/2019
+       
+    </div>
+     
+    <div
+      className="header-player"
+    >
+      Falle
+      <p>
+        2
+         bands
+      </p>
+    </div>
+     
+    <div
+      className="header-points"
+    >
+      297
+       points
+    </div>
+  </div>
+  <div
+    className="band-info"
+    key="one"
+  >
+    <div
+      className="band-image-container"
+    >
+      <img
+        alt="one"
+        className="band-image"
+        onClick={[Function]}
+        src="www.1img.com"
+        title="Open Discogs page for ONE "
+      />
+    </div>
+    <div
+      className="band-name-container"
+    >
+      <div
+        className="band-name"
+      >
+        one
+      </div>
+    </div>
+    <div
+      className="band-points"
+    >
+      12
+       points
+    </div>
+  </div>
+  <div
+    className="band-info"
+    key="two"
+  >
+    <div
+      className="band-image-container"
+    >
+      <img
+        alt="two"
+        className="band-image"
+        onClick={[Function]}
+        src="www.2img.com"
+        title="Open Discogs page for TWO "
+      />
+    </div>
+    <div
+      className="band-name-container"
+    >
+      <div
+        className="band-name-computer"
+      >
+        two
+      </div>
+    </div>
+    <div
+      className="no-band-points"
+    >
+      No points
+    </div>
+  </div>
+  <div
+    className="band-info"
+    key="three"
+  >
+    <div
+      className="band-image-container"
+    >
+      <img
+        alt="three"
+        className="band-image"
+        onClick={[Function]}
+        src="www.3img.com"
+        title="Open Discogs page for THREE "
+      />
+    </div>
+    <div
+      className="band-name-container"
+    >
+      <div
+        className="band-name"
+      >
+        three
+      </div>
+    </div>
+    <div
+      className="band-points"
+    >
+      31
+       points
+    </div>
+  </div>
+  <div
+    className="band-info"
+    key="four"
+  >
+    <div
+      className="band-image-container"
+    >
+      <img
+        alt="four"
+        className="band-image"
+        onClick={[Function]}
+        src="www.4img.com"
+        title="Open Discogs page for FOUR "
+      />
+    </div>
+    <div
+      className="band-name-container"
+    >
+      <div
+        className="band-name-computer"
+      >
+        four
+      </div>
+    </div>
+    <div
+      className="no-band-points"
+    >
+      No points
+    </div>
+  </div>
+</Modal>
+`;

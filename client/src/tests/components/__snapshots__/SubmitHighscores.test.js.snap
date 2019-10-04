@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render component correctly 1`] = `
+<div
+  className="submit-view"
+>
+  <div
+    className="highscore-message"
+  >
+    123
+     points! That's a highscore.
+  </div>
+  <form
+    className="submit-form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="submit-label"
+    >
+      Enter your name:
+    </label>
+    <input
+      autoFocus={true}
+      className="submit-input"
+      maxLength="10"
+      onChange={[Function]}
+      type="text"
+    />
+  </form>
+</div>
+`;
+
+exports[`should set highscore and render confirmation 1`] = `
+<div
+  className="submit-view"
+>
+  <div
+    className="highscore-message"
+  >
+    Highscore set!
+  </div>
+  <div
+    className="highscore-link-container"
+  >
+    <div
+      className="link-button"
+      onClick={[Function]}
+    >
+      Ok
+    </div>
+    <div
+      className="link-button"
+      onClick={[Function]}
+    >
+      Go to highscores
+    </div>
+  </div>
+</div>
+`;

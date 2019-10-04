@@ -6,7 +6,7 @@ import HighscoreList from '../highscores/HighscoreList';
 
 import getHighscores from '../../actions/getHighscores';
 
-const Highscores = ({ highscores, onGetHighscores }) => {
+export const Highscores = ({ highscores, onGetHighscores }) => {
   useEffect(() => {
     if (!highscores.length) {
       onGetHighscores();

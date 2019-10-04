@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import getHighscores from '../../actions/getHighscores';
 
-const SubmitHighscore = props => {
+export const SubmitHighscore = props => {
   const [name, setName] = useState('');
   const [highscoreSet, setHighscoreSet] = useState(false);
   const [nameSubmitted, setNameSubmitted] = useState(false);
@@ -14,7 +14,6 @@ const SubmitHighscore = props => {
   const onSubmit = async e => {
     e.preventDefault();
     setNameSubmitted(true);
-
     try {
       const data = {
         bands: props.bands,
@@ -33,7 +32,8 @@ const SubmitHighscore = props => {
         setHighscoreSet(true);
         props.onGetHighscores();
       } else {
-        console.log("Couldn't set highscore");
+        alert("Couldn't set highscore");
+        goToPlay();
       }
     } catch (e) {
       console.log(e.message);

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Points correctly 1`] = `
+<Points
+  points={23}
+>
+  <div
+    className="points"
+  >
+    +
+    23
+  </div>
+</Points>
+`;

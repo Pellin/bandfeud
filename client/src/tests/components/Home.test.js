@@ -1,14 +1,10 @@
 import React from 'react';
-import configureMockStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
 
 import { Home } from '../../components/home/Home';
+import { ShowBandlistModal } from '../../components/highscores/ShowBandlistModal';
 
-let onGetHighscoresSpy,
-  onSetMessageSpy,
-  onGameOnSpy,
-  onSetOsSpy,
-  bands
+let onGetHighscoresSpy, onSetMessageSpy, onGameOnSpy, onSetOsSpy, bands;
 
 beforeEach(() => {
   onGetHighscoresSpy = jest.fn();
@@ -86,5 +82,22 @@ it('should render with <Play /> when inGame is true', () => {
     />
   );
 
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render ShowBandlistModal when "REVIEW LAST BUTTON" button is clicked', () => {
+  const wrapper = shallow(
+    <Home
+      bands={bands}
+      inGame={false}
+      onGetHighscores={onGetHighscoresSpy}
+      onSetMessage={onSetMessageSpy}
+      onSetOs={onSetOsSpy}
+      onGameOn={onGameOnSpy}
+    />
+  );
+  expect(wrapper.find('ShowBandlistModal').props().showModal).toBeFalsy();
+  wrapper.find('button.show-modal-button').simulate('click', { button: 0 });
+  expect(wrapper.find('ShowBandlistModal').props().showModal).toBeTruthy();
   expect(wrapper).toMatchSnapshot();
 });
