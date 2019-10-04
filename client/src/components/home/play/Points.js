@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 const Points = ({ points }) => {
   const [show, setShow] = useState(true);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const timeout = setTimeout(() => {
       setShow(false);
     }, 400);

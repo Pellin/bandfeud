@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 
 import BandItem from './BandItem';
 
@@ -7,7 +7,7 @@ const BandList = ({ bands }) => {
   const setCenter = () => {
     setLeft(window.innerWidth / 2 - bands.length * 210 + 105 + 'px');
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (bands.length < 1) {
       setCenter();
     }        
@@ -18,7 +18,7 @@ const BandList = ({ bands }) => {
       window.removeEventListener('resize', setCenter);
     };
   });
-  useEffect(() => {
+  useLayoutEffect(() => {
     setLeft(l => parseInt(l.slice(0, -2)) - 210 + 'px');
   }, [bands]);
   return (
