@@ -7,7 +7,7 @@ export default (state = { previous1: letter, previous2: '' }, action) => {
 
   if (action.type === 'SET_PREVIOUS' && action.payload.length > 1) {
     if (
-      action.payload[action.payload.length - 2].match(/1/) &&
+      action.payload[action.payload.length - 2].match(/[1-9]/) &&
       action.payload[action.payload.length - 1].match(/[0-9]/)
     ) {
       switch (
@@ -17,6 +17,27 @@ export default (state = { previous1: letter, previous2: '' }, action) => {
           previous2 = 'e';
           break;
         case '20':
+          previous2 = 'y';
+          break;
+        case '30':
+          previous2 = 'y';
+          break;
+        case '40':
+          previous2 = 'y';
+          break;
+        case '50':
+          previous2 = 'y';
+          break;
+        case '60':
+          previous2 = 'y';
+          break;
+        case '70':
+          previous2 = 'y';
+          break;
+        case '80':
+          previous2 = 'y';
+          break;
+        case '90':
           previous2 = 'y';
           break;
         default:
