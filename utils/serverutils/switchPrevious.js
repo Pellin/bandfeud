@@ -1,6 +1,8 @@
 const switchPrevious = previous => {
-  if (previous.charCodeAt([0]) > 48 && previous.charCodeAt([0]) < 58) {
+  if (previous.match(/0-9/)) {
     switch (previous) {
+      case '0':
+        previous = '0'
       case '1':
         previous = 'e';
         break;
