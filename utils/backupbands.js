@@ -32,13 +32,16 @@ const backupBands = async (previous, newBands, used) => {
           band.name = str + ', the';
         }
       }
-
-      try {
-        const addedBands = await Band.insertMany(newBands, { ordered: false });
-        console.log(`Success, added ${addedBands.length} bands.`);
-      } catch (e) {
-        console.log('Not all bands added');
-        console.log(e.message);
+      if (newBands.length) {
+        try {
+          const addedBands = await Band.insertMany(newBands, {
+            ordered: false
+          });
+          console.log(`Success, added ${addedBands.length} bands.`);
+        } catch (e) {
+          console.log('Not all bands added');
+          console.log(e.message);
+        }
       }
 
       resolve({

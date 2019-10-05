@@ -16,7 +16,9 @@ const getBand = (previous, used, bandBank) => async dispatch => {
       const parsedResponse = await reply.json();
       answer = parsedResponse.answer;
       const serverBandBank = parsedResponse.serverBandBank;
-      dispatch({ type: 'ADD_TO_BANDBANK', payload: serverBandBank });
+      if (serverBandBank.length) {
+        dispatch({ type: 'ADD_TO_BANDBANK', payload: serverBandBank });
+      } 
     } catch (e) {
       console.log(e.message);
     }
