@@ -65,7 +65,7 @@ const prepareReply = async (albums, previous, used) => {
   bandArray = bandArray.filter(band => !band.name.includes('no artist'));
   bandArray = bandArray.filter(band => !band.name.includes('unknown artist'));
 
-  bandArray = bandArray.filter(band => !band.name.match(/^.*\, the/));
+  // bandArray = bandArray.filter(band => !band.name.match(/^.*\, the/));
 
   //Remove duplicates
   bandArray = bandArray.filter(
