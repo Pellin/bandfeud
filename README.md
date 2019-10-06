@@ -1,6 +1,6 @@
 # Bandfeud
 
-<strong><em>Bandname-dropping game built with React and Node.js</em></strong>
+<strong><em>Bandname-dropping browser game built with React and Node.js</em></strong>
 
 Uses the <a href="https://www.discogs.com/developers"><strong>Discogs API</strong></a> to validate user input and fetch new bands
 
@@ -37,3 +37,8 @@ Later in the game, the available time decreases, first to 15 seconds, then to 10
 ### Highscores
 If your score is among the top 20, you get a <strong>highscore</strong>.<br> 
 The highscore list consists of player name, score and date for each of the highscores and, as you click on each row, the full lists of bands and artists from the corresponding rounds. 
+
+### Artist selection
+The Discogs database contains more than 5 million artists. In order to narrow down the number of correct answers, the game will only accept the names of artists or bands that have a <strong>profile picture on their Discogs page<strong>. 
+This usually means that they have probably released at least one album and that somebody cares about them enough to have uploaded a profile pic for their page.
+If you submit the name of your favourite band or artist and the answer is deemed incorrect, don't throw a fit. Just log into Discogs and add a profile picture for them on their page.
