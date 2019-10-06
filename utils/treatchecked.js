@@ -1,7 +1,8 @@
+const checkProfile = require('./serverutils/checkProfile');
 const theFix = require('./serverutils/theFix');
 const dotFix = require('./serverutils/dotFix');
 
-const treatChecked = (userBand, bands) => {
+const treatChecked = async (userBand, bands) => {
   bands = bands.results;
   if (bands.length > 5) {
     bands.length = 5;
@@ -19,6 +20,7 @@ const treatChecked = (userBand, bands) => {
         bands[i].title = split.trim();
       }
     }
+
     if (
       userBand.match(/^the\\s/) ||
       bands[0].title.toLowerCase().match(/^the\\s/)
@@ -30,19 +32,31 @@ const treatChecked = (userBand, bands) => {
 
     let nameMatches = [];
     let imgMatches = [];
+    let urls = [];
 
     for (let i = 0; i < bands.length; i++) {
       bands[i].title = bands[i].title.toLowerCase();
       if (bands[i].title === userBand) {
         nameMatches.push(bands[i].title);
         imgMatches.push(bands[i].cover_image);
+        urls.push(bands[i].resource_url);
       }
     }
+
     if (nameMatches.length) {
-      return {
-        name: nameMatches[0],
-        imgUrl: imgMatches[0]
-      };
+      try {
+        const profile = await checkProfile(urls[0]);
+        if (profile && !profile.match(/producer/gim) && !profile.match(/designer/gim)) {
+          return {
+            name: nameMatches[0],
+            imgUrl: imgMatches[0]
+          };
+        } else {
+          return null;
+        }
+      } catch (e) {
+        console.log(e);
+      }
     } else {
       return null;
     }
