@@ -21,6 +21,7 @@ const ShowBandlistModal = props => {
       contentLabel="BandList"
       closeTimeoutMS={200}
       className="modal"
+      overlayClassName="overlay"
     >
       {props.playerInfo && (
         <div className="modal-header">

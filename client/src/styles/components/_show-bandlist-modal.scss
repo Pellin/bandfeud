@@ -10,6 +10,15 @@
   z-index: 200;
 }
 
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(254,203,46,0.9);
+}
+
 .ReactModalPortal .ReactModal__Overlay--after-open {
   opacity: 1;
 }
@@ -31,6 +40,10 @@
   overflow: auto;
   padding: 3rem 0;
   text-align: center;
+
+  overlay: {
+    background: yellow;
+  }
 }
 
 .modal-header {
@@ -41,7 +54,7 @@
   text-align: center;
   text-transform: uppercase;
   width: 100vw;
-  }
+}
 
 .header-date {
   align-self: flex-start;
@@ -51,9 +64,9 @@
   width: 17rem;
   text-align: center;
 
-  @media(min-width: $desktop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
     font-size: 1.8rem;
-    
+
     width: 20rem;
   }
 }
@@ -65,7 +78,7 @@
   text-shadow: 1px 1px 6px, -1px -1px 6px;
   width: 25rem;
 
-  @media(min-width: $desktop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
     font-size: 3rem;
     width: 25rem;
   }
@@ -89,7 +102,7 @@
   text-align: center;
   width: 17rem;
 
-  @media(min-width: $desktop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
     font-size: 1.8rem;
     width: 20rem;
   }
