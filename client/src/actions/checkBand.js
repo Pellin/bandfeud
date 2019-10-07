@@ -49,7 +49,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     return;
   } catch (e) {
     return setTimeout(() => {
-      dispatch(gameOver("Never heard of 'em! Better luck next time.", score));
+      dispatch(gameOver("Sorry, no match.", score));
     }, 250);
   }
 };

@@ -21,7 +21,6 @@ app.get('/api/checkband', async (req, res) => {
     const bands = await checkBand(req.query.name);
     const parsedBands = JSON.parse(bands);
     const band = await treatChecked(req.query.name, parsedBands);
-    console.log(band);
     res.json(band);
   } catch (e) {
     console.log(e);

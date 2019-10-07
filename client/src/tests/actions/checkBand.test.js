@@ -82,7 +82,7 @@ it("should dispatch expected actions if 'band' doesn't match", async () => {
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Checking...' },
-    { type: 'SET_MESSAGE', payload: 'Not in database! GAME OVER.' },
+    { type: 'SET_MESSAGE', payload: 'Sorry, no match.' },
     { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' }
   ];

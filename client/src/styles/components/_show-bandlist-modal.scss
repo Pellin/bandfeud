@@ -10,15 +10,6 @@
   z-index: 200;
 }
 
-.overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(254,203,46,0.9);
-}
-
 .ReactModalPortal .ReactModal__Overlay--after-open {
   opacity: 1;
 }
@@ -30,8 +21,8 @@
 .modal {
   justify-content: space-between;
   background: $off-black;
-  border: 1px solid $off-white;
-  border-radius: 4px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid $off-white;
   color: $yellow;
   cursor: default;
   display: flex;
@@ -40,10 +31,15 @@
   overflow: auto;
   padding: 3rem 0;
   text-align: center;
+}
 
-  overlay: {
-    background: yellow;
-  }
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(15,15,20,0.9);
 }
 
 .modal-header {

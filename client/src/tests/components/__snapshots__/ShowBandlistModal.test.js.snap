@@ -8,6 +8,7 @@ exports[`should render component correctly 1`] = `
   closeTimeoutMS={200}
   contentLabel="BandList"
   isOpen={true}
+  overlayClassName="overlay"
   parentSelector={[Function]}
   portalClassName="ReactModalPortal"
   role="dialog"

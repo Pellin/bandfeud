@@ -8,7 +8,6 @@ const getBand = async (previous, used) => {
   if (previous.match(/[1234uvoxyzq]/)) {
     const answer = await backupBands(previous, [], used);
     
-    console.log(`returning ${answer.name}`);
     return {
       answer,
       serverBandBank: []
