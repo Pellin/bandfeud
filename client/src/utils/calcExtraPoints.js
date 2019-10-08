@@ -1,4 +1,4 @@
-const calcExtraPoints = (name, difficulty) => {
+const calcExtraPoints = (timeLeft, name, difficulty) => {
   let firstLetter = name[0];
   if (name.match(/^the /)) {
     firstLetter = name[4];
@@ -73,13 +73,13 @@ const calcExtraPoints = (name, difficulty) => {
 
   switch (difficulty) {
     case 15:
-      points = Math.round((points + letterPoints) * 1.5);
+      points = Math.round((points + letterPoints) * 1.5 + timeLeft * 0.3);
       break;
     case 10:
-      points = Math.round((points + letterPoints) * 2);
+      points = Math.round((points + letterPoints) * 2 + timeLeft * 1.2);
       break;
     case 5:
-      points = Math.round((points + letterPoints) * 3);
+      points = Math.round((points + letterPoints) * 3 + timeLeft * 4.5);
       break;
     default:
       points = points + letterPoints;

@@ -39,7 +39,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     }
     const previous = checkedBand.name[checkedBand.name.length - 1];
     const state = getState();
-    const extraPoints = calcExtraPoints(checkedBand.name, difficulty);
+    const extraPoints = calcExtraPoints(state.currentPoints, checkedBand.name, difficulty);
     const totalPoints = state.currentPoints + extraPoints;
     dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
