@@ -33,7 +33,7 @@ export const SubmitHighscore = props => {
         props.onGetHighscores();
       } else {
         alert("Couldn't set highscore");
-        goToPlay();
+        return goToPlay();
       }
     } catch (e) {
       console.log(e.message);
