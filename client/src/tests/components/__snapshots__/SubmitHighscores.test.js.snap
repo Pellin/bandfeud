@@ -14,16 +14,14 @@ exports[`should render component correctly 1`] = `
     className="submit-form"
     onSubmit={[Function]}
   >
-    <label
-      className="submit-label"
-    >
-      Enter your name:
-    </label>
     <input
+      autoCorrect={false}
       autoFocus={true}
       className="submit-input"
       maxLength="10"
       onChange={[Function]}
+      placeholder="NAME"
+      spellCheck={false}
       type="text"
     />
   </form>

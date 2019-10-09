@@ -108,7 +108,7 @@ it('should dispatch game over if band was already used', async () => {
 
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
-    { type: 'SET_MESSAGE', payload: "Already used! You're out, Einstein" },
+    { type: 'SET_MESSAGE', payload: "Already used!" },
     { type: 'SHOW_GAME_OVER' },
     { type: 'RESET_USED' }
   ];
@@ -136,7 +136,7 @@ it('should dispatch game over if band has incorrect first letter', async () => {
 
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
-    { type: 'SET_MESSAGE', payload: 'Wrong letter! You lose, punk' },
+    { type: 'SET_MESSAGE', payload: 'Wrong letter!' },
     { type: 'SHOW_GAME_OVER'},
     { type: 'RESET_USED' }
   ];
@@ -164,7 +164,7 @@ it('should dispatch expected actions if highscore', async () => {
 
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
-    { type: 'SET_MESSAGE', payload: 'Wrong letter! You lose, punk' },
+    { type: 'SET_MESSAGE', payload: 'Wrong letter!' },
     { type: 'SHOW_GAME_OVER'},
     { type: 'RESET_USED' }
   ];

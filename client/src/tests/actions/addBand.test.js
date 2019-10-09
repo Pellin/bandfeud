@@ -43,12 +43,12 @@ it('should dispatch correct actions for "user"', async () => {
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
 
   const userActions = [
-    { type: 'ADD_BAND', name: 'kiss', url: 'www.img.com' },
-    { type: 'SET_MESSAGE', payload: 'Correct!' },
+    { type: 'ADD_BAND', name: 'kiss', points: 26, url: 'www.img.com' },
+    { type: 'SET_MESSAGE', payload: 'Great!' },
     { type: 'SET_MESSAGE', payload: 'Get ready...' }
   ];
 
-  await store.dispatch(addBand(name, url, 'user'));
+  await store.dispatch(addBand(name, url, 'user', 26));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(userActions);
@@ -72,7 +72,7 @@ it('should not call fetch(getImg) if "user" turn', async () => {
 
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
 
-  await store.dispatch(addBand(name, url, 'user'));
+  await store.dispatch(addBand(name, url, 'user', 21));
   jest.runAllTimers();
 
   expect(fetchMock.called()).toBeFalsy();
