@@ -75,6 +75,7 @@ export const SubmitHighscore = props => {
                 maxLength="10"
                 onChange={onTextChange}
                 placeholder="NAME"
+                spellCheck={false}
               />
             </form>
           </>
