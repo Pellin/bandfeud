@@ -13,6 +13,10 @@
   background: $off-black;
   width: 101vw;
 
+  ::-webkit-input-placeholder {
+    color: $mustard;
+  }
+
   @media(min-width: $desktop-breakpoint) {
     width: 100.2vw;
   }
@@ -21,11 +25,13 @@
 .band-input-form-ios {
   margin: 0;
   width: 105.5vw;
+
+  ::-webkit-input-placeholder {
+    color: $mustard;
+  }
 }
 
-::-webkit-input-placeholder {
-  color: $mustard;
-}
+
 
 .band-input {
   background: $off-black;

@@ -66,14 +66,15 @@ export const SubmitHighscore = props => {
             <div className="highscore-message">
               {props.score} points! That's a highscore.
             </div>
-            <form className="submit-form" onSubmit={onSubmit}>
-              <label className="submit-label">Enter your name:</label>
+            <form className="submit-form" onSubmit={onSubmit}>     
               <input
                 className="submit-input"
                 type="text"
                 autoFocus
+                autoCorrect={false}
                 maxLength="10"
                 onChange={onTextChange}
+                placeholder="NAME"
               />
             </form>
           </>
@@ -116,3 +117,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SubmitHighscore);
+
+/* <label className="submit-label">Enter your name:</label> */

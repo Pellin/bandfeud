@@ -4,7 +4,7 @@
   justify-content: center;
   text-align: center;
   top: 40%;
-  width: 40rem;
+  width: 100vw;
   height: 30rem;
   position: absolute;
 }
@@ -12,6 +12,10 @@
 .highscore-message {
   font-size: 2rem;
   margin: 1rem 0 1rem;
+
+  @media(min-width: $desktop-breakpoint) {
+    font-size: 3rem;
+  }
 }
 
 .submit-form {
@@ -23,7 +27,7 @@
 }
 
 .submit-label {
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 2rem;
 }
 
@@ -31,11 +35,15 @@
   background: $off-black;
   border: none;
   text-align: center;
-  color: white;
-  font-size: 4rem;
+  color: $mustard;
+  font-size: 2rem;
   outline: none;
   text-transform: uppercase;
   width: 98%;
+
+  ::-webkit-input-placeholder {
+    color: lighten($off-black, 5%);
+  }
 }
 
 .highscore-link-container {
