@@ -19,12 +19,12 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     used.includes(band.slice(4))
   ) {
     return setTimeout(() => {
-      dispatch(gameOver("Already used! You're out, Einstein", score));
+      dispatch(gameOver("Already used!", score));
     }, 250);
   }
   if (band[0] !== previous.previous1 && band[0] !== previous.previous2) {
     return setTimeout(() => {
-      dispatch(gameOver('Wrong letter! You lose, punk', score));
+      dispatch(gameOver('Wrong letter!', score));
     }, 250);
   }
 
