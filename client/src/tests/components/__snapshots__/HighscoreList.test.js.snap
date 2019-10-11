@@ -5,7 +5,7 @@ exports[`should render HighscoreList correctly 1`] = `
   <div
     className="highscore-title"
   >
-    HALL OF FAME
+    HIGHSCORES
   </div>
   <table>
     <tbody

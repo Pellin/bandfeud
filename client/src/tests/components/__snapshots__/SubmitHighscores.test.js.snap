@@ -15,7 +15,7 @@ exports[`should render component correctly 1`] = `
     onSubmit={[Function]}
   >
     <input
-      autoCorrect={false}
+      autoCorrect="false"
       autoFocus={true}
       className="submit-input"
       maxLength="10"
