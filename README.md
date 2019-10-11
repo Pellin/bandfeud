@@ -18,6 +18,13 @@ Wait while the app checks if the name exists in the Discogs database.
 If the name exists, your score increases. The longer the band name, the more points you get.
 Extra points are awarded for certain first letters. Q, X, Y and Z, for example, gets you 5 extra points
 
+#### Special name rules
+<strong>Some special rules for name submissions:</strong>
+<ul>
+<li>For artist names, it's the <em>first letter of the first name</em> that counts
+<li>For bands beginning with 'the', it's the <em>first letter after 'the'</em> that counts
+</ul>
+
 ### App turn
 Next, the app will present a band or an artist. 
 You now need to submit a band or artist name that begins with the last letter of the name the app presented.
@@ -39,6 +46,6 @@ If your score is among the top 20, you get a <strong>highscore</strong>.<br>
 The highscore list consists of player name, score and date for each of the highscores and, as you click on each row, the full lists of bands and artists from the corresponding rounds. 
 
 ### Artist selection
-The Discogs database contains more than 5 million artists. In order to narrow down the number of correct answers, the game will only accept the names of artists or bands that have a <strong>profile picture on their Discogs page<strong>. 
+The Discogs database contains more than 5 million artists. In order to narrow down the number of possible correct answers a little, the game will only accept the names of artists or bands that have a <strong>profile picture on their Discogs page</strong>. 
 This usually means that they have probably released at least one album and that somebody cares about them enough to have uploaded a profile pic for their page.
-If you submit the name of your favourite band or artist and the answer is deemed incorrect, don't throw a fit. Just log into Discogs and add a profile picture for them on their page.
+If you submit the name of your favourite band or artist and the answer is deemed incorrect, don't throw a fit. Just log into your Discogs account and add a profile picture for them on their page.
