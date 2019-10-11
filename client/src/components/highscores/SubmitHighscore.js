@@ -71,7 +71,7 @@ export const SubmitHighscore = props => {
                 className="submit-input"
                 type="text"
                 autoFocus
-                autoCorrect={false}
+                autoCorrect="false"
                 maxLength="10"
                 onChange={onTextChange}
                 placeholder="NAME"
