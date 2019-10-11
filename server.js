@@ -9,6 +9,15 @@ app.use(express.json());
 require('./routes/bandRoutes')(app);
 require('./routes/highscoreRoutes')(app);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+  app.get('*', (_req, res) => {
+    res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Started on port ${PORT}`);
 });
