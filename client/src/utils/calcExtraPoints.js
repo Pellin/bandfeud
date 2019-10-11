@@ -7,6 +7,36 @@ const calcExtraPoints = (timeLeft, name, difficulty) => {
   let points = Math.round(name.length / 2);
   let letterPoints = 0;
   switch (firstLetter) {
+    case '0': 
+      letterPoints = 8;
+      break;
+      case '1': 
+      letterPoints = 4;
+      break;
+      case '2': 
+      letterPoints = 4;
+      break;
+      case '3': 
+      letterPoints = 5;
+      break;
+      case '4': 
+      letterPoints = 4;
+      break;
+      case '5': 
+      letterPoints = 8;
+      break;
+      case '6': 
+      letterPoints = 8;
+      break;
+      case '7': 
+      letterPoints = 7;
+      break;
+      case '8': 
+      letterPoints = 7;
+      break;
+      case '9': 
+      letterPoints = 7;
+      break;
     case 'a':
       letterPoints = 1;
       break;
