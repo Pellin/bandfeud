@@ -26,7 +26,7 @@ const HighscoreList = ({ highscores }) => {
   };
   return (
     <>
-      <div className="highscore-title">HALL OF FAME</div>
+      <div className="highscore-title">HIGHSCORES</div>
       <table>
         <tbody className="highscore-body">
           {highscores.map(highscore => (
