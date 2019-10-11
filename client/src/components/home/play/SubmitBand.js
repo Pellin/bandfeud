@@ -68,6 +68,7 @@ export const SubmitBand = props => {
           value={band}
           onChange={onBandChange}
           placeholder={props.os !== 'desktop' ? iosPlaceHold : undefined}
+          spellCheck={false}
           onFocus={() => onRemovePlaceholder()}
         />
       </form>
