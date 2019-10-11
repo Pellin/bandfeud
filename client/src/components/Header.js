@@ -38,9 +38,11 @@ export const Header = ({
             </div>
           )}
         </div>
-        <div className="header-logo">
-          <img src="/images/bandFeud_logo.svg" alt="BandFeud" />
-        </div>
+        <NavLink to="/about" exact activeClassName="active-link">
+          <div className="header-logo" title="About Bandfeud">
+            <img src="/images/bandFeud_logo.svg" alt="BandFeud" />
+          </div>
+        </NavLink>
         <div className="link-container">
           {!inGame && (
             <div className="link">

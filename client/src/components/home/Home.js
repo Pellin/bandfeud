@@ -42,7 +42,7 @@ export const Home = ({
       <Header />
       {!inGame && (
         <div className="buttons-container">
-          <button className="new-game-button" onClick={startGame}>
+          <button title="Start new game" className="new-game-button" onClick={startGame}>
             PLAY
           </button>
           {bands.length > 0 && (

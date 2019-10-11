@@ -1,5 +1,6 @@
 @import './settings';
 @import './base/base';
+@import './components/about';
 @import './components/band-item';
 @import './components/header';
 @import './components/highscores';
@@ -7,6 +8,6 @@
 @import './components/play';
 @import './components/show-bandlist-modal';
 @import './components/submit-band';
-@import './components/submit-highscore';
+@import './components/submit-highscore';    
 @import url('https://fonts.googleapis.com/css?family=Righteous|Source+Sans+Pro&display=swap');
 
