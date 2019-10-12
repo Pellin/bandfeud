@@ -2,7 +2,6 @@
 
 exports[`should render component correctly with highscores 1`] = `
 <div>
-  <Connect(Header) />
   <div
     className="highscore-container"
   >
@@ -42,7 +41,6 @@ exports[`should render component correctly with highscores 1`] = `
 
 exports[`should render component correctly without highscores 1`] = `
 <div>
-  <Connect(Header) />
   <div
     className="highscore-container"
   >
