@@ -1,10 +1,8 @@
 import React from 'react';
-import Header from '../components/Header';
 
 const About = () => {
   return (
     <div>
-      <Header />
       <div className="info-container">
         <h1>How to play Bandfeud</h1>
         <h2>Your turn</h2>
