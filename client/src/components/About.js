@@ -10,11 +10,11 @@ const About = () => {
         <h2>Your turn</h2>
         <p>
           Type in a band or an artist beginning with the letter visible under
-          the input field
+          the input field.
         </p>
         <p>
           Band or artist names must contain at least two letters or numbers. It
-          must begin and end with a letter between a and z or a number
+          must begin and end with a letter between a and z or a number.
         </p>
         <p>
           Wait while the app checks if the name exists in the Discogs database.
@@ -32,7 +32,7 @@ const About = () => {
         <h2>Detailed instructions</h2>
         <p>
           For more detailed instructions and references, go to our{' '}
-          <a rel="noopener noreferrer" target="_blank" href="https://github.com/Pellin/bandfeud">github page</a>
+          <a rel="noopener noreferrer" target="_blank" href="https://github.com/Pellin/bandfeud">github page</a>.
         </p>
       </div>
     </div>
