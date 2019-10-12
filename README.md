@@ -9,25 +9,26 @@ Uses <a href="https://www.mongodb.com/cloud/atlas"><strong>Mongodb Atlas</strong
 ## How to play
 
 ### Your turn
-Type in a band or an artist <strong>beginning with the letter visible under the input field</strong>
+Type in a band or an artist <strong>beginning with the letter visible under the input field</strong>.
 
-Band or artist names must contain at least two letters or numbers. It must begin and end with a letter between a and z or a number
+Band or artist names must contain at least two letters or numbers. It must begin and end with a letter between a and z or a number.
 
 Wait while the app checks if the name exists in the Discogs database.
 
 If the name exists, your score increases. The longer the band name, the more points you get.
-Extra points are awarded for certain first letters. Q, X, Y and Z, for example, gets you 5 extra points
+Extra points are awarded for certain first letters (or numbers). Q, X, Y and Z, for example, gets you 5 extra points.
 
 #### Special name rules
 Some special rules for name submissions:
 <ul>
 <li>For artist names, it's the <em>first letter of the first name</em> that counts
 <li>For bands beginning with 'the', it's the <em>first letter after 'the'</em> that counts
+<li>If the last character of the last band name is a number, you can <em>choose between the number and the corresponding letter</em>, e.g. '3' or 'E'.
 </ul>
 
 ### App turn
 Next, the app will present a band or an artist. 
-You now need to submit a band or artist name that begins with the last letter of the name the app presented.
+You now need to submit a band or artist name that begins with the last letter of the name the app presented
 
 ### Difficulty
 Later in the game, the available time decreases, first to 15 seconds, then to 10 seconds and finally to 5 seconds. At these stages, the points awarded will also increase.
