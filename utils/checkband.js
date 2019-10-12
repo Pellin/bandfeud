@@ -15,7 +15,7 @@ const checkBand = band => {
 
   return new Promise((resolve, reject) => {
     request(options, (err, res, body) => {
-      console.log(res.headers['x-discogs-ratelimit-remaining']);
+      console.log(`Calls remaining: ${res.headers['x-discogs-ratelimit-remaining']}`);
       if (!err && res.statusCode == 200) {
         resolve(body);
       } else {
