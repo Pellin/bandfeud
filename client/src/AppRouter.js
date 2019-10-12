@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './styles/App.scss';
 
+import Header from './components/Header';
 import Home from './components/home/Home';
 import About from './components/About';
 import Highscores from './components/highscores/Highscores';
@@ -9,6 +10,7 @@ import Highscores from './components/highscores/Highscores';
 function AppRouter() {
   return (
     <Router>
+      <Header />
       <div>
         <Route path="/" exact component={Home} />
         <Route path="/highscores/" component={Highscores} />

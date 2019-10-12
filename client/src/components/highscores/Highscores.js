@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import Header from '../Header';
 import HighscoreList from '../highscores/HighscoreList';
 
 import getHighscores from '../../actions/getHighscores';
@@ -14,7 +13,6 @@ export const Highscores = ({ highscores, onGetHighscores }) => {
   });
   return (
     <div>
-      <Header />
       <div className="highscore-container">
         {highscores.length ? (
           <HighscoreList highscores={highscores} />

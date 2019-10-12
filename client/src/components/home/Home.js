@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import Header from '../Header';
 import Play from '../home/play/Play';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
 
@@ -39,7 +38,6 @@ export const Home = ({
   };
   return (
     <div>
-      <Header />
       {!inGame && (
         <div className="buttons-container">
           <button title="Start new game" className="new-game-button" onClick={startGame}>
