@@ -43,7 +43,7 @@ const addHighscore = async (score, player, date, bands) => {
 
 const getHighscores = async () => {
   try {
-    highscores = await Highscore.find();
+    let highscores = await Highscore.find();
     highscores = highscores.sort((a, b) => (a.score > b.score ? -1 : 1));
     return highscores;
   } catch (e) {
