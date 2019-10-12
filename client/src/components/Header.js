@@ -33,7 +33,7 @@ export const Header = ({
           {!inGame && (
             <div className="link">
               <NavLink to="/" exact activeClassName="active-link">
-                Home
+                Play
               </NavLink>
             </div>
           )}
