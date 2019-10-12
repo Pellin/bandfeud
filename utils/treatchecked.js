@@ -18,8 +18,8 @@ const treatChecked = async (userBand, bands) => {
       }
     }
     if (
-      userBand.match(/^the\\s/) ||
-      bands[0].title.toLowerCase().match(/^the\\s/)
+      userBand.match(/^the .+$/) ||
+      bands[0].title.toLowerCase().match(/^the s.+$/)
     ) {
       userBand = theFix(userBand, bands[0].title.toLowerCase());
     }
