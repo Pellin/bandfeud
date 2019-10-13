@@ -1,5 +1,6 @@
+const andFix = require('./serverutils/andFix');
+const regExpFix = require('./serverutils/regExpFix');
 const theFix = require('./serverutils/theFix');
-const dotFix = require('./serverutils/dotFix');
 
 const treatChecked = async (userBand, bands) => {
   bands = bands.results;
@@ -19,18 +20,28 @@ const treatChecked = async (userBand, bands) => {
     }
     if (
       userBand.match(/^the .+$/) ||
-      bands[0].title.toLowerCase().match(/^the s.+$/)
+      bands[0].title.toLowerCase().match(/^the .+$/)
     ) {
       userBand = theFix(userBand, bands[0].title.toLowerCase());
     }
-    userBand = dotFix(userBand);
 
+    userBand = andFix(userBand, bands);
+    userBand = regExpFix(userBand, bands[0].title.toLowerCase());
     let nameMatches = [];
     let imgMatches = [];
 
     for (let i = 0; i < bands.length; i++) {
       bands[i].title = bands[i].title.toLowerCase();
-      if (bands[i].title === userBand) {
+      if (
+        bands[i].title.split('&')[0].trim() === userBand.split('&')[0].trim() &&
+        bands[i].title.split(' ').length > 3
+      ) {
+        nameMatches.push(bands[i].title.split('&')[0].trim());
+        imgMatches.push(bands[i].cover_image);
+      } else if (
+        bands[i].title.split('&')[0].trim() === userBand.split('&')[0].trim() &&
+        bands[i].title.split(' ').length < 4
+      ) {
         nameMatches.push(bands[i].title);
         imgMatches.push(bands[i].cover_image);
       }
