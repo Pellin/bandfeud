@@ -4,7 +4,7 @@ const calcExtraPoints = (timeLeft, name, difficulty) => {
     firstLetter = name[4];
   }
   name = name.replace(/\s-\.&/g, '');
-  let points = Math.round(name.length / 2);
+  let points = Math.round(name.length);
   let letterPoints = 0;
   switch (firstLetter) {
     case '0': 

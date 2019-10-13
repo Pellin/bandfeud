@@ -47,9 +47,9 @@ it('should dispatch expected actions if "band" matches', async () => {
   const expectedActions = [
     { type: 'SUBMITTED:_TRUE' },
     { type: 'SET_MESSAGE', payload: 'Checking...' },
-    { type: 'ADD_TO_SCORE', payload: 19 },
-    { type: 'ADD_BAND', name: 'seven', points: 19, url: 'www.7img.com' },
-    { type: 'SET_MESSAGE', payload: 'Correct!' },
+    { type: 'ADD_TO_SCORE', payload: 21 },
+    { type: 'ADD_BAND', name: 'seven', points: 21, url: 'www.7img.com' },
+    { type: 'SET_MESSAGE', payload: 'Good!' },
     { type: 'SET_MESSAGE', payload: 'Get ready...' }
   ];
   fetchMock
