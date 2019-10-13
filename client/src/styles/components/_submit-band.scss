@@ -53,6 +53,21 @@
   }
 }
 
+.band-input-long {
+  background: $off-black;
+  caret-color: $off-white;
+  color: $off-white;
+  display: inline-block;
+  width: 100vw;
+  height: 3rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .previous {
   background: $off-black;
   color: $off-white;

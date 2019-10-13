@@ -57,14 +57,14 @@ export const SubmitBand = props => {
         onSubmit={onSubmit}
       >
         <input
-          className="band-input"
+          className={band.length > 25 && props.os !== 'desktop' ? 'band-input-long' : "band-input" }
           type="text"
           inputMode="email"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="none"
           autoFocus={props.os !== 'desktop' ? false : true}
-          maxLength="25"
+          maxLength="42"
           value={band}
           onChange={onBandChange}
           placeholder={props.os !== 'desktop' ? iosPlaceHold : undefined}
