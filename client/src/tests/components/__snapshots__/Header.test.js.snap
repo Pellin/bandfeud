@@ -26,12 +26,10 @@ exports[`should render Header correctly when inGame is false 1`] = `
       </div>
     </div>
     <NavLink
-      activeClassName="active-link"
-      exact={true}
-      to="/about"
+      to="/about/"
     >
       <div
-        className="header-logo"
+        className="header-logo-link"
         title="About Bandfeud"
       >
         <img
@@ -74,21 +72,15 @@ exports[`should render Header correctly when inGame is true 1`] = `
     <div
       className="link-container"
     />
-    <NavLink
-      activeClassName="active-link"
-      exact={true}
-      to="/about"
+    <div
+      className="header-logo"
+      title="About Bandfeud"
     >
-      <div
-        className="header-logo"
-        title="About Bandfeud"
-      >
-        <img
-          alt="BandFeud"
-          src="/images/bandFeud_logo.svg"
-        />
-      </div>
-    </NavLink>
+      <img
+        alt="BandFeud"
+        src="/images/bandFeud_logo.svg"
+      />
+    </div>
     <div
       className="link-container"
     />

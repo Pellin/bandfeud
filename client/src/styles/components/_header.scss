@@ -49,6 +49,25 @@
 }
 
 .header-logo {
+  cursor: default;
+  margin: 5px;
+  width: 100px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    margin: 10px;
+    width: 200px;
+  }
+
+  @media (max-height: 640px) and (min-width: 570px) {
+    width: 150px;
+  }
+}
+
+.header-logo-link {
   cursor: pointer;
   margin: 5px;
   width: 100px;
