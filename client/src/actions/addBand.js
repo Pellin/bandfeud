@@ -27,13 +27,13 @@ const addBand = (name, url, turn, points) => async dispatch => {
       let message;
       if (points < 20) {
         message = 'Correct!';
-      } else if (points > 19 && points < 25) {
+      } else if (points > 19 && points < 30) {
         message = 'Good!';
-      } else if (points > 24 && points < 30) {
-        message = 'Great!';
       } else if (points > 29 && points < 40) {
+        message = 'Great!';
+      } else if (points > 39 && points < 50) {
         message = 'Fantastic!!';
-      } else if (points > 39) {
+      } else if (points > 49) {
         message = 'WORLD CLASS!!!';
       }
       setTimeout(() => {

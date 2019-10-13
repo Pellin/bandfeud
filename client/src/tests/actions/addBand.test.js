@@ -44,7 +44,7 @@ it('should dispatch correct actions for "user"', async () => {
 
   const userActions = [
     { type: 'ADD_BAND', name: 'kiss', points: 26, url: 'www.img.com' },
-    { type: 'SET_MESSAGE', payload: 'Great!' },
+    { type: 'SET_MESSAGE', payload: 'Good!' },
     { type: 'SET_MESSAGE', payload: 'Get ready...' }
   ];
 
