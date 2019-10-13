@@ -19,7 +19,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     used.includes(band.slice(4))
   ) {
     return setTimeout(() => {
-      dispatch(gameOver("Already used!", score));
+      dispatch(gameOver('Already used!', score));
     }, 250);
   }
   if (band[0] !== previous.previous1 && band[0] !== previous.previous2) {
@@ -37,9 +37,19 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     if (checkedBand.name !== band) {
       used.push(checkedBand.name);
     }
-    const previous = checkedBand.name[checkedBand.name.length - 1];
+    let previous;
+    if (checkedBand.name[checkedBand.name.length - 1].match(/[a-z0-9]/)) {
+      previous = checkedBand.name[checkedBand.name.length - 1];
+    } else {
+      previous = checkedBand.name[checkedBand.name.length - 2];
+    }
+
     const state = getState();
-    const extraPoints = calcExtraPoints(state.currentPoints, checkedBand.name, difficulty);
+    const extraPoints = calcExtraPoints(
+      state.currentPoints,
+      checkedBand.name,
+      difficulty
+    );
     const totalPoints = state.currentPoints + extraPoints;
     dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
@@ -49,7 +59,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     return;
   } catch (e) {
     return setTimeout(() => {
-      dispatch(gameOver("Sorry, no match.", score));
+      dispatch(gameOver('Sorry, no match.', score));
     }, 250);
   }
 };
