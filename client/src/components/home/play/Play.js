@@ -5,9 +5,27 @@ import SubmitBand from './SubmitBand';
 import BandList from './BandList';
 import MessageBox from '../MessageBox';
 import SubmitHighscore from '../../highscores/SubmitHighscore';
+import { gameAborted } from '../../../actions/gameStatus';
 
-export const Play = (props) => {
+export const Play = props => {
   const [isFirefox, setIsFirefox] = useState(false);
+  const abortGame = () => {
+    if (props.inGame) {
+      props.onGameAborted();
+    }
+  };
+  useEffect(() => {
+    const listener =
+      props.os === 'desktop' &&
+      (/Firefox/gi.test(navigator.userAgent) ||
+      /Chrome/gi.test(navigator.userAgent))
+        ? 'visibilitychange'
+        : 'blur';
+    window.addEventListener(listener, abortGame);
+    return () => {
+      window.removeEventListener(listener, abortGame);
+    };
+  });
   useEffect(() => {
     const fireReg = new RegExp('Firefox');
     setIsFirefox(fireReg.test(navigator.userAgent));
@@ -34,9 +52,7 @@ export const Play = (props) => {
           ) : (
             <div
               className={
-                isFirefox
-                  ? 'game-container-firefox'
-                  : 'game-container'
+                isFirefox ? 'game-container-firefox' : 'game-container'
               }
             >
               <div className="band-list">
@@ -47,20 +63,18 @@ export const Play = (props) => {
                   <MessageBox message={props.message} />
                 ) : (
                   <div className="submit-band">
-                    {props.inGame &&
-                      !props.submitted &&
-                      !props.message && (
-                        <SubmitBand
-                          bandBank={props.bandBank}
-                          difficulty={props.difficulty}
-                          inGame={props.inGame}
-                          previous={props.previous}
-                          score={props.score}
-                          submitted={props.submitted}
-                          used={props.used}
-                          os={props.os}
-                        />
-                      )}
+                    {props.inGame && !props.submitted && !props.message && (
+                      <SubmitBand
+                        bandBank={props.bandBank}
+                        difficulty={props.difficulty}
+                        inGame={props.inGame}
+                        previous={props.previous}
+                        score={props.score}
+                        submitted={props.submitted}
+                        used={props.used}
+                        os={props.os}
+                      />
+                    )}
                   </div>
                 )}
               </div>
@@ -71,6 +85,10 @@ export const Play = (props) => {
     </>
   );
 };
+
+const mapDispatchToProps = dispatch => ({
+  onGameAborted: () => dispatch(gameAborted())
+});
 
 const mapStateToProps = state => ({
   bandBank: state.bandBank,
@@ -87,4 +105,7 @@ const mapStateToProps = state => ({
   os: state.os
 });
 
-export default connect(mapStateToProps)(Play);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Play);
