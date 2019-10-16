@@ -59,7 +59,6 @@ export const SubmitBand = props => {
         <input
           className={band.length > 25 && props.os !== 'desktop' ? 'band-input-long' : "band-input" }
           type="text"
-          inputMode="email"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="none"
