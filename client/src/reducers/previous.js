@@ -7,41 +7,45 @@ export default (state = { previous1: letter, previous2: '' }, action) => {
 
   if (action.type === 'SET_PREVIOUS' && action.payload.length > 1) {
     if (
-      action.payload[action.payload.length - 2].match(/[1-9]/) &&
+      action.payload[action.payload.length - 2].match(/1/) &&
       action.payload[action.payload.length - 1].match(/[0-9]/)
     ) {
       switch (
-        action.payload.slice(action.payload.length - 2, action.payload.length)
+        action.payload.slice(action.payload.length - 1, action.payload.length)
       ) {
-        case '12':
+        case '2':
           previous2 = 'e';
-          break;
-        case '20':
-          previous2 = 'y';
-          break;
-        case '30':
-          previous2 = 'y';
-          break;
-        case '40':
-          previous2 = 'y';
-          break;
-        case '50':
-          previous2 = 'y';
-          break;
-        case '60':
-          previous2 = 'y';
-          break;
-        case '70':
-          previous2 = 'y';
-          break;
-        case '80':
-          previous2 = 'y';
-          break;
-        case '90':
-          previous2 = 'y';
           break;
         default:
           previous2 = 'n';
+          break;
+      }
+    } else if (
+      action.payload[action.payload.length - 2].match(/[2-9]/) &&
+      action.payload[action.payload.length - 1].match(/[0-9]/)
+    ) {
+      switch (
+        action.payload.slice(action.payload.length - 1, action.payload.length)
+      ) {
+        case '0':
+          previous2 = 'y';
+        case '2':
+          previous2 = 'o';
+          break;
+        case '4':
+          previous2 = 'r';
+          break;
+        case '6':
+          previous2 = 'x';
+          break;
+        case '7':
+          previous2 = 'n';
+          break;
+        case '8':
+          previous2 = 'h';
+          break;
+        default:
+          previous2 = 'e';
       }
     } else if (action.payload[action.payload.length - 1].match(/[0-9]/)) {
       switch (action.payload[action.payload.length - 1]) {

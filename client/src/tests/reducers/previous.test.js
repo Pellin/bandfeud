@@ -34,7 +34,7 @@ it('should set previous 1 to number and previous2 to letter (one digit)', () => 
 });
 
 it('should set previous 1 to number and previous2 to letter (two digits)', () => {
-  const previous = 'UB40';
+  const previous = 'state 25';
   const state = previousReducer(
     { previous1: '6', previous2: 'x' },
     {
@@ -42,5 +42,5 @@ it('should set previous 1 to number and previous2 to letter (two digits)', () =>
       payload: previous
     }
   );
-  expect(state).toEqual({ previous1: '0', previous2: 'y' });
+  expect(state).toEqual({ previous1: '5', previous2: 'e' });
 });
