@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 import { SubmitBand } from '../../components/home/play/SubmitBand';
 
@@ -10,7 +11,7 @@ let wrapper;
 beforeEach(() => {
   onCheckBandSpy = jest.fn();
   onSetDifficultySpy = jest.fn();
-  previous = {previous1: 'o', previous2: ''};
+  previous = { previous1: 'o', previous2: '' };
   used = ['two', 'three', 'four'];
   bandBank = [
     { name: 'five', url: 'www.5img.com' },
@@ -38,7 +39,7 @@ it('should render component correctly', () => {
 });
 
 it('should render component correctly with value for previous2', () => {
-  previous = {previous1: '13', previous2: 'n'};
+  previous = { previous1: '13', previous2: 'n' };
   wrapper = shallow(
     <SubmitBand
       onCheckBand={onCheckBandSpy}
@@ -61,7 +62,7 @@ it('should update state.band and rerender input value when band-input changes', 
       value: 'one'
     }
   });
-  
+
   expect(wrapper.find('.band-input').props().value).toBe('one');
   expect(wrapper).toMatchSnapshot();
 });
@@ -123,4 +124,18 @@ it('should reset state.band after submission and call onSetDifficulty with used 
   });
   expect(wrapper.find('.band-input').props().value).toBeFalsy();
   expect(onSetDifficultySpy).toHaveBeenCalledWith(used.length);
+});
+
+it('should delete all text if backspace is pressed', async () => {
+  wrapper.find('.band-input').simulate('change', {
+    target: {
+      value: 'the bea'
+    }
+  });
+  expect(wrapper.find('.band-input').props().value).toBe('the bea');
+
+  wrapper.find('.band-input').simulate('keyDown', { key: 'Backspace' });
+
+  expect(wrapper.find('.band-input').props().value).toBe('');
+  expect(wrapper).toMatchSnapshot();
 });

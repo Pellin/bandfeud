@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 
-import { gameOn, gameOver } from '../../actions/gameStatus';
+import { gameOn, gameOver, gameAborted } from '../../actions/gameStatus';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -68,6 +68,21 @@ it('(gameOver) should dispatch expected actions if highscore === true', async ()
 
   await store.dispatch(gameOver(message, score));
   jest.runAllTimers();
+
+  expect(store.getActions()).toEqual(expectedActions);
+});
+
+it('(gameAborted) should dispatch expected actions', async () => {
+  const expectedActions = [
+    { type: 'SET_MESSAGE', payload: '' },
+    { type: 'RESET_BANDS' },
+    { type: 'GAME_OVER' },
+    { type: 'RESET_USED' },
+    { type: 'RESET_SCORE' },
+    { type: 'RESET_BANDBANK' },
+    { type: 'RESET_DIFFICULTY' }
+  ];
+  await store.dispatch(gameAborted());
 
   expect(store.getActions()).toEqual(expectedActions);
 });
