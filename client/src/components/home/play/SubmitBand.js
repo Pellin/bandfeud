@@ -22,10 +22,6 @@ export const SubmitBand = props => {
       setBand(bandName);
     }
   };
-  const deleteText = e => {
-    if (e.key !== 'Backspace') return;
-    setBand('');
-  };
   const onSubmit = e => {
     e.preventDefault();
     if (band.length < 2 || !band.match(/[\wåäö]$/)) return;
@@ -73,7 +69,6 @@ export const SubmitBand = props => {
           maxLength="42"
           onChange={onBandChange}
           onFocus={() => onRemovePlaceholder()}
-          onKeyDown={deleteText}
           placeholder={props.os !== 'desktop' ? iosPlaceHold : undefined}
           spellCheck={false}
           type="text"
