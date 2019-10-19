@@ -5,7 +5,7 @@
   justify-content: center;
   margin: auto;
   position: fixed;
-  top: 11rem;
+  top: 8rem;
   left: 0;
   right: 0;
 
@@ -26,7 +26,7 @@
   color: $off-white;
   cursor: default;
   font-size: 2.3rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 9px;
   margin-bottom: 1.5rem;
   padding-left: 9px;
@@ -87,7 +87,7 @@
   text-transform: uppercase;
   width: 17rem;
 
-  color: $yellow;
+  color: $off-white;
   transition: 200ms color;
 
   @media (min-width: $desktop-breakpoint) {
@@ -96,13 +96,13 @@
 }
 
 .hs-player:hover {
-  color: lighten($yellow, 20%);
+  color: lighten($off-white, 20%);
 }
 
 .hs-score {
   text-align: right;
   margin: 0;
-  color: $red;
+  color: $off-white;
 }
 
 .load-message {

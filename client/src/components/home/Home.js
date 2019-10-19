@@ -41,7 +41,7 @@ export const Home = ({
       {!inGame && (
         <div className="buttons-container">
           <button title="Start new game" className="new-game-button" onClick={startGame}>
-            PLAY
+            <img src="/images/bf_play_a_vit.svg" className="play-logo" alt="Play" />
           </button>
           {bands.length > 0 && (
             <button className="show-modal-button" onClick={openModal}>

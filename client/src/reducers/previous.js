@@ -29,6 +29,7 @@ export default (state = { previous1: letter, previous2: '' }, action) => {
       ) {
         case '0':
           previous2 = 'y';
+          break;
         case '2':
           previous2 = 'o';
           break;

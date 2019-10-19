@@ -14,18 +14,18 @@ export const Play = props => {
       props.onGameAborted();
     }
   };
-  useEffect(() => {
-    const listener =
-      props.os === 'desktop' &&
-      (/Firefox/gi.test(navigator.userAgent) ||
-      /Chrome/gi.test(navigator.userAgent))
-        ? 'visibilitychange'
-        : 'blur';
-    window.addEventListener(listener, abortGame);
-    return () => {
-      window.removeEventListener(listener, abortGame);
-    };
-  });
+  // useEffect(() => {
+  //   const listener =
+  //     props.os === 'desktop' &&
+  //     (/Firefox/gi.test(navigator.userAgent) ||
+  //       /Chrome/gi.test(navigator.userAgent))
+  //       ? 'visibilitychange'
+  //       : 'blur';
+  //   window.addEventListener(listener, abortGame);
+  //   return () => {
+  //     window.removeEventListener(listener, abortGame);
+  //   };
+  // });
   useEffect(() => {
     const fireReg = new RegExp('Firefox');
     setIsFirefox(fireReg.test(navigator.userAgent));
@@ -33,10 +33,16 @@ export const Play = props => {
   return (
     <>
       {props.showGameOver ? (
+        <>
         <div className="game-over-container">
-          <div className="game-over-message">GAME OVER</div>
-          <MessageBox message={props.message} />
+          <div className="game-over-logo">
+            <img src="/images/bf_go_a_white.svg" alt="BandFeud" />
+          </div>
         </div>
+         <div className="footer">
+           <MessageBox message={props.message} />
+        </div>
+        </>
       ) : (
         <div className="view-holder">
           {props.isHighscore ? (

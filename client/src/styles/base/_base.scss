@@ -1,14 +1,18 @@
 body {
-  color: $off-white;
-  font-family: arial;
+  color: $off-black;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 html {
-  background: $off-black;
+  background: $frans-orange;
+  height: 100%;
   font-size: 62.5%;
   margin: 0;
+  overflow: auto;
+  position: fixed;
   height: 100vh;
   width: 100vw;
 }

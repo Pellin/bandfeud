@@ -20,8 +20,7 @@
 
 .modal {
   justify-content: space-between;
-  background: $off-black;
-  border-top: 1px solid white;
+  background: $off-white;
   border-bottom: 1px solid $off-white;
   color: $yellow;
   cursor: default;
@@ -39,7 +38,7 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: rgba(15,15,20,0.9);
+  background-color: rgba(220, 220, 205,0.4);
 }
 
 .modal-header {
@@ -54,8 +53,9 @@
 
 .header-date {
   align-self: flex-start;
-  color: white;
+  color: $frans-orange;
   font-size: 1.2rem;
+  font-weight: 300;
   margin-top: 1rem;
   width: 17rem;
   text-align: center;
@@ -68,10 +68,12 @@
 }
 
 .header-player {
-  color: $yellow;
+  color: $frans-orange;
   font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-align: center;
-  text-shadow: 1px 1px 6px, -1px -1px 6px;
+  text-shadow: 1px 2px 8px $frans-orange, -1px -2px 8px $frans-orange;
   width: 25rem;
 
   @media (min-width: $desktop-breakpoint) {
@@ -92,8 +94,9 @@
 
 .header-points {
   align-self: flex-start;
-  color: white;
+  color: $frans-orange;
   font-size: 1.2rem;
+  font-weight: 300;
   margin-top: 1rem;
   text-align: center;
   width: 17rem;
@@ -118,7 +121,7 @@
 }
 
 .band-name {
-  color: $orange;
+  color: $frans-orange;
   display: flex;
   height: 4rem;
   align-items: flex-end;
@@ -131,7 +134,7 @@
 }
 
 .band-name-computer {
-  color: $off-white;
+  color: $off-black;
   display: flex;
   height: 4rem;
   align-items: flex-end;
@@ -144,11 +147,12 @@
 }
 
 .band-points {
-  color: $yellow;
+  color: $off-black;
+  font-weight: 300;
 }
 
 .no-band-points {
-  color: $off-black;
+  color: $off-white;
 }
 
 .band-image-container {

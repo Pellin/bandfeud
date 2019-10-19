@@ -1,5 +1,6 @@
 .header-container {
-  border-bottom: 1px solid $off-white;
+  background: $off-white;
+  border-bottom: 1px solid $frans-orange;
   position: fixed;
   top: 0px;
   display: flex;
@@ -24,9 +25,10 @@
 
 .counter {
   align-items: center;
-  color: $yellow;
+  color: $frans-orange;
   display: flex;
   font-size: 2rem;
+  font-weight: 700;
   width: 2rem;
   height: 3rem;
 
@@ -44,69 +46,93 @@
   justify-content: space-around;
   margin: auto;
   padding: 0.5rem;
-  width: 80%;
   z-index: 10;
 }
 
 .header-logo {
-  cursor: default;
-  margin: 5px;
-  width: 100px;
+  margin: 1rem 0 0.5rem;
+  width: 19rem;
 
   img {
-    width: 100%;
+    width: 19rem;
     height: auto;
   }
   @media (min-width: $desktop-breakpoint) {
-    margin: 10px;
-    width: 200px;
+    margin: 1rem;
+    width: 35rem;
+
+    img {
+      width: 35rem;
+      height: auto;
+    }
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
-    width: 150px;
+    margin: 1rem;
+    width: 18rem;
+
+    img {
+      width: 18rem;
+      height: auto;
+    }
   }
 }
 
 .header-logo-link {
   cursor: pointer;
-  margin: 5px;
-  width: 100px;
+  margin: 1rem;
+  min-width: 17rem;
 
   img {
-    width: 100%;
+    width: 17rem;
     height: auto;
   }
   @media (min-width: $desktop-breakpoint) {
-    margin: 10px;
-    width: 200px;
+    margin: 1rem;
+    min-width: 35rem;
+
+    img {
+      width: 35rem;
+      height: auto;
+    }
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
-    width: 150px;
+    margin: 1rem;
+    width: 18rem;
+
+    img {
+      width: 18rem;
+      height: auto;
+    }
   }
 }
 
 .link-container {
   display: flex;
   align-items: center;
-  margin: 0;
+  margin: 0 1rem;
   padding: 0;
   text-align: center;
   justify-content: center;
-  width: 20%;
+  width: 10%;
 }
 
 .link {
   font-size: 0.9rem;
   margin-left: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
 
   a {
-    color: $yellow;
+    color: #e94500;
     text-decoration: none;
   }
 
   @media (min-width: $desktop-breakpoint) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
@@ -120,7 +146,7 @@
   text-align: center;
 
   @media (min-width: $desktop-breakpoint) {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
@@ -136,8 +162,9 @@
 }
 
 .score {
-  color: $orange;
-  font-size: 1.5rem;
+  color: $frans-orange;
+  font-size: 1.3rem;
+  font-weight: 700;
 
   @media (min-width: $desktop-breakpoint) {
     font-size: 2.3rem;

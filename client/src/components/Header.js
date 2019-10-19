@@ -39,13 +39,13 @@ export const Header = ({
           )}
         </div>
         {inGame ? (
-          <div className="header-logo" title="About Bandfeud">
-            <img src="/images/bandFeud_logo.svg" alt="BandFeud" />
+          <div className="header-logo-link" title="About Bandfeud">
+            <img src="/images/bf_c.svg" alt="BandFeud" />
           </div>
         ) : (
           <NavLink to="/about/">
-            <div className="header-logo-link" title="About Bandfeud">
-              <img src="/images/bandFeud_logo.svg" alt="BandFeud" />
+            <div className="header-logo" title="About Bandfeud">
+              <img src="/images/bf_c.svg" alt="BandFeud" />
             </div>
           </NavLink>
         )}
@@ -79,3 +79,12 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Header);
+
+// {inGame ? (
+//   ) : (
+//     <NavLink to="/about/">
+//       <div className="header-logo-link" title="About Bandfeud">
+//         <img src="/images/bf_c.svg" alt="BandFeud" />
+//       </div>
+//     </NavLink>
+//   )}
