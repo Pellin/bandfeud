@@ -1,5 +1,5 @@
 .footer-counter-container {
-  background: $off-black;
+  background: $off-white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,11 +10,11 @@
 }
 
 .band-input-form {
-  background: $off-black;
+  background: $off-white;
   width: 101vw;
 
   ::-webkit-input-placeholder {
-    color: $mustard;
+    color: gray;
   }
 
   @media(min-width: $desktop-breakpoint) {
@@ -27,16 +27,16 @@
   width: 105.5vw;
 
   ::-webkit-input-placeholder {
-    color: $mustard;
+    color: light-gray;
   }
 }
 
 
 
 .band-input {
-  background: $off-black;
-  caret-color: $off-white;
-  color: $off-white;
+  background: $off-white;
+  caret-color: $off-black;
+  color: $off-black;
   display: inline-block;
   width: 100vw;
   height: 3rem;
@@ -54,9 +54,9 @@
 }
 
 .band-input-long {
-  background: $off-black;
-  caret-color: $off-white;
-  color: $off-white;
+  background: $off-white;
+  caret-color: $off-black;
+  color: $off-black;
   display: inline-block;
   width: 100vw;
   height: 3rem;
@@ -69,9 +69,10 @@
 }
 
 .previous {
-  background: $off-black;
-  color: $off-white;
+  background: $off-white;
+  color: $frans-orange;
   font-size: 2rem;
+  font-weight: 700;
   position: relative;
   text-align: center;
 
