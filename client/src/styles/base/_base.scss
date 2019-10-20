@@ -14,5 +14,6 @@ html {
   overflow: auto;
   position: fixed;
   height: 100vh;
+  -webkit-tap-highlight-color: transparent;
   width: 100vw;
 }

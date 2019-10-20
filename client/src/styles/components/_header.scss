@@ -1,6 +1,5 @@
 .header-container {
   background: $off-white;
-  border-bottom: 1px solid $frans-orange;
   position: fixed;
   top: 0px;
   display: flex;
@@ -9,10 +8,10 @@
   z-index: 100;
 }
 
-.flex-counter {
-  width: 33%;
+.header-side {
+  width: 30%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
@@ -50,61 +49,43 @@
 }
 
 .header-logo {
-  margin: 1rem 0 0.5rem;
-  width: 19rem;
+  cursor: default;
+  margin: 1rem 0;
+  width: 17rem;
 
   img {
-    width: 19rem;
+    width: 100%;
     height: auto;
   }
+
   @media (min-width: $desktop-breakpoint) {
     margin: 1rem;
     width: 35rem;
-
-    img {
-      width: 35rem;
-      height: auto;
-    }
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
     margin: 1rem;
     width: 18rem;
-
-    img {
-      width: 18rem;
-      height: auto;
-    }
   }
 }
 
 .header-logo-link {
   cursor: pointer;
   margin: 1rem;
-  min-width: 17rem;
+  width: 17rem;
 
   img {
-    width: 17rem;
+    width: 100%;
     height: auto;
   }
   @media (min-width: $desktop-breakpoint) {
     margin: 1rem;
-    min-width: 35rem;
-
-    img {
-      width: 35rem;
-      height: auto;
-    }
+    width: 35rem;
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
     margin: 1rem;
     width: 18rem;
-
-    img {
-      width: 18rem;
-      height: auto;
-    }
   }
 }
 
@@ -123,6 +104,7 @@
   margin-left: 0.8rem;
   font-weight: 800;
   letter-spacing: 1px;
+ 
 
   a {
     color: #e94500;
@@ -152,13 +134,6 @@
   @media (max-height: 640px) and (min-width: 570px) {
     font-size: 1.2rem;
   }
-}
-
-.flex-score {
-  width: 33%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .score {

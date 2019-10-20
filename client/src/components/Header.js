@@ -15,7 +15,14 @@ export const Header = ({
 }) => {
   return (
     <div className="header-container">
-      <div className="flex-counter">
+      <div className="header-side">
+        {!inGame && (
+          <div className="link">
+            <NavLink to="/" exact activeClassName="active-link">
+              Play
+            </NavLink>
+          </div>
+        )}
         {inGame && !submitted && !message && os === 'desktop' && (
           <div className="counter-container">
             <Counter
@@ -29,15 +36,6 @@ export const Header = ({
         )}
       </div>
       <div className="header-center">
-        <div className="link-container">
-          {!inGame && (
-            <div className="link">
-              <NavLink to="/" exact activeClassName="active-link">
-                Play
-              </NavLink>
-            </div>
-          )}
-        </div>
         {inGame ? (
           <div className="header-logo-link" title="About Bandfeud">
             <img src="/images/bf_c.svg" alt="BandFeud" />
@@ -49,17 +47,15 @@ export const Header = ({
             </div>
           </NavLink>
         )}
-        <div className="link-container">
-          {!inGame && (
-            <div className="link">
-              <NavLink to="/highscores/" activeClassName="active-link">
-                Highscores
-              </NavLink>
-            </div>
-          )}
-        </div>
       </div>
-      <div className="flex-score">
+      <div className="header-side">
+        {!inGame && (
+          <div className="link">
+            <NavLink to="/highscores/" activeClassName="active-link">
+              Highscores
+            </NavLink>
+          </div>
+        )}
         {inGame && used.length > 0 && (
           <div className="score">Score: {score}</div>
         )}
