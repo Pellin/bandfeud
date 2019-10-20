@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import SubmitBand from './SubmitBand';
 import BandList from './BandList';
 import MessageBox from '../MessageBox';
+import GameOverSVG from '../../../icons/GameOverSVG';
+
 import SubmitHighscore from '../../highscores/SubmitHighscore';
 import { gameAborted } from '../../../actions/gameStatus';
 
@@ -14,18 +16,18 @@ export const Play = props => {
       props.onGameAborted();
     }
   };
-  // useEffect(() => {
-  //   const listener =
-  //     props.os === 'desktop' &&
-  //     (/Firefox/gi.test(navigator.userAgent) ||
-  //       /Chrome/gi.test(navigator.userAgent))
-  //       ? 'visibilitychange'
-  //       : 'blur';
-  //   window.addEventListener(listener, abortGame);
-  //   return () => {
-  //     window.removeEventListener(listener, abortGame);
-  //   };
-  // });
+  useEffect(() => {
+    const listener =
+      props.os === 'desktop' &&
+      (/Firefox/gi.test(navigator.userAgent) ||
+        /Chrome/gi.test(navigator.userAgent))
+        ? 'visibilitychange'
+        : 'blur';
+    window.addEventListener(listener, abortGame);
+    return () => {
+      window.removeEventListener(listener, abortGame);
+    };
+  });
   useEffect(() => {
     const fireReg = new RegExp('Firefox');
     setIsFirefox(fireReg.test(navigator.userAgent));
@@ -36,7 +38,7 @@ export const Play = props => {
         <>
         <div className="game-over-container">
           <div className="game-over-logo">
-            <img src="/images/bf_go_a_white.svg" alt="BandFeud" />
+            <GameOverSVG />
           </div>
         </div>
          <div className="footer">

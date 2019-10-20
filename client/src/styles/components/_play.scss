@@ -16,12 +16,7 @@
   position: relative;
   width: 32rem;
   top: 15rem;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
+  
   @media (min-width: $desktop-breakpoint) {
     top: 22rem;
   }

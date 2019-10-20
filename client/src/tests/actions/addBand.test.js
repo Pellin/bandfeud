@@ -77,22 +77,3 @@ it('should not call fetch(getImg) if "user" turn', async () => {
 
   expect(fetchMock.called()).toBeFalsy();
 });
-
-it('should change url if it ends with spacer.gif', async () => {
-  const name = 'kiss';
-  const url = 'www.img.spacer.gif';
-  const changedUrl = '/images/bandFeud_logo.svg';
-
-  fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify(url));
-
-  const expectedActions = [
-    { type: 'ADD_BAND', name, url: changedUrl },
-    { type: 'SUBMITTED:_FALSE' },
-    { type: 'SET_MESSAGE', payload: '' }
-  ];
-
-  await store.dispatch(addBand(name, url, 'computer'));
-  jest.runAllTimers();
-
-  expect(store.getActions()).toEqual(expectedActions);
-});

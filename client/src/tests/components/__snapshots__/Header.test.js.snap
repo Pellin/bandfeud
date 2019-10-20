@@ -29,10 +29,7 @@ exports[`should render Header correctly when inGame is false 1`] = `
         className="header-logo"
         title="About Bandfeud"
       >
-        <img
-          alt="BandFeud"
-          src="/images/bf_c.svg"
-        />
+        <BFLogo />
       </div>
     </NavLink>
   </div>
@@ -67,10 +64,7 @@ exports[`should render Header correctly when inGame is true 1`] = `
       className="header-logo-link"
       title="About Bandfeud"
     >
-      <img
-        alt="BandFeud"
-        src="/images/bf_c.svg"
-      />
+      <BFLogo />
     </div>
   </div>
   <div

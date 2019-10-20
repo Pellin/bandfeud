@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import Counter from '../components/home/play/Counter';
+import BFLogo from '../icons/BFLogo';
 
 export const Header = ({
   inGame,
@@ -37,13 +38,13 @@ export const Header = ({
       </div>
       <div className="header-center">
         {inGame ? (
-          <div className="header-logo-link" title="About Bandfeud">
-            <img src="/images/bf_c.svg" alt="BandFeud" />
+          <div className="header-logo">
+            <BFLogo />
           </div>
         ) : (
           <NavLink to="/about/">
-            <div className="header-logo" title="About Bandfeud">
-              <img src="/images/bf_c.svg" alt="BandFeud" />
+            <div className="header-logo-link" title="About Bandfeud">
+              <BFLogo />
             </div>
           </NavLink>
         )}
@@ -75,12 +76,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Header);
-
-// {inGame ? (
-//   ) : (
-//     <NavLink to="/about/">
-//       <div className="header-logo-link" title="About Bandfeud">
-//         <img src="/images/bf_c.svg" alt="BandFeud" />
-//       </div>
-//     </NavLink>
-//   )}

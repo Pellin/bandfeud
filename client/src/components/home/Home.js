@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Play from '../home/play/Play';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
+import PlayButton from '../../icons/PlayButtonSVG';
 
 import getHighscores from '../../actions/getHighscores';
 import setMessage from '../../actions/setMessage';
@@ -40,13 +41,14 @@ export const Home = ({
     <div>
       {!inGame && (
         <div className="buttons-container">
-          <button title="Start new game" className="new-game-button" onClick={startGame}>
-            <img src="/images/bf_play_a_vit.svg" className="play-logo" alt="Play" />
-          </button>
+          <div title="Start new game" className="new-game-button" onClick={startGame}>
+           <PlayButton />
+          </div>
           {bands.length > 0 && (
             <button className="show-modal-button" onClick={openModal}>
-              REVIEW LAST ROUND
+               REVIEW LAST ROUND
             </button>
+          
           )}
         </div>
       )}

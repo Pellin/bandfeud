@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Home } from '../../components/home/Home';
-import { ShowBandlistModal } from '../../components/highscores/ShowBandlistModal';
 
 let onGetHighscoresSpy, onSetMessageSpy, onGameOnSpy, onSetOsSpy, bands;
 
@@ -61,7 +60,7 @@ it('should call onSetMessage and onGameOn correctly when "PLAY" button is clicke
     />
   );
 
-  wrapper.find('button').simulate('click', { button: 0 });
+  wrapper.find('.new-game-button').simulate('click', { button: 0 });
   jest.runAllTimers();
 
   expect(onSetMessageSpy).toHaveBeenCalledWith('Get ready...');

@@ -5,17 +5,13 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
   <div
     className="buttons-container"
   >
-    <button
+    <div
       className="new-game-button"
       onClick={[Function]}
       title="Start new game"
     >
-      <img
-        alt="Play"
-        className="play-logo"
-        src="/images/bf_play_a_vit.svg"
-      />
-    </button>
+      <SvgBfPlayAVit />
+    </div>
     <button
       className="show-modal-button"
       onClick={[Function]}
@@ -61,17 +57,13 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
   <div
     className="buttons-container"
   >
-    <button
+    <div
       className="new-game-button"
       onClick={[Function]}
       title="Start new game"
     >
-      <img
-        alt="Play"
-        className="play-logo"
-        src="/images/bf_play_a_vit.svg"
-      />
-    </button>
+      <SvgBfPlayAVit />
+    </div>
     <button
       className="show-modal-button"
       onClick={[Function]}
@@ -107,17 +99,13 @@ exports[`should render with PLAY <button> when inGame is false 1`] = `
   <div
     className="buttons-container"
   >
-    <button
+    <div
       className="new-game-button"
       onClick={[Function]}
       title="Start new game"
     >
-      <img
-        alt="Play"
-        className="play-logo"
-        src="/images/bf_play_a_vit.svg"
-      />
-    </button>
+      <SvgBfPlayAVit />
+    </div>
   </div>
   <ShowBandlistModal
     bands={Array []}

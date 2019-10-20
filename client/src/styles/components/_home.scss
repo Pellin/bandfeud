@@ -19,37 +19,20 @@
 }
 
 .new-game-button {
-  background: $frans-orange;
-  border: none;
-  // border-radius: 50px;
-  // box-shadow: 0 2px red, 0 2px inset black;
-  // color: $frans-orange;
+  background: transparent;
   cursor: pointer;
-  // font-size: 1.9rem;
-  outline: none;
   width: 9rem;
   height: 9rem;
-  padding: 0;
-  // text-shadow: 0 1px black;
 
   @media (min-width: $desktop-breakpoint) {
-    font-size: 2.6rem;
     width: 10rem;
     height: 10rem;
   }
 
   @media (max-height: 640px) and (min-width: 570px) {
-    font-size: 2.2rem;
     width: 8rem;
     height: 8rem;
   }
-}
-
-.play-logo {
-  width: 100%;
-  // background: url("/images/bf_play_a.svg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
 }
 
 .new-game-button:hover {
@@ -62,14 +45,12 @@
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 300;
-  // padding: 3rem;
-  color: $off-black;
+  width: 20rem;
   margin-top: 4rem;
   position: relative;
   outline: none;
 }
 
 .show-modal-button:hover {
-  color: lighten($off-black, 20%);
   font-weight: 400;
 }
