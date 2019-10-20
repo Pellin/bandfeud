@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render ShowBandlistModal when "REVIEW LAST BUTTON" button is clicked 1`] = `
+exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clicked 1`] = `
 <div>
   <div
     className="buttons-container"
@@ -10,7 +10,11 @@ exports[`should render ShowBandlistModal when "REVIEW LAST BUTTON" button is cli
       onClick={[Function]}
       title="Start new game"
     >
-      PLAY
+      <img
+        alt="Play"
+        className="play-logo"
+        src="/images/bf_play_a_vit.svg"
+      />
     </button>
     <button
       className="show-modal-button"
@@ -62,7 +66,11 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
       onClick={[Function]}
       title="Start new game"
     >
-      PLAY
+      <img
+        alt="Play"
+        className="play-logo"
+        src="/images/bf_play_a_vit.svg"
+      />
     </button>
     <button
       className="show-modal-button"
@@ -104,7 +112,11 @@ exports[`should render with PLAY <button> when inGame is false 1`] = `
       onClick={[Function]}
       title="Start new game"
     >
-      PLAY
+      <img
+        alt="Play"
+        className="play-logo"
+        src="/images/bf_play_a_vit.svg"
+      />
     </button>
   </div>
   <ShowBandlistModal

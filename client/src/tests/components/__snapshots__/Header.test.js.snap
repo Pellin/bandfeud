@@ -5,57 +5,51 @@ exports[`should render Header correctly when inGame is false 1`] = `
   className="header-container"
 >
   <div
-    className="flex-counter"
-  />
+    className="header-side"
+  >
+    <div
+      className="link"
+    >
+      <NavLink
+        activeClassName="active-link"
+        exact={true}
+        to="/"
+      >
+        Play
+      </NavLink>
+    </div>
+  </div>
   <div
     className="header-center"
   >
-    <div
-      className="link-container"
-    >
-      <div
-        className="link"
-      >
-        <NavLink
-          activeClassName="active-link"
-          exact={true}
-          to="/"
-        >
-          Play
-        </NavLink>
-      </div>
-    </div>
     <NavLink
       to="/about/"
     >
       <div
-        className="header-logo-link"
+        className="header-logo"
         title="About Bandfeud"
       >
         <img
           alt="BandFeud"
-          src="/images/bandFeud_logo.svg"
+          src="/images/bf_c.svg"
         />
       </div>
     </NavLink>
-    <div
-      className="link-container"
-    >
-      <div
-        className="link"
-      >
-        <NavLink
-          activeClassName="active-link"
-          to="/highscores/"
-        >
-          Highscores
-        </NavLink>
-      </div>
-    </div>
   </div>
   <div
-    className="flex-score"
-  />
+    className="header-side"
+  >
+    <div
+      className="link"
+    >
+      <NavLink
+        activeClassName="active-link"
+        to="/highscores/"
+      >
+        Highscores
+      </NavLink>
+    </div>
+  </div>
 </div>
 `;
 
@@ -64,29 +58,23 @@ exports[`should render Header correctly when inGame is true 1`] = `
   className="header-container"
 >
   <div
-    className="flex-counter"
+    className="header-side"
   />
   <div
     className="header-center"
   >
     <div
-      className="link-container"
-    />
-    <div
-      className="header-logo"
+      className="header-logo-link"
       title="About Bandfeud"
     >
       <img
         alt="BandFeud"
-        src="/images/bandFeud_logo.svg"
+        src="/images/bf_c.svg"
       />
     </div>
-    <div
-      className="link-container"
-    />
   </div>
   <div
-    className="flex-score"
+    className="header-side"
   >
     <div
       className="score"

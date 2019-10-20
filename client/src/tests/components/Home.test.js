@@ -85,7 +85,7 @@ it('should render with <Play /> when inGame is true', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render ShowBandlistModal when "REVIEW LAST BUTTON" button is clicked', () => {
+it('should render ShowBandlistModal when "REVIEW LAST ROUND" button is clicked', () => {
   const wrapper = shallow(
     <Home
       bands={bands}

@@ -125,17 +125,3 @@ it('should reset state.band after submission and call onSetDifficulty with used 
   expect(wrapper.find('.band-input').props().value).toBeFalsy();
   expect(onSetDifficultySpy).toHaveBeenCalledWith(used.length);
 });
-
-it('should delete all text if backspace is pressed', async () => {
-  wrapper.find('.band-input').simulate('change', {
-    target: {
-      value: 'the bea'
-    }
-  });
-  expect(wrapper.find('.band-input').props().value).toBe('the bea');
-
-  wrapper.find('.band-input').simulate('keyDown', { key: 'Backspace' });
-
-  expect(wrapper.find('.band-input').props().value).toBe('');
-  expect(wrapper).toMatchSnapshot();
-});
