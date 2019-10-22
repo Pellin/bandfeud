@@ -32,16 +32,7 @@ const treatChecked = async (userBand, bands) => {
 
     for (let i = 0; i < bands.length; i++) {
       bands[i].title = bands[i].title.toLowerCase();
-      if (
-        bands[i].title.split('&')[0].trim() === userBand.split('&')[0].trim() &&
-        bands[i].title.split(' ').length > 3
-      ) {
-        nameMatches.push(bands[i].title.split('&')[0].trim());
-        imgMatches.push(bands[i].cover_image);
-      } else if (
-        bands[i].title.split('&')[0].trim() === userBand.split('&')[0].trim() &&
-        bands[i].title.split(' ').length < 4
-      ) {
+      if (bands[i].title === userBand) {
         nameMatches.push(bands[i].title);
         imgMatches.push(bands[i].cover_image);
       }

@@ -5,7 +5,7 @@ const getProxy = require('./serverutils/getProxy');
 const checkBand = band => {
   let proxy = getProxy(band);
   let options = {
-    url: `https://api.discogs.com/database/search?q=${proxy}&type=artist&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`,
+    url: `https://api.discogs.com/database/search?q=${encodeURIComponent(proxy)}&type=artist&key=${process.env.DC_KEY}&secret=${process.env.DC_SECRET}`,
     headers: {
       'User-Agent': 'Bandfeud',
       Accept: 'application/vnd.discogs.v2.discogs+json',
