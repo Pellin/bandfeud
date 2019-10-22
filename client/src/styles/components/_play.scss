@@ -1,5 +1,5 @@
 .view-holder {
-  background: $frans-orange;
+  background: $orange;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .game-container {
   align-items: space-between;
-  background: $frans-orange;
+  background: transparent;
   display: flex;
   justify-content: space-between;
   margin: 27rem 0 0 0;
@@ -90,7 +90,7 @@
   position: fixed;
   height: 4rem;
   width: 100vw;
-  border-top: 1px solid $frans-orange;
+  // border-top: 1px solid $orange;
   padding-bottom: 3rem;
   z-index: 1000;
 
@@ -117,7 +117,7 @@
 
 .message-box {
   background: $off-white;
-  color: $frans-orange;
+  color: $orange;
   font-size: 1.5rem;
   height: 1.5rem;
   margin: auto;

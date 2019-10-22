@@ -22,7 +22,7 @@
   justify-content: space-between;
   background: $off-white;
   border-bottom: 1px solid $off-white;
-  color: $yellow;
+  color: $off-black;
   cursor: default;
   display: flex;
   flex-direction: row;
@@ -53,7 +53,7 @@
 
 .header-date {
   align-self: flex-start;
-  color: $frans-orange;
+  color: $orange;
   font-size: 1.2rem;
   font-weight: 300;
   margin-top: 1rem;
@@ -68,12 +68,12 @@
 }
 
 .header-player {
-  color: $frans-orange;
+  color: $orange;
   font-size: 2.2rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-align: center;
-  text-shadow: 1px 2px 8px $frans-orange, -1px -2px 8px $frans-orange;
+  text-shadow: 1px 2px 8px $orange, -1px -2px 8px $orange;
   width: 25rem;
 
   @media (min-width: $desktop-breakpoint) {
@@ -94,7 +94,7 @@
 
 .header-points {
   align-self: flex-start;
-  color: $frans-orange;
+  color: $orange;
   font-size: 1.2rem;
   font-weight: 300;
   margin-top: 1rem;
@@ -121,11 +121,12 @@
 }
 
 .band-name {
-  color: $frans-orange;
+  color: $orange;
   display: flex;
   height: 4rem;
   align-items: flex-end;
   justify-content: center;
+  line-height: 1;
   font-family: 'Righteous', cursive;
   font-size: 2.3rem;
   text-align: center;

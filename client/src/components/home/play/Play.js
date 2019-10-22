@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import SubmitBand from './SubmitBand';
 import BandList from './BandList';
 import MessageBox from '../MessageBox';
-import GameOverSVG from '../../../icons/GameOverSVG';
+import BfGoA from '../../../icons/BfGoA';
 
 import SubmitHighscore from '../../highscores/SubmitHighscore';
 import { gameAborted } from '../../../actions/gameStatus';
@@ -38,7 +38,7 @@ export const Play = props => {
         <>
         <div className="game-over-container">
           <div className="game-over-logo">
-            <GameOverSVG />
+            <BfGoA />
           </div>
         </div>
          <div className="footer">

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Play from '../home/play/Play';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
-import PlayButton from '../../icons/PlayButtonSVG';
+import BfPlayA from '../../icons/BfPlayA';
 
 import getHighscores from '../../actions/getHighscores';
 import setMessage from '../../actions/setMessage';
@@ -42,7 +42,7 @@ export const Home = ({
       {!inGame && (
         <div className="buttons-container">
           <div title="Start new game" className="new-game-button" onClick={startGame}>
-           <PlayButton />
+           <BfPlayA />
           </div>
           {bands.length > 0 && (
             <button className="show-modal-button" onClick={openModal}>

@@ -36,12 +36,13 @@
 }
 
 .new-game-button:hover {
-  color: lighten($mustard, 10%);
+  color: lighten($orange, 10%);
 }
 
 .show-modal-button {
   background: transparent;
   border: none;
+  color: $off-white;
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 300;
