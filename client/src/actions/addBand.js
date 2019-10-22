@@ -1,6 +1,9 @@
 import setMessage from './setMessage';
 
-const addBand = (name, url, turn, points) => async dispatch => {
+const addBand = (name, url, turn, points) => async (dispatch, getState) => {
+  const state = getState();
+  if (!state.inGame) return;
+
   if (turn === 'computer') {
     const response = await fetch(`/api/getimg?name=${name}`);
     let imageUrl = await response.json();
@@ -11,6 +14,7 @@ const addBand = (name, url, turn, points) => async dispatch => {
 
   if (turn === 'computer') {
     return setTimeout(() => {
+      console.log('adding', name);
       dispatch({ type: 'ADD_BAND', name, url });
       setTimeout(() => {
         dispatch({ type: 'SUBMITTED:_FALSE' });
