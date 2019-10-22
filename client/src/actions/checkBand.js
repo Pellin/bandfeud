@@ -31,7 +31,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
   dispatch(setMessage('Checking...'));
 
   try {
-    const reply = await fetch(`/api/checkband?name=${band}`);
+    const reply = await fetch(`/api/checkband?name=${encodeURIComponent(band)}`);
     const checkedBand = await reply.json();
     used.push(band);
     if (checkedBand.name !== band) {
