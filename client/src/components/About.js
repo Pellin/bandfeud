@@ -2,8 +2,8 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div>
-      <div className="info-container">
+    <div className="info-container">
+      <div className="info">
         <h1>How to play Bandfeud</h1>
         <h2>Your turn</h2>
         <p>
@@ -29,8 +29,8 @@ const About = () => {
         </p>
         <h2>Detailed instructions</h2>
         <p>
-          For more detailed instructions and references, go to our{' '}
-          <a rel="noopener noreferrer" target="_blank" href="https://github.com/Pellin/bandfeud">github page</a>.
+          For more detailed instructions and references, please visit the{' '}
+          <a rel="noopener noreferrer" target="_blank" href="https://github.com/Pellin/bandfeud">Bandfeud Github page</a>.
         </p>
       </div>
     </div>
