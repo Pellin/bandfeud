@@ -1,19 +1,18 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Points = ({ points }) => {
-  const [show, setShow] = useState(true);
-  useLayoutEffect(() => {
-    const timeout = setTimeout(() => {
-      setShow(false);
-    }, 400);
-    return () => {
-      clearTimeout(timeout);
-    };
-  });
   return (
     <>
       {points && (
-        <div className={show ? 'points' : 'points-hide'}>+{points}</div>
+        <motion.div
+          className="points"
+          initial={{ scale: 0 }}
+          animate={{ scale: [null, 1.2, 0] }}
+          transition={{ duration: 1.7, times: [0, 0.4, 1], type: "ease-out" }}
+        >
+          +{points}
+        </motion.div>
       )}
     </>
   );

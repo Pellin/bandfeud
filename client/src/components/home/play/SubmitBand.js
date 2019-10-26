@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { motion } from 'framer-motion';
 
 import Counter from './Counter';
 
@@ -82,7 +83,13 @@ export const SubmitBand = props => {
             props.previous.previous2.toUpperCase()}
         </div>
       ) : (
-        <div className="previous">{props.previous.previous1.toUpperCase()}</div>
+        <motion.div
+          className="previous"
+          animate={{ scale: [null, 1.3, 1] }}
+          transition={{ duration: 1 }}
+        >
+          {props.previous.previous1.toUpperCase()}
+        </motion.div>
       )}
     </>
   );

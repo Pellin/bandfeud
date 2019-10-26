@@ -20,9 +20,9 @@
 
 .modal {
   justify-content: space-between;
-  background: $off-white;
+  background: $off-black;
   border-bottom: 1px solid $off-white;
-  color: $off-black;
+  color: $off-white;
   cursor: default;
   display: flex;
   flex-direction: row;
@@ -38,7 +38,7 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: rgba(220, 220, 205,0.4);
+  background-color: rgba(220, 220, 205,0.7);
 }
 
 .modal-header {
@@ -135,7 +135,7 @@
 }
 
 .band-name-computer {
-  color: $off-black;
+  color: $off-white;
   display: flex;
   height: 4rem;
   align-items: flex-end;
@@ -148,12 +148,12 @@
 }
 
 .band-points {
-  color: $off-black;
+  color: $off-white;
   font-weight: 300;
 }
 
 .no-band-points {
-  color: $off-white;
+  color: $off-black;
 }
 
 .band-image-container {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { motion } from 'framer-motion';
 
 import SubmitBand from './SubmitBand';
 import BandList from './BandList';
@@ -26,6 +27,7 @@ export const Play = props => {
     window.addEventListener(listener, abortGame);
     return () => {
       window.removeEventListener(listener, abortGame);
+      props.releaseButton();
     };
   });
   useEffect(() => {
@@ -36,14 +38,19 @@ export const Play = props => {
     <>
       {props.showGameOver ? (
         <>
-        <div className="game-over-container">
-          <div className="game-over-logo">
-            <BfGoA />
+          <div className="game-over-container">
+            <motion.div
+              className="game-over-logo"
+              initial={{ scale: 3, y: 'calc(75vh)', opacity: 0 }}
+              animate={{ scale: 1, rotate: [30, 0], y: 0, opacity: 1 }}
+              transition={{ ease: "backOut",  duration: 1, type: "tween" }}
+            >
+              <BfGoA />
+            </motion.div>
           </div>
-        </div>
-         <div className="footer">
-           <MessageBox message={props.message} />
-        </div>
+          <div className="footer">
+            <MessageBox message={props.message} />
+          </div>
         </>
       ) : (
         <div className="view-holder">
