@@ -22,6 +22,13 @@ const getProxy = band => {
     ) {
       proxy.push('o');
     } else if (
+      band[i] === 'ë' ||
+      band[i] === 'é' ||
+      band[i] === 'è' ||
+      band[i] === 'ê'
+    ) {
+      proxy.push('e');
+    } else if (
       band[i] === 'ì' ||
       band[i] === 'í' ||
       band[i] === 'î' ||

@@ -1,12 +1,14 @@
 const andFix = require('./serverutils/andFix');
 const regExpFix = require('./serverutils/regExpFix');
 const theFix = require('./serverutils/theFix');
+const getProxy = require('./serverutils/getProxy');
 
 const treatChecked = async (userBand, bands) => {
   bands = bands.results;
   if (bands.length > 5) {
     bands.length = 5;
   }
+
   bands = bands.filter(band => {
     return !band.cover_image.match(/^.*spacer\.gif$/);
   });
@@ -32,7 +34,7 @@ const treatChecked = async (userBand, bands) => {
 
     for (let i = 0; i < bands.length; i++) {
       bands[i].title = bands[i].title.toLowerCase();
-      if (bands[i].title === userBand) {
+      if (bands[i].title === userBand || getProxy(bands[i].title) === userBand )  {
         nameMatches.push(bands[i].title);
         imgMatches.push(bands[i].cover_image);
       }
