@@ -5,7 +5,6 @@ const getImg = require('../utils/getimg');
 
 module.exports = app => {
   app.get('/api/checkband', async (req, res) => {
-    console.log(req.query.name);
     try {
       const bands = await checkBand(req.query.name);
       const parsedBands = JSON.parse(bands);
