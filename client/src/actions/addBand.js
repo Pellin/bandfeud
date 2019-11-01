@@ -1,5 +1,7 @@
 import setMessage from './setMessage';
 
+import addProBand from './addProBand';
+
 const addBand = (name, url, discogsId, turn, points) => async (dispatch, getState) => {
   const state = getState();
   if (!state.inGame) return;
@@ -9,6 +11,7 @@ const addBand = (name, url, discogsId, turn, points) => async (dispatch, getStat
     let imageUrl = await response.json();
     if (!imageUrl.match(/^.*spacer\.gif$/)) {
       url = imageUrl;
+      addProBand(name, url);
     }
   }
 
