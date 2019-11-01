@@ -10,7 +10,7 @@ let store;
 
 beforeEach(() => {
   jest.useFakeTimers();
-  store = mockStore({ bands: [] });
+  store = mockStore({ bands: [], inGame: true });
 });
 
 afterEach(() => {
@@ -80,7 +80,6 @@ it('should not call api/getband if matching band in bandBank', async () => {
 
   expect(fetchMock.called(getbandURL)).toBeFalsy();
   expect(fetchMock.done(getimgURL)).toBeTruthy();
-  expect(fetchMock.lastUrl()).toBe(getimgURL);
 });
 
 it('dispatches the expected actions if bankBand === true', async () => {

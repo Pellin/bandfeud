@@ -13,7 +13,8 @@ beforeEach(() => {
     submitted: false,
     highscore: false,
     currentPoints: 16,
-    score: 0
+    score: 0,
+    inGame: true
   });
   jest.useFakeTimers();
 });
@@ -33,6 +34,7 @@ it('should dispatch expected actions if "band" matches', async () => {
     { name: 'six', url: 'www.6img.com' }
   ];
   const score = 23;
+  const difficulty = 20;
   const checkbandURL = `/api/checkband?name=${band}`;
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
 
@@ -60,7 +62,7 @@ it('should dispatch expected actions if "band" matches', async () => {
       JSON.stringify(reply)
     );
 
-  await store.dispatch(getBand(band, previous, used, bandBank, score));
+  await store.dispatch(getBand(band, previous, used, bandBank, score, difficulty));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(expectedActions);

@@ -26,7 +26,7 @@ exports[`should render Header correctly when inGame is false 1`] = `
       to="/about/"
     >
       <div
-        className="header-logo"
+        className="header-logo-link"
         title="About Bandfeud"
       >
         <BFLogo />
@@ -61,20 +61,13 @@ exports[`should render Header correctly when inGame is true 1`] = `
     className="header-center"
   >
     <div
-      className="header-logo-link"
-      title="About Bandfeud"
+      className="header-logo"
     >
       <BFLogo />
     </div>
   </div>
   <div
     className="header-side"
-  >
-    <div
-      className="score"
-    >
-      Score: 
-    </div>
-  </div>
+  />
 </div>
 `;

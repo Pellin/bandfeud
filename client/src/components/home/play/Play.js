@@ -43,7 +43,7 @@ export const Play = props => {
               className="game-over-logo"
               initial={{ scale: 3, y: 'calc(75vh)', opacity: 0 }}
               animate={{ scale: 1, rotate: [30, 0], y: 0, opacity: 1 }}
-              transition={{ ease: "backOut",  duration: 1, type: "tween" }}
+              transition={{ ease: 'backOut', duration: 1, type: 'tween' }}
             >
               <BfGoA />
             </motion.div>
@@ -73,6 +73,9 @@ export const Play = props => {
               <div className="band-list">
                 <BandList bands={props.bands} />
               </div>
+              {props.inGame && props.os !== 'desktop' && (
+                <div className="score">{props.score}p</div>
+              )}
               <div className="footer">
                 {props.message ? (
                   <MessageBox message={props.message} />

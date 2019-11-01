@@ -16,6 +16,12 @@ exports[`should not show submitform and counter when submitted is true 1`] = `
         />
       </div>
       <div
+        className="score"
+      >
+        0
+        p
+      </div>
+      <div
         className="footer"
       >
         <div
@@ -41,6 +47,12 @@ exports[`should render Play correctly with get ready message 1`] = `
         <BandList
           bands={Array []}
         />
+      </div>
+      <div
+        className="score"
+      >
+        0
+        p
       </div>
       <div
         className="footer"
@@ -132,6 +144,12 @@ exports[`should show bands in band-list 1`] = `
         />
       </div>
       <div
+        className="score"
+      >
+        76
+        p
+      </div>
+      <div
         className="footer"
       >
         <div
@@ -188,6 +206,12 @@ exports[`should show submitform when submitted is falsy 1`] = `
         <BandList
           bands={Array []}
         />
+      </div>
+      <div
+        className="score"
+      >
+        0
+        p
       </div>
       <div
         className="footer"

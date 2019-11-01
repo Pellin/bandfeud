@@ -8,7 +8,7 @@ const BFLogo = props => (
     {...props}
   >
     <defs>
-      <style>{".bf_c_svg__cls-1{fill:#e94500}"}</style>
+      <style>{".bf_c_svg__cls-1{fill:#dcdccd}"}</style>
     </defs>
     <path
       className="bf_c_svg__cls-1"

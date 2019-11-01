@@ -1,5 +1,5 @@
 .view-holder {
-  background: $orange;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
   position: relative;
   width: 32rem;
   top: 15rem;
-  
+
   @media (min-width: $desktop-breakpoint) {
     top: 22rem;
   }
@@ -41,7 +41,7 @@
   }
 
   @media (max-width: 568px) {
-    margin: 25rem 0 0 0;
+    margin: 28rem 0 0 0;
   }
   //iphone 11 pro & iphone X & iphone Xs
   @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
@@ -60,7 +60,7 @@
 }
 
 .game-container-firefox {
-  background: $off-white;
+  background: transparent;
   margin: 10rem 0 0 0;
   height: 35rem;
   width: 100%;
@@ -83,12 +83,39 @@
   height: 40rem;
 }
 
+.score {
+  color: $gold;
+  font-size: 2rem;
+  font-weight: 700;
+  width: auto;
+  height: 3rem;
+  margin: auto;
+  bottom: 17rem;
+  position: relative;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 2.3rem;
+  }
+}
+
+.new-counter-container {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  margin: auto;
+  position: relative;
+  top: 15rem;
+  width: 4rem;
+}
+
 .footer {
-  background: $off-white;
+  background: transparent;
   bottom: 0;
   overflow: hidden;
   position: fixed;
-  height: 4rem;
+  height: 9rem;
   width: 100vw;
   padding-bottom: 3rem;
   z-index: 1000;
@@ -103,9 +130,9 @@
 }
 
 .submit-band {
-  background: $off-white;
+  background: transparent;
   align-items: center;
-  color: $off-black;
+  color: $off-white;
   font-size: 2rem;
   justify-content: center;
   display: flex;
@@ -115,8 +142,8 @@
 }
 
 .message-box {
-  background: $off-white;
-  color: $orange;
+  background: transparent;
+  color: $off-white;
   font-size: 1.5rem;
   height: 1.5rem;
   margin: auto;

@@ -63,9 +63,8 @@ it('should call onSetMessage and onGameOn correctly when "PLAY" button is clicke
   wrapper.find('.new-game-button').simulate('click', { button: 0 });
   jest.runAllTimers();
 
-  expect(onSetMessageSpy).toHaveBeenCalledWith('Get ready...');
+  expect(onSetMessageSpy).toHaveBeenCalled();
   expect(onGameOnSpy).toHaveBeenCalled();
-  expect(onSetMessageSpy).toHaveBeenCalledWith('');
 
   jest.useRealTimers();
 });

@@ -57,9 +57,9 @@ export const Header = ({
             </NavLink>
           </div>
         )}
-        {inGame && used.length > 0 && (
-          <div className="score">Score: {score}</div>
-        )}
+         {inGame && os === 'desktop' && (
+                <div className="desktop-score">{score}p</div>
+              )}
       </div>
     </div>
   );

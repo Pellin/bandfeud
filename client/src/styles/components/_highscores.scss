@@ -13,20 +13,21 @@
     top: $desktop-top + 2rem;
   }
 
-  @media (min-height: 820px) {
-    top: 23rem;
+  @media (min-height: 780px) and (min-width: $desktop-breakpoint) {
+    top: 20rem;
   }
 
   @media (max-height: 740px) and (min-width: 570px) {
-    top: $desktop-top - 3rem;
+    top: $desktop-top - 5rem;
   }
+
 }
 
 .highscore-title {
-  color: $orange;
+  color: $off-white;
   cursor: default;
-  font-size: 2.3rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   letter-spacing: 9px;
   margin-bottom: 1.5rem;
   padding-left: 9px;
@@ -39,7 +40,7 @@
     padding-left: 7px;
   }
 
-  @media (max-height: 640px) and (min-width: 570px) {
+  @media (max-height: 675px) and (min-width: 570px) {
     font-size: 2rem;
   }
 

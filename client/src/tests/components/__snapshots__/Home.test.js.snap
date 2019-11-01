@@ -2,22 +2,72 @@
 
 exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clicked 1`] = `
 <div>
-  <div
-    className="buttons-container"
-  >
+  <div>
     <div
-      className="new-game-button"
-      onClick={[Function]}
-      title="Start new game"
+      className="buttons-container"
     >
-      <SvgBfPlayAVit />
+      <div
+        className="new-game-button"
+        onClick={[Function]}
+        title="Start new game"
+      >
+        <ForwardRef(MotionComponent)
+          animate="notPressed"
+          className="play-button"
+          initial={
+            Object {
+              "rotate": -360,
+              "scale": 0,
+            }
+          }
+          onClick={[Function]}
+          transition={
+            Object {
+              "duration": 1,
+              "times": Array [
+                0,
+                0.3,
+                1,
+              ],
+            }
+          }
+          variants={
+            Object {
+              "notPressed": Object {
+                "opacity": 1,
+                "rotate": 720,
+                "scale": 1,
+              },
+              "pressed": Object {
+                "opacity": Array [
+                  null,
+                  1,
+                  0,
+                ],
+                "rotate": Array [
+                  null,
+                  780,
+                  0,
+                ],
+                "scale": Array [
+                  null,
+                  1.1,
+                  0,
+                ],
+              },
+            }
+          }
+        >
+          <SvgBfPlayA />
+        </ForwardRef(MotionComponent)>
+      </div>
+      <button
+        className="show-modal-button"
+        onClick={[Function]}
+      >
+        REVIEW LAST ROUND
+      </button>
     </div>
-    <button
-      className="show-modal-button"
-      onClick={[Function]}
-    >
-      REVIEW LAST ROUND
-    </button>
   </div>
   <ShowBandlistModal
     bands={
@@ -44,7 +94,10 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
 
 exports[`should render with <Play /> when inGame is true 1`] = `
 <div>
-  <Connect(Play) />
+  <div />
+  <Connect(Play)
+    releaseButton={[Function]}
+  />
   <ShowBandlistModal
     closeModal={[Function]}
     showModal={false}
@@ -54,22 +107,72 @@ exports[`should render with <Play /> when inGame is true 1`] = `
 
 exports[`should render with PLAY <button> and Review... <button> when inGame is false and bands.length > 0 1`] = `
 <div>
-  <div
-    className="buttons-container"
-  >
+  <div>
     <div
-      className="new-game-button"
-      onClick={[Function]}
-      title="Start new game"
+      className="buttons-container"
     >
-      <SvgBfPlayAVit />
+      <div
+        className="new-game-button"
+        onClick={[Function]}
+        title="Start new game"
+      >
+        <ForwardRef(MotionComponent)
+          animate="notPressed"
+          className="play-button"
+          initial={
+            Object {
+              "rotate": -360,
+              "scale": 0,
+            }
+          }
+          onClick={[Function]}
+          transition={
+            Object {
+              "duration": 1,
+              "times": Array [
+                0,
+                0.3,
+                1,
+              ],
+            }
+          }
+          variants={
+            Object {
+              "notPressed": Object {
+                "opacity": 1,
+                "rotate": 720,
+                "scale": 1,
+              },
+              "pressed": Object {
+                "opacity": Array [
+                  null,
+                  1,
+                  0,
+                ],
+                "rotate": Array [
+                  null,
+                  780,
+                  0,
+                ],
+                "scale": Array [
+                  null,
+                  1.1,
+                  0,
+                ],
+              },
+            }
+          }
+        >
+          <SvgBfPlayA />
+        </ForwardRef(MotionComponent)>
+      </div>
+      <button
+        className="show-modal-button"
+        onClick={[Function]}
+      >
+        REVIEW LAST ROUND
+      </button>
     </div>
-    <button
-      className="show-modal-button"
-      onClick={[Function]}
-    >
-      REVIEW LAST ROUND
-    </button>
   </div>
   <ShowBandlistModal
     bands={
@@ -96,15 +199,70 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
 
 exports[`should render with PLAY <button> when inGame is false 1`] = `
 <div>
-  <div
-    className="buttons-container"
-  >
+  <div>
     <div
-      className="new-game-button"
-      onClick={[Function]}
-      title="Start new game"
+      className="buttons-container"
     >
-      <SvgBfPlayAVit />
+      <div
+        className="new-game-button"
+        onClick={[Function]}
+        title="Start new game"
+      >
+        <ForwardRef(MotionComponent)
+          animate="notPressed"
+          className="play-button"
+          initial={
+            Object {
+              "rotate": -360,
+              "scale": 0,
+            }
+          }
+          onClick={[Function]}
+          transition={
+            Object {
+              "duration": 1,
+              "times": Array [
+                0,
+                0.3,
+                1,
+              ],
+            }
+          }
+          variants={
+            Object {
+              "notPressed": Object {
+                "opacity": 1,
+                "rotate": 720,
+                "scale": 1,
+              },
+              "pressed": Object {
+                "opacity": Array [
+                  null,
+                  1,
+                  0,
+                ],
+                "rotate": Array [
+                  null,
+                  780,
+                  0,
+                ],
+                "scale": Array [
+                  null,
+                  1.1,
+                  0,
+                ],
+              },
+            }
+          }
+        >
+          <SvgBfPlayA />
+        </ForwardRef(MotionComponent)>
+      </div>
+      <button
+        className="show-modal-button-invisible"
+      >
+        NOT SHOWING
+      </button>
     </div>
   </div>
   <ShowBandlistModal

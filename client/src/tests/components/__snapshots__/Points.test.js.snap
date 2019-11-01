@@ -4,11 +4,298 @@ exports[`should render Points correctly 1`] = `
 <Points
   points={23}
 >
-  <div
+  <ForwardRef(MotionComponent)
+    animate={
+      Object {
+        "opacity": Array [
+          null,
+          1,
+          0,
+        ],
+        "scale": 4.5,
+      }
+    }
     className="points"
+    initial={
+      Object {
+        "opacity": 1,
+        "scale": 0,
+      }
+    }
+    transition={
+      Object {
+        "duration": 2,
+        "times": Array [
+          0,
+          0.7,
+          1,
+        ],
+      }
+    }
   >
-    +
-    23
-  </div>
+    <ForwardRef(MountRefComponent)
+      externalRef={null}
+      isStatic={false}
+      values={
+        MotionValuesMap {
+          "hasMounted": true,
+          "onUpdate": undefined,
+          "output": [Function],
+          "unsubscribers": Map {
+            "scale" => [Function],
+            "opacity" => [Function],
+          },
+          "values": Map {
+            "scale" => MotionValue {
+              "canTrackVelocity": true,
+              "current": 0,
+              "lastUpdated": 0,
+              "notifySubscriber": [Function],
+              "parent": undefined,
+              "prev": undefined,
+              "renderSubscribers": Set {
+                [Function],
+              },
+              "scheduleVelocityCheck": [Function],
+              "setChild": [Function],
+              "stopAnimation": [Function],
+              "timeDelta": 0,
+              "transformer": undefined,
+              "updateAndNotify": [Function],
+              "updateSubscribers": Set {
+                [Function],
+              },
+              "velocityCheck": [Function],
+            },
+            "opacity" => MotionValue {
+              "canTrackVelocity": true,
+              "current": 1,
+              "lastUpdated": 0,
+              "notifySubscriber": [Function],
+              "parent": undefined,
+              "prev": undefined,
+              "renderSubscribers": Set {
+                [Function],
+              },
+              "scheduleVelocityCheck": [Function],
+              "setChild": [Function],
+              "stopAnimation": [Function],
+              "timeDelta": 0,
+              "transformer": undefined,
+              "updateAndNotify": [Function],
+              "updateSubscribers": Set {
+                [Function],
+              },
+              "velocityCheck": [Function],
+            },
+          },
+        }
+      }
+    />
+    <Component
+      animate={
+        Object {
+          "opacity": Array [
+            null,
+            1,
+            0,
+          ],
+          "scale": 4.5,
+        }
+      }
+      controls={
+        ValueAnimationControls {
+          "activeOverrides": Set {},
+          "baseTarget": Object {
+            "opacity": 0,
+            "scale": 4.5,
+          },
+          "defaultTransition": Object {
+            "duration": 2,
+            "times": Array [
+              0,
+              0.7,
+              1,
+            ],
+          },
+          "hasValue": [Function],
+          "isAnimating": Set {
+            "scale",
+            "opacity",
+          },
+          "makeTargetAnimatable": [Function],
+          "overrides": Array [],
+          "props": Object {
+            "animate": Object {
+              "opacity": Array [
+                null,
+                1,
+                0,
+              ],
+              "scale": 4.5,
+            },
+            "children": Array [
+              "+",
+              23,
+            ],
+            "className": "points",
+            "initial": Object {
+              "opacity": 1,
+              "scale": 0,
+            },
+            "transition": Object {
+              "duration": 2,
+              "times": Array [
+                0,
+                0.7,
+                1,
+              ],
+            },
+          },
+          "readValueFromSource": [Function],
+          "resolvedOverrides": Array [],
+          "values": MotionValuesMap {
+            "hasMounted": true,
+            "onUpdate": undefined,
+            "output": [Function],
+            "unsubscribers": Map {
+              "scale" => [Function],
+              "opacity" => [Function],
+            },
+            "values": Map {
+              "scale" => MotionValue {
+                "canTrackVelocity": true,
+                "current": 0,
+                "lastUpdated": 0,
+                "notifySubscriber": [Function],
+                "parent": undefined,
+                "prev": undefined,
+                "renderSubscribers": Set {
+                  [Function],
+                },
+                "scheduleVelocityCheck": [Function],
+                "setChild": [Function],
+                "stopAnimation": [Function],
+                "timeDelta": 0,
+                "transformer": undefined,
+                "updateAndNotify": [Function],
+                "updateSubscribers": Set {
+                  [Function],
+                },
+                "velocityCheck": [Function],
+              },
+              "opacity" => MotionValue {
+                "canTrackVelocity": true,
+                "current": 1,
+                "lastUpdated": 0,
+                "notifySubscriber": [Function],
+                "parent": undefined,
+                "prev": undefined,
+                "renderSubscribers": Set {
+                  [Function],
+                },
+                "scheduleVelocityCheck": [Function],
+                "setChild": [Function],
+                "stopAnimation": [Function],
+                "timeDelta": 0,
+                "transformer": undefined,
+                "updateAndNotify": [Function],
+                "updateSubscribers": Set {
+                  [Function],
+                },
+                "velocityCheck": [Function],
+              },
+            },
+          },
+          "variants": Object {},
+        }
+      }
+      inherit={false}
+      initial={
+        Object {
+          "opacity": 1,
+          "scale": 0,
+        }
+      }
+      key="animation"
+      transition={
+        Object {
+          "duration": 2,
+          "times": Array [
+            0,
+            0.7,
+            1,
+          ],
+        }
+      }
+      values={
+        MotionValuesMap {
+          "hasMounted": true,
+          "onUpdate": undefined,
+          "output": [Function],
+          "unsubscribers": Map {
+            "scale" => [Function],
+            "opacity" => [Function],
+          },
+          "values": Map {
+            "scale" => MotionValue {
+              "canTrackVelocity": true,
+              "current": 0,
+              "lastUpdated": 0,
+              "notifySubscriber": [Function],
+              "parent": undefined,
+              "prev": undefined,
+              "renderSubscribers": Set {
+                [Function],
+              },
+              "scheduleVelocityCheck": [Function],
+              "setChild": [Function],
+              "stopAnimation": [Function],
+              "timeDelta": 0,
+              "transformer": undefined,
+              "updateAndNotify": [Function],
+              "updateSubscribers": Set {
+                [Function],
+              },
+              "velocityCheck": [Function],
+            },
+            "opacity" => MotionValue {
+              "canTrackVelocity": true,
+              "current": 1,
+              "lastUpdated": 0,
+              "notifySubscriber": [Function],
+              "parent": undefined,
+              "prev": undefined,
+              "renderSubscribers": Set {
+                [Function],
+              },
+              "scheduleVelocityCheck": [Function],
+              "setChild": [Function],
+              "stopAnimation": [Function],
+              "timeDelta": 0,
+              "transformer": undefined,
+              "updateAndNotify": [Function],
+              "updateSubscribers": Set {
+                [Function],
+              },
+              "velocityCheck": [Function],
+            },
+          },
+        }
+      }
+    />
+    <div
+      className="points"
+      style={
+        Object {
+          "opacity": 1,
+          "transform": "scale(0) translateZ(0)",
+        }
+      }
+    >
+      +
+      23
+    </div>
+  </ForwardRef(MotionComponent)>
 </Points>
 `;

@@ -10,7 +10,7 @@ let store;
 
 beforeEach(() => {
   jest.useFakeTimers();
-  store = mockStore({ bands: [] });
+  store = mockStore({ bands: [], inGame: true });
 });
 
 afterEach(() => {

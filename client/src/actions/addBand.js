@@ -14,7 +14,6 @@ const addBand = (name, url, turn, points) => async (dispatch, getState) => {
 
   if (turn === 'computer') {
     return setTimeout(() => {
-      console.log('adding', name);
       dispatch({ type: 'ADD_BAND', name, url });
       setTimeout(() => {
         dispatch({ type: 'SUBMITTED:_FALSE' });

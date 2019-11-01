@@ -1,5 +1,5 @@
 .header-container {
-  background: $off-white;
+  background: transparent;
   position: fixed;
   top: 0px;
   display: flex;
@@ -23,13 +23,15 @@
 }
 
 .counter {
-  align-items: center;
-  color: $orange;
-  display: flex;
-  font-size: 2rem;
+  background: transparent;
+  color: $gold;
+  font-size: 3rem;
   font-weight: 700;
-  width: 2rem;
+  width: 3rem;
   height: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
 
   @media (min-width: $desktop-breakpoint) {
     font-size: 3rem;
@@ -51,7 +53,7 @@
 .header-logo {
   cursor: default;
   margin: 1rem 0;
-  width: 17rem;
+  width: 80vw;
 
   img {
     width: 100%;
@@ -107,7 +109,7 @@
  
 
   a {
-    color: #e94500;
+    color: $gold;
     text-decoration: none;
   }
 
@@ -124,7 +126,7 @@
 
 .active-link {
   font-size: 1.1rem;
-  color: #efeefe;
+  color: $gold;
   text-align: center;
 
   @media (min-width: $desktop-breakpoint) {
@@ -136,12 +138,9 @@
   }
 }
 
-.score {
-  color: $orange;
-  font-size: 1.3rem;
-  font-weight: 700;
 
-  @media (min-width: $desktop-breakpoint) {
-    font-size: 2.3rem;
-  }
+.desktop-score {
+  color: $gold;
+  font-size: 3rem;
+  font-weight: 700; 
 }

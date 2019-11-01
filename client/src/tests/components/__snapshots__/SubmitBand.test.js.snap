@@ -2,21 +2,17 @@
 
 exports[`should render component correctly 1`] = `
 <Fragment>
-  <div
-    className="footer-counter-container"
-  >
-    <Connect(Counter)
-      difficulty={20}
-      score={23}
-      used={
-        Array [
-          "two",
-          "three",
-          "four",
-        ]
-      }
-    />
-  </div>
+  <Connect(Counter)
+    difficulty={20}
+    score={23}
+    used={
+      Array [
+        "two",
+        "three",
+        "four",
+      ]
+    }
+  />
   <form
     className="band-input-form"
     onSubmit={[Function]}
@@ -36,31 +32,41 @@ exports[`should render component correctly 1`] = `
       value=""
     />
   </form>
-  <div
+  <ForwardRef(MotionComponent)
+    animate={
+      Object {
+        "scale": Array [
+          null,
+          1.3,
+          1,
+        ],
+      }
+    }
     className="previous"
+    transition={
+      Object {
+        "duration": 1,
+      }
+    }
   >
     O
-  </div>
+  </ForwardRef(MotionComponent)>
 </Fragment>
 `;
 
 exports[`should render component correctly with value for previous2 1`] = `
 <Fragment>
-  <div
-    className="footer-counter-container"
-  >
-    <Connect(Counter)
-      difficulty={20}
-      score={23}
-      used={
-        Array [
-          "two",
-          "three",
-          "four",
-        ]
-      }
-    />
-  </div>
+  <Connect(Counter)
+    difficulty={20}
+    score={23}
+    used={
+      Array [
+        "two",
+        "three",
+        "four",
+      ]
+    }
+  />
   <form
     className="band-input-form"
     onSubmit={[Function]}
@@ -90,21 +96,17 @@ exports[`should render component correctly with value for previous2 1`] = `
 
 exports[`should update state.band and rerender input value when band-input changes 1`] = `
 <Fragment>
-  <div
-    className="footer-counter-container"
-  >
-    <Connect(Counter)
-      difficulty={20}
-      score={23}
-      used={
-        Array [
-          "two",
-          "three",
-          "four",
-        ]
-      }
-    />
-  </div>
+  <Connect(Counter)
+    difficulty={20}
+    score={23}
+    used={
+      Array [
+        "two",
+        "three",
+        "four",
+      ]
+    }
+  />
   <form
     className="band-input-form"
     onSubmit={[Function]}
@@ -124,10 +126,24 @@ exports[`should update state.band and rerender input value when band-input chang
       value="one"
     />
   </form>
-  <div
+  <ForwardRef(MotionComponent)
+    animate={
+      Object {
+        "scale": Array [
+          null,
+          1.3,
+          1,
+        ],
+      }
+    }
     className="previous"
+    transition={
+      Object {
+        "duration": 1,
+      }
+    }
   >
     O
-  </div>
+  </ForwardRef(MotionComponent)>
 </Fragment>
 `;

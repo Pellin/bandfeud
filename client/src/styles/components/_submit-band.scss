@@ -1,20 +1,19 @@
 .footer-counter-container {
-  background: $off-white;
+  background: blue;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4rem;
-  position: absolute;
-  left: 1rem;
-  width: 4rem;
+  height: 3rem;
+
+  width: 5rem;
 }
 
 .band-input-form {
-  background: $off-white;
+  background: transparent;
   width: 101vw;
 
   ::-webkit-input-placeholder {
-    color: gray;
+    color: darken($off-white, 10%);
   }
 
   @media(min-width: $desktop-breakpoint) {
@@ -27,16 +26,14 @@
   width: 105.5vw;
 
   ::-webkit-input-placeholder {
-    color: light-gray;
+    color: darken($off-white, 10%);
   }
 }
 
-
-
 .band-input {
-  background: $off-white;
-  caret-color: $off-black;
-  color: $off-black;
+  background: transparent;
+  caret-color: $off-white;
+  color: $off-white;
   display: inline-block;
   width: 100vw;
   height: 3rem;
@@ -54,9 +51,9 @@
 }
 
 .band-input-long {
-  background: $off-white;
+  background: transparent;
   caret-color: $off-black;
-  color: $off-black;
+  color: $off-white;
   display: inline-block;
   width: 100vw;
   height: 3rem;
@@ -69,8 +66,8 @@
 }
 
 .previous {
-  background: $off-white;
-  color: $orange;
+  background: transparent;
+  color: $off-white;
   font-size: 2rem;
   font-weight: 700;
   position: relative;

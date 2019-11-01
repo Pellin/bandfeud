@@ -51,6 +51,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
       difficulty
     );
     const totalPoints = state.currentPoints + extraPoints;
+  
     dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
     dispatch(

@@ -7,10 +7,16 @@
   top: 10rem;
   width: 100vw;
 
-  @media (min-width: $desktop-breakpoint) { 
+  @media (min-width: $desktop-breakpoint) {
     height: 60rem;
     overflow: hidden;
     top: $desktop-top - 9rem;
+  }
+
+  @media (max-height: 675px) and (min-width: 570px) {
+    height: 55rem;
+    overflow: hidden;
+    top: $desktop-top - 12rem;
   }
 }
 
@@ -25,7 +31,8 @@
     text-decoration: none;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     color: $off-white;
     margin-bottom: 0;
   }
@@ -34,8 +41,14 @@
     margin: 0.5rem 0 1rem;
     line-height: 1.4;
   }
+
   @media (min-width: $desktop-breakpoint) {
     font-size: 1.3rem;
     width: 32rem;
+  }
+
+  @media (max-height: 675px) and (min-width: 570px) {
+    font-size: 1.2rem;
+    width: 36rem;
   }
 }

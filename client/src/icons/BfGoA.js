@@ -8,7 +8,7 @@ const SvgBfGoA = props => (
     {...props}
   >
     <defs>
-      <style>{".bf_go_a_svg__cls-1{fill:#e94500}"}</style>
+      <style>{".bf_go_a_svg__cls-1{fill:#f7af49}"}</style>
     </defs>
     <path
       className="bf_go_a_svg__cls-1"

@@ -41,7 +41,6 @@ export const SubmitBand = props => {
   return (
     <>
       {props.os !== 'desktop' && (
-        <div className="footer-counter-container">
           <Counter
             submitted={props.submitted}
             inGame={props.inGame}
@@ -49,7 +48,6 @@ export const SubmitBand = props => {
             difficulty={props.difficulty}
             score={props.score}
           />
-        </div>
       )}
       <form
         className={

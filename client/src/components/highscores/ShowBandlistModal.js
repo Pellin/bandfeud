@@ -32,7 +32,7 @@ const ShowBandlistModal = props => {
             {props.playerInfo.player}
             <p>{props.bands.length / 2} bands</p>
           </div>{' '}
-          <div className="header-points">{props.playerInfo.score} points</div>
+          <div className="header-points">{props.playerInfo.score}p</div>
         </div>
       )}
       {props.showModal &&
@@ -48,16 +48,18 @@ const ShowBandlistModal = props => {
               />
             </div>
             <div className="band-name-container">
-              <div className={band.points ? 'band-name' : 'band-name-computer'}>
-                {band.name}
-              </div>
-            </div>
-
             {band.points ? (
-              <div className="band-points">{band.points} points</div>
+              <div className="band-points">{band.points}p</div>
             ) : (
               <div className="no-band-points">No points</div>
             )}
+              <div className={band.points ? 'band-name' : 'band-name-computer'}>
+                {band.name}
+              </div>
+          
+            </div>
+
+          
           </div>
         ))}
     </Modal>
