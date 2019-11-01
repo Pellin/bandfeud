@@ -6,6 +6,7 @@ export default (state = [], action) => {
         {
           name: action.name,
           url: action.url,
+          id: action.discogsId,
           points: action.points
         }
       ];

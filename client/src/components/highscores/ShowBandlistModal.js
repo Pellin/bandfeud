@@ -6,13 +6,17 @@ import moment from 'moment';
 Modal.setAppElement(document.getElementById('root'));
 
 const ShowBandlistModal = props => {
-  const goToDiscogs = band => {
-    if (band.name === 'n.w.a') {
-      band.name = 'n.w.a.';
+  const goToDiscogs = band => {   
+    if (band.id) {
+      window.open(`https://www.discogs.com/artist/${band.id}`)
+    } else {
+      if (band.name === 'n.w.a') {
+        band.name = 'n.w.a.';
+      }
+      const arr = band.name.split(' ');
+      const string = arr.join('+');
+      window.open(`https://www.discogs.com/artist/${string}`);
     }
-    const arr = band.name.split(' ');
-    const string = arr.join('+');
-    window.open(`https://www.discogs.com/artist/${string}`);
   };
   return (
     <Modal

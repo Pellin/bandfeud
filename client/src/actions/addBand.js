@@ -1,6 +1,6 @@
 import setMessage from './setMessage';
 
-const addBand = (name, url, turn, points) => async (dispatch, getState) => {
+const addBand = (name, url, discogsId, turn, points) => async (dispatch, getState) => {
   const state = getState();
   if (!state.inGame) return;
 
@@ -22,7 +22,7 @@ const addBand = (name, url, turn, points) => async (dispatch, getState) => {
     }, 1);
   } else {
     return setTimeout(() => {
-      dispatch({ type: 'ADD_BAND', name, url, points });
+      dispatch({ type: 'ADD_BAND', name, url, discogsId, points });
       let message;
       if (points < 20) {
         message = 'Correct!';

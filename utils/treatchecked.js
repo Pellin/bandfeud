@@ -31,18 +31,21 @@ const treatChecked = async (userBand, bands) => {
     userBand = regExpFix(userBand, bands[0].title.toLowerCase());
     let nameMatches = [];
     let imgMatches = [];
+    let idMatches = [];
 
     for (let i = 0; i < bands.length; i++) {
       bands[i].title = bands[i].title.toLowerCase();
       if (bands[i].title === userBand || getProxy(bands[i].title) === userBand )  {
         nameMatches.push(bands[i].title);
         imgMatches.push(bands[i].cover_image);
+        idMatches.push(bands[i].id);
       }
     }
     if (nameMatches.length) {
       return {
         name: nameMatches[0],
-        imgUrl: imgMatches[0]
+        imgUrl: imgMatches[0],
+        discogsId: idMatches[0]
       };
     } else {
       return null;

@@ -1,6 +1,5 @@
 const createBands = albums => {
   let arr = [];
-
   class Band {
     constructor(band, url) {
       this.name = band;

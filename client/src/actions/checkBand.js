@@ -3,6 +3,7 @@ import getBand from './getBand';
 import setMessage from './setMessage';
 import { gameOver } from './gameStatus';
 import { addToScore } from './addToScore';
+import addProBand from './addProBand';
 import theFix from '../utils/theFix';
 import calcExtraPoints from '../utils/calcExtraPoints';
 
@@ -34,8 +35,11 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     const reply = await fetch(`/api/checkband?name=${encodeURIComponent(band)}`);
     const checkedBand = await reply.json();
     used.push(band);
+    addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
+
     if (checkedBand.name !== band) {
       used.push(checkedBand.name);
+      addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
     }
     let previous;
     if (checkedBand.name[checkedBand.name.length - 1].match(/[a-z0-9]/)) {
@@ -55,7 +59,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
     dispatch(
-      addBand(checkedBand.name, checkedBand.imgUrl, 'user', totalPoints)
+      addBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId, 'user', totalPoints)
     );
     return;
   } catch (e) {

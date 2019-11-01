@@ -24,7 +24,7 @@ const getBand = (previous, used, bandBank) => async dispatch => {
     }
   }
   setTimeout(() => {
-    dispatch(addBand(answer.name, answer.url, 'computer'));
+    dispatch(addBand(answer.name, answer.url, undefined, 'computer'));
     dispatch({ type: 'ADD_TO_USED', payload: answer.name });
     dispatch({
       type: 'SET_PREVIOUS',
