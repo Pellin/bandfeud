@@ -2,7 +2,10 @@ import setMessage from './setMessage';
 
 import addProBand from './addProBand';
 
-const addBand = (name, url, discogsId, turn, points) => async (dispatch, getState) => {
+const addBand = (name, url, discogsId, turn, points) => async (
+  dispatch,
+  getState
+) => {
   const state = getState();
   if (!state.inGame) return;
 
