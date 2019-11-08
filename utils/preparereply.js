@@ -76,11 +76,14 @@ const prepareReply = async (albums, previous, used) => {
   //Remove faulty contributions
   for (let i = bandArray.length - 1; i >= 0; i--) {
     if (
+      bandArray[i].name === 'adolphson' ||
       bandArray[i].name === 'elvis' ||
       bandArray[i].name === 'presley' ||
       bandArray[i].name === 'bob' ||
       bandArray[i].name === 'eek' ||
+      bandArray[i].name === 'eno' ||
       bandArray[i].name === 'dylan' ||
+      bandArray[i].name === 'omd' ||
       bandArray[i].name === 'the simpsons' ||
       bandArray[i].name === 'david' ||
       bandArray[i].name === 'bowie' ||
