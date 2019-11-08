@@ -5,6 +5,7 @@ import { gameOver } from './gameStatus';
 import { addToScore } from './addToScore';
 import addProBand from './addProBand';
 import theFix from '../utils/theFix';
+import getClientProxy from '../utils/getClientProxy';
 import calcExtraPoints from '../utils/calcExtraPoints';
 
 const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
@@ -32,7 +33,9 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
   dispatch(setMessage('Checking...'));
 
   try {
-    const reply = await fetch(`/api/checkband?name=${encodeURIComponent(band)}`);
+    const reply = await fetch(
+      `/api/checkband?name=${encodeURIComponent(band)}`
+    );
     const checkedBand = await reply.json();
     used.push(band);
     addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
@@ -42,10 +45,24 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
       addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
     }
     let previous;
-    if (checkedBand.name[checkedBand.name.length - 1].match(/[a-z0-9]/)) {
-      previous = checkedBand.name[checkedBand.name.length - 1];
+    let proxy;
+    if (
+      checkedBand.name[checkedBand.name.length - 1].match(
+        /[áàâäåæéèêëìíïóòôøöùúü]/
+      )
+    ) {
+      proxy = getClientProxy(checkedBand.name);
+      if (proxy[proxy.length - 1].match(/[a-z0-9]/)) {
+        previous = proxy[proxy.length - 1];
+      } else {
+        previous = proxy[proxy.length - 2];
+      }
     } else {
-      previous = checkedBand.name[checkedBand.name.length - 2];
+      if (checkedBand.name[checkedBand.name.length - 1].match(/[a-z0-9]/)) {
+        previous = checkedBand.name[checkedBand.name.length - 1];
+      } else {
+        previous = checkedBand.name[checkedBand.name.length - 2];
+      }
     }
 
     const state = getState();
@@ -55,11 +72,17 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
       difficulty
     );
     const totalPoints = state.currentPoints + extraPoints;
-  
+
     dispatch(addToScore(totalPoints));
     dispatch(getBand(previous, used, bandBank));
     dispatch(
-      addBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId, 'user', totalPoints)
+      addBand(
+        checkedBand.name,
+        checkedBand.imgUrl,
+        checkedBand.discogsId,
+        'user',
+        totalPoints
+      )
     );
     return;
   } catch (e) {
