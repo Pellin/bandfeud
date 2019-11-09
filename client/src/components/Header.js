@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import Counter from '../components/home/play/Counter';
 import BFLogo from '../icons/BFLogo';
+import I from '../icons/I';
+import Crown from '../icons/Crown';
 
 export const Header = ({
+  buttonPressed,
   inGame,
   submitted,
   used,
@@ -14,15 +18,29 @@ export const Header = ({
   score,
   os
 }) => {
+  const visibleVariants = {
+    show: {
+      opacity: 1
+    },
+    hide: {
+      opacity: 0
+    }
+  };
   return (
     <div className="header-container">
       <div className="header-side">
         {!inGame && (
-          <div className="link">
-            <NavLink to="/" exact activeClassName="active-link">
-              Play
+          <motion.div
+          className="i-link"
+          initial={{ opacity: 0 }}
+          animate={ buttonPressed ? 'hide' : 'show'}
+          transition={{ duration: 1.5 }}
+          variants={visibleVariants}
+        >
+            <NavLink to="/about" exact activeClassName="active-link">
+              <I />
             </NavLink>
-          </div>
+          </motion.div>
         )}
         {inGame && !submitted && !message && os === 'desktop' && (
           <div className="counter-container">
@@ -37,29 +55,33 @@ export const Header = ({
         )}
       </div>
       <div className="header-center">
-        {inGame ? (
+        {inGame && (
           <div className="header-logo">
             <BFLogo />
           </div>
-        ) : (
-          <NavLink to="/about/">
-            <div className="header-logo-link" title="About Bandfeud">
-              <BFLogo />
-            </div>
-          </NavLink>
         )}
       </div>
       <div className="header-side">
         {!inGame && (
-          <div className="link">
+          <motion.div
+            className="crown-link"
+            initial={{ opacity: 0 }}
+            animate={ buttonPressed ? 'hide' : 'show'}
+            transition={{ duration: 1.5 }}
+            variants={visibleVariants}
+          >
             <NavLink to="/highscores/" activeClassName="active-link">
-              Highscores
-            </NavLink>
-          </div>
-        )}
-         {inGame && os === 'desktop' && (
-                <div className="desktop-score">{score}p</div>
+              {os === 'desktop' ? (
+                <Crown width={25} height="100%" className="crown-right" />
+              ) : (
+                <Crown width={20} height="100%" className="crown-right" />
               )}
+            </NavLink>
+          </motion.div>
+        )}
+        {inGame && os === 'desktop' && (
+          <div className="desktop-score">{score}p</div>
+        )}
       </div>
     </div>
   );

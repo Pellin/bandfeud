@@ -1,29 +1,28 @@
 .info-container {
+  background: url('../../icons/BFLogo.js');
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 75vh;
+  height: 90vh;
   position: fixed;
-  top: 10rem;
   width: 100vw;
 
   @media (min-width: $desktop-breakpoint) {
-    height: 60rem;
+    height: 100vh;
     overflow: hidden;
-    top: $desktop-top - 9rem;
   }
 
   @media (max-height: 675px) and (min-width: 570px) {
-    height: 55rem;
+    height: 100vh;
     overflow: hidden;
-    top: $desktop-top - 12rem;
   }
 }
 
 .info {
-  color: $off-white;
-  height: 75vh;
-  width: 82vw;
+  color: lighten($off-white, 10%);
+  height: 60vh;
+  width: 85vw;
   overflow: hidden;
 
   a {
@@ -44,11 +43,26 @@
 
   @media (min-width: $desktop-breakpoint) {
     font-size: 1.3rem;
+    height: 55rem;
     width: 32rem;
   }
 
   @media (max-height: 675px) and (min-width: 570px) {
     font-size: 1.2rem;
     width: 36rem;
+  }
+}
+
+.about-logo {
+  height: auto;
+  width: 35vw;
+  position: relative;
+  top: 2vh;
+  margin-left: 1vh;
+
+  @media(min-width: $desktop-breakpoint) {
+    width: 14vw;
+    margin-left: 0.5vw;
+    top: 2.5vh;
   }
 }

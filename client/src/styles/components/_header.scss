@@ -50,7 +50,7 @@
   z-index: 10;
 }
 
-.header-logo {
+.header-logo-not {
   cursor: default;
   margin: 1rem 0;
   width: 80vw;
@@ -71,10 +71,9 @@
   }
 }
 
-.header-logo-link {
-  cursor: pointer;
+.header-logo {
   margin: 1rem;
-  width: 17rem;
+  width: 23rem;
 
   img {
     width: 100%;
@@ -101,9 +100,16 @@
   width: 10%;
 }
 
-.link {
-  font-size: 0.9rem;
-  margin-left: 0.8rem;
+.i-link {
+  font-size: 1.5rem;
+  transform: rotate(-35deg);
+  margin: 1.5rem 0 0 0.8rem;
+}
+
+.crown-link {
+  font-size: 1.5rem;
+
+  margin: 1.5rem 0 0 0.8rem;
   font-weight: 800;
   letter-spacing: 1px;
  

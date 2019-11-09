@@ -65,7 +65,7 @@ export const SubmitBand = props => {
           autoComplete="off"
           autoCorrect="off"
           autoFocus={props.os !== 'desktop' ? false : true}
-          maxLength="42"
+          maxLength="50"
           onChange={onBandChange}
           onFocus={() => onRemovePlaceholder()}
           placeholder={props.os !== 'desktop' ? iosPlaceHold : undefined}

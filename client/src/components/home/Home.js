@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 
+import Header from '../Header';
 import Play from '../home/play/Play';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
 import MessageBox from '../home/MessageBox';
-import BfPlayA from '../../icons/BfPlayA';
+import PlayIcon from '../../icons/PlayIcon';
+import LogoSquare from '../../icons/LogoSquare';
 
 import getHighscores from '../../actions/getHighscores';
 import setMessage from '../../actions/setMessage';
@@ -60,6 +62,14 @@ export const Home = ({
       rotate: [null, 780, 0]
     }
   };
+  const logoVariants = {
+    show: {
+      opacity: 1
+    },
+    hide: {
+      opacity: 0
+    }
+  }
   const footerVariants = {
     show: {
       y: 0
@@ -70,9 +80,20 @@ export const Home = ({
   };
   return (
     <div>
+      <Header buttonPressed={buttonPressed} />
       <div>
         {!inGame && (
-          <div className="buttons-container">
+          <div className="home-container">
+            <motion.div
+              className="logo-square"
+              initial={{ opacity: 0 }}
+              animate={buttonPressed ? 'hide' : 'show'}
+              transition={{ duration: 1.5 }}
+              variants={logoVariants}
+            >
+              <LogoSquare />
+            </motion.div>
+
             <div
               title="Start new game"
               className="new-game-button"
@@ -86,27 +107,26 @@ export const Home = ({
                 variants={buttonVariants}
                 onClick={startGame}
               >
-                <BfPlayA />
+                <PlayIcon />
               </motion.div>
             </div>
             {bands.length > 0 && !message ? (
-              <button className="show-modal-button" onClick={openModal}>
-                REVIEW LAST ROUND
-              </button>
+              <div className="footer">
+                <button className="show-modal-button" onClick={openModal}>
+                  REVIEW LAST ROUND
+                </button>
+              </div>
             ) : (
-              <button className="show-modal-button-invisible">
-                NOT SHOWING
-              </button>
+              <div className="footer">
+                <button className="show-modal-button-invisible">
+                  NOT SHOWING
+                </button>
+              </div>
             )}
           </div>
         )}
       </div>
-      {inGame && (
-        <Play
-          releaseButton={releaseButton}
-          history={history}
-        />
-      )}
+      {inGame && <Play releaseButton={releaseButton} history={history} />}
       <ShowBandlistModal
         bands={bands}
         closeModal={closeModal}

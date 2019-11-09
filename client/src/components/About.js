@@ -1,10 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-const About = () => {
+import BFLogo from '../icons/BFLogo';
+import LogoSquare from '../icons/LogoSquare';
+
+const About = ({ os }) => {
+  console.log(os);
   return (
     <div className="info-container">
+      {os === 'desktop' ? (
+        <BFLogo className="background-logo" />
+      ) : (
+        <LogoSquare className="background-logo-square" />
+      )}
       <div className="info">
-        <h1>How to play Bandfeud</h1>
+        <h1>How to play</h1>
+
         <h2>Your turn</h2>
         <p>
           Type in a band or an artist beginning with the letter visible under
@@ -30,11 +42,25 @@ const About = () => {
         <h2>Detailed instructions</h2>
         <p>
           For more detailed instructions and references, please visit the{' '}
-          <a rel="noopener noreferrer" target="_blank" href="https://github.com/Pellin/bandfeud">Bandfeud Github page</a>.
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://github.com/Pellin/bandfeud"
+          >
+            Bandfeud Github page
+          </a>
+          .
         </p>
       </div>
+      <Link to="/" className="back-button">
+        BACK
+      </Link>
     </div>
   );
 };
 
-export default About;
+const mapStateToProps = state => ({
+  os: state.os
+});
+
+export default connect(mapStateToProps)(About);

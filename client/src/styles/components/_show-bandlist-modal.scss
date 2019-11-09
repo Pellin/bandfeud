@@ -6,7 +6,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: opacity 150ms ease-in-out;
+  transition: opacity 50ms ease-in-out;
   z-index: 200;
 }
 
@@ -21,7 +21,6 @@
 .modal {
   justify-content: space-between;
   background: $off-black;
-  border-bottom: 1px solid $off-white;
   color: $off-white;
   cursor: default;
   display: flex;
@@ -38,7 +37,7 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: rgba(220, 220, 205,0.7);
+  background-color: rgba(48, 48, 48, 1);
 }
 
 .modal-header {
@@ -49,6 +48,19 @@
   text-align: center;
   text-transform: uppercase;
   width: 100vw;
+}
+
+.modal-back-button {
+  align-self: center;
+  bottom: 2rem;
+  font-size: 2vh;
+  color: $gold;
+  position: fixed;
+  width: 100vw;
+  height: 2.5rem;
+  padding: 0 0 1rem;
+  margin: auto;
+  text-align: center;
 }
 
 .header-date {
@@ -165,7 +177,7 @@
   justify-content: center;
   border-radius: 4px;
   display: flex;
-  height: 15rem;
+  height: 20rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
   width: 15rem;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
+import Crown from '../../icons/Crown';
 
 const HighscoreList = ({ highscores }) => {
   const [showModal, setShowModal] = useState(false);
@@ -26,7 +27,11 @@ const HighscoreList = ({ highscores }) => {
   };
   return (
     <>
-      <div className="highscore-title">HIGHSCORES</div>
+      <div className="title-container">
+        <Crown width={25} height="100%" className="crown-left" />
+        <div className="highscore-title">HIGHSCORES</div>
+        <Crown width={25} height="100%" className="crown-right" />
+      </div>
       <table>
         <tbody className="highscore-body">
           {highscores.map(highscore => (
