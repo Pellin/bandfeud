@@ -31,13 +31,13 @@ export const Header = ({
       <div className="header-side">
         {!inGame && (
           <motion.div
-          className="i-link"
-          initial={{ opacity: 0 }}
-          animate={ buttonPressed ? 'hide' : 'show'}
-          transition={{ duration: 1.5 }}
-          variants={visibleVariants}
-        >
-            <NavLink to="/about" exact activeClassName="active-link">
+            className="i-link"
+            initial={{ opacity: 0 }}
+            animate={buttonPressed ? 'hide' : 'show'}
+            transition={{ duration: 1.5 }}
+            variants={visibleVariants}
+          >
+            <NavLink to="/about" exact className="i-link">
               <I />
             </NavLink>
           </motion.div>
@@ -66,16 +66,12 @@ export const Header = ({
           <motion.div
             className="crown-link"
             initial={{ opacity: 0 }}
-            animate={ buttonPressed ? 'hide' : 'show'}
+            animate={buttonPressed ? 'hide' : 'show'}
             transition={{ duration: 1.5 }}
             variants={visibleVariants}
           >
-            <NavLink to="/highscores/" activeClassName="active-link">
-              {os === 'desktop' ? (
-                <Crown width={25} height="100%" className="crown-right" />
-              ) : (
-                <Crown width={20} height="100%" className="crown-right" />
-              )}
+            <NavLink to="/highscores/" className="crown-link">
+              <Crown className="crown-right" />
             </NavLink>
           </motion.div>
         )}
