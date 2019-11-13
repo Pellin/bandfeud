@@ -88,7 +88,7 @@ export const Home = ({
               className="logo-square"
               initial={{ opacity: 0 }}
               animate={buttonPressed ? 'hide' : 'show'}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 2 }}
               variants={logoVariants}
             >
               <LogoSquare />
@@ -103,7 +103,7 @@ export const Home = ({
                 className="play-button"
                 initial={{ scale: 0, rotate: -360 }}
                 animate={buttonPressed ? 'pressed' : 'notPressed'}
-                transition={{ duration: 1, times: [0, 0.3, 1] }}
+                transition={{ duration: 1.2, times: [0, 0.4, 1] }}
                 variants={buttonVariants}
                 onClick={startGame}
               >
