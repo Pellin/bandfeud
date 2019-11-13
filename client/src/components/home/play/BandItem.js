@@ -8,7 +8,7 @@ const BandItem = ({ name, url, points }) => {
     <div className="band-item">
       <div className="image-container">
         <div className="band-item-image">
-          <img className="img" src={url} alt={'"' + { name } + '"'} />
+          <img className="img" src={url} alt={'"' + name + '"'} />
         </div>
         {points && <Points points={points} />}
       </div>
@@ -16,7 +16,6 @@ const BandItem = ({ name, url, points }) => {
         <div className="band-item-title-container">
           <div className="band-item-title">{name}</div>
         </div>
-        
       </div>
     </div>
   );
