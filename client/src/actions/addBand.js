@@ -12,7 +12,7 @@ const addBand = (name, url, discogsId, turn, points) => async (
   if (turn === 'computer') {
     const response = await fetch(`/api/getimg?name=${name}`);
     let imageUrl = await response.json();
-    if (!imageUrl.match(/^.*spacer\.gif$/)) {
+    if (!imageUrl.match(/^.*spacer\.gif$/) && !imageUrl.match(/discogs-white/)) {
       url = imageUrl;
       addProBand(name, url);
     }
