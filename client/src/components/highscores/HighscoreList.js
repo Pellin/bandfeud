@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
 import Crown from '../../icons/Crown';
 
@@ -28,9 +28,9 @@ const HighscoreList = ({ highscores }) => {
   return (
     <>
       <div className="title-container">
-        <Crown width={25} height="100%" className="crown-left" />
+        <Crown className="crown-left" />
         <div className="highscore-title">HIGHSCORES</div>
-        <Crown width={25} height="100%" className="crown-right" />
+        <Crown className="crown-right" />
       </div>
       <table>
         <tbody className="highscore-body">
@@ -46,6 +46,9 @@ const HighscoreList = ({ highscores }) => {
           ))}
         </tbody>
       </table>
+      <Link to="/" className="back-button">
+        BACK
+      </Link>
       <ShowBandlistModal
         bands={bands}
         playerInfo={playerInfo}

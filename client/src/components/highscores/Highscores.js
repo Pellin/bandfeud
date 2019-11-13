@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import HighscoreList from '../highscores/HighscoreList';
@@ -33,9 +32,6 @@ export const Highscores = ({ highscores, os, onGetHighscores }) => {
         ) : (
           <div className="load-message">Loading highscores...</div>
         )}
-        <Link to="/" className="back-button">
-          BACK
-        </Link>
       </div>
     </motion.div>
   );

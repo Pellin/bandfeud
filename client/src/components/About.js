@@ -1,14 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import BFLogo from '../icons/BFLogo';
 import LogoSquare from '../icons/LogoSquare';
 
 const About = ({ os }) => {
-  console.log(os);
   return (
-    <div className="info-container">
+    <motion.div
+      className="info-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       {os === 'desktop' ? (
         <BFLogo className="background-logo" />
       ) : (
@@ -55,7 +60,7 @@ const About = ({ os }) => {
       <Link to="/" className="back-button">
         BACK
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
