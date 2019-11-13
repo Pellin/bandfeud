@@ -6,8 +6,6 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: opacity 50ms ease-in-out;
-  z-index: 200;
 }
 
 .ReactModalPortal .ReactModal__Overlay--after-open {
@@ -21,6 +19,7 @@
 .modal {
   justify-content: space-between;
   background: $off-black;
+  box-shadow: 0 54px 26px -46px $off-black;
   color: $off-white;
   cursor: default;
   display: flex;
@@ -29,6 +28,10 @@
   overflow: auto;
   padding: 3rem 0;
   text-align: center;
+
+  @media (min-width: $desktop-breakpoint) {
+    padding: 8rem 0;
+  }
 }
 
 .overlay {
@@ -37,7 +40,8 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: rgba(48, 48, 48, 1);
+  background-color: rgba(247, 175, 73, 1);
+  z-index: 2000;
 }
 
 .modal-header {
@@ -81,23 +85,17 @@
 
 .header-player {
   color: $gold;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-align: center;
   text-shadow: 1px 2px 8px $gold, -1px -2px 8px $gold;
   width: 25rem;
-
-  @media (min-width: $desktop-breakpoint) {
-    font-size: 3rem;
-    width: 25rem;
-  }
 
   p {
     color: white;
     font-size: 0.8rem;
     font-weight: 300;
-    letter-spacing: 1px;
     text-shadow: none;
 
     @media (min-width: $desktop-breakpoint) {

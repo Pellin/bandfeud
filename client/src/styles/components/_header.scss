@@ -15,6 +15,29 @@
   align-items: center;
 }
 
+.link-container {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  width: 10%;
+}
+
+.i-link {
+  width: 2.5vh;
+  height: 2.5vh;
+  transform: rotate(-35deg);
+  margin: 1.5vh 0 0;
+}
+
+.crown-link {
+  width: 4vh;
+  height: 4vh;
+  margin: 2vh 0 0;
+}
+
 .counter-container {
   background: transparent;
   text-align: center;
@@ -25,18 +48,16 @@
 .counter {
   background: transparent;
   color: $gold;
-  font-size: 3rem;
+  font-size: 4vh;
   font-weight: 700;
   width: 3rem;
   height: 3rem;
   text-align: center;
-  margin-bottom: 2rem;
   position: relative;
 
   @media (min-width: $desktop-breakpoint) {
-    font-size: 3rem;
-    width: 3rem;
-    height: 4rem;
+    font-size: 4vh;
+    margin: 0;
   }
 }
 
@@ -50,103 +71,22 @@
   z-index: 10;
 }
 
-.header-logo-not {
-  cursor: default;
-  margin: 1rem 0;
-  width: 80vw;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  @media (min-width: $desktop-breakpoint) {
-    margin: 1rem;
-    width: 35rem;
-  }
-
-  @media (max-height: 640px) and (min-width: 570px) {
-    margin: 1rem;
-    width: 18rem;
-  }
-}
-
 .header-logo {
-  margin: 1rem;
-  width: 23rem;
+  margin: 1.5vh;
+  width: 35vh;
 
   img {
     width: 100%;
     height: auto;
   }
-  @media (min-width: $desktop-breakpoint) {
-    margin: 1rem;
-    width: 35rem;
-  }
-
-  @media (max-height: 640px) and (min-width: 570px) {
-    margin: 1rem;
-    width: 18rem;
-  }
-}
-
-.link-container {
-  display: flex;
-  align-items: center;
-  margin: 0 1rem;
-  padding: 0;
-  text-align: center;
-  justify-content: center;
-  width: 10%;
-}
-
-.i-link {
-  font-size: 1.5rem;
-  transform: rotate(-35deg);
-  margin: 1.5rem 0 0 0.8rem;
-}
-
-.crown-link {
-  font-size: 1.5rem;
-
-  margin: 1.5rem 0 0 0.8rem;
-  font-weight: 800;
-  letter-spacing: 1px;
- 
-
-  a {
-    color: $gold;
-    text-decoration: none;
-  }
 
   @media (min-width: $desktop-breakpoint) {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-
-  @media (max-height: 640px) and (min-width: 570px) {
-    font-size: 1rem;
+    width: 50vh;
   }
 }
-
-.active-link {
-  font-size: 1.1rem;
-  color: $gold;
-  text-align: center;
-
-  @media (min-width: $desktop-breakpoint) {
-    font-size: 1.7rem;
-  }
-
-  @media (max-height: 640px) and (min-width: 570px) {
-    font-size: 1.2rem;
-  }
-}
-
 
 .desktop-score {
   color: $gold;
-  font-size: 3rem;
-  font-weight: 700; 
+  font-size: 4vh;
+  font-weight: 700;
 }
