@@ -1,7 +1,7 @@
 import React from "react";
 
 const SvgCrown = props => (
-  <svg viewBox="0 0 47.625 52.917" height={200} width={180} {...props}>
+  <svg viewBox="0 0 47.625 52.917" {...props}>
     <g transform="matrix(.79057 0 0 .7062 185.103 -79.857)" strokeWidth={1.338}>
       <g fill="#f7af49">
         <path

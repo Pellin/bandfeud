@@ -1,7 +1,7 @@
 import React from "react";
 
 const SvgI = props => (
-  <svg viewBox="0 0 3.969 5.292" height={20} width={15} {...props}>
+  <svg viewBox="0 0 3.969 5.292" {...props}>
     <g
       style={{
         lineHeight: 1.25,
