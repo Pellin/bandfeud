@@ -67,7 +67,6 @@ const ShowBandlistModal = props => {
           </div>
           
         ))}
-         <div className="modal-back-button" onClick={props.closeModal}>BACK</div>
     </Modal>
   );
 };
