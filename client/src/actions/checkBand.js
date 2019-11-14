@@ -57,6 +57,9 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
       } else {
         previous = proxy[proxy.length - 2];
       }
+    } else if (checkedBand.name.match(/.*\W{2,}/)) {
+      const proxy = checkedBand.name.match(/[a-z0-9\s]/g);
+      previous = proxy[proxy.length - 1];
     } else {
       if (checkedBand.name[checkedBand.name.length - 1].match(/[a-z0-9]/)) {
         previous = checkedBand.name[checkedBand.name.length - 1];
