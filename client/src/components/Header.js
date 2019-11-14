@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Counter from '../components/home/play/Counter';
+import Score from '../components/home/play/Score';
 import BFLogo from '../icons/BFLogo';
 import I from '../icons/I';
 import Crown from '../icons/Crown';
@@ -76,7 +77,9 @@ export const Header = ({
           </motion.div>
         )}
         {inGame && os === 'desktop' && (
-          <div className="desktop-score">{score}p</div>
+          <div className="desktop-score">
+            <Score score={score} />
+          </div>
         )}
       </div>
     </div>

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import SubmitBand from './SubmitBand';
 import BandList from './BandList';
 import MessageBox from '../MessageBox';
+import Score from './Score';
 import BfGoA from '../../../icons/BfGoA';
 
 import SubmitHighscore from '../../highscores/SubmitHighscore';
@@ -74,7 +75,9 @@ export const Play = props => {
                 <BandList bands={props.bands} />
               </div>
               {props.inGame && props.os !== 'desktop' && (
-                <div className="score">{props.score}p</div>
+                <div className="score">
+                  <Score score={props.score} />
+                </div>
               )}
               <div className="footer">
                 {props.message ? (
@@ -123,7 +126,4 @@ const mapStateToProps = state => ({
   os: state.os
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Play);
+export default connect(mapStateToProps, mapDispatchToProps)(Play);
