@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import Crown from '../../icons/Crown';
+
 import getHighscores from '../../actions/getHighscores';
 
 export const SubmitHighscore = props => {
@@ -63,10 +65,11 @@ export const SubmitHighscore = props => {
           <div className="highscore-message">Setting highscore...</div>
         ) : (
           <>
+            <Crown className="submit-highscore-crown" />
             <div className="highscore-message">
               {props.score} points! That's a highscore.
             </div>
-            <form className="submit-form" onSubmit={onSubmit}>     
+            <form className="submit-form" onSubmit={onSubmit}>
               <input
                 className="submit-input"
                 type="text"
@@ -114,9 +117,6 @@ const mapDispatchToProps = dispatch => ({
   onGameOver: () => dispatch({ type: 'GAME_OVER' })
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SubmitHighscore);
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitHighscore);
 
 /* <label className="submit-label">Enter your name:</label> */
