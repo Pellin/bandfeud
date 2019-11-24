@@ -115,7 +115,20 @@
   opacity: 0.2;
 }
 
+.submit-highscore-crown {
+  stroke: $gold;
+  fill: $gold;
+  width: 6vw;
+  height: auto;
+
+  @media (min-width: $desktop-breakpoint) {
+    width: 2vw;
+  }
+}
+
 .crown-left {
+  fill: $gold;
+  stroke: $gold;
   width: 3vh;
   height: 3vh;
   transform: rotate(-10deg);
@@ -123,6 +136,8 @@
 }
 
 .crown-right {
+  fill: $gold;
+  stroke: $gold;
   width: 3vh;
   height: 3vh;
   transform: rotate(10deg);

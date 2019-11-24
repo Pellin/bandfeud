@@ -3,10 +3,14 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  top: 40%;
+  top: 30vh;
   width: 100vw;
   height: 30rem;
   position: absolute;
+
+  @media (min-width: $desktop-breakpoint) {
+    top: 35vh;
+  }
 }
 
 .highscore-message {

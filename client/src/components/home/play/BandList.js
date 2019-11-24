@@ -10,7 +10,7 @@ const BandList = ({ bands }) => {
   useLayoutEffect(() => {
     if (bands.length < 1) {
       setCenter();
-    }        
+    }
   });
   useEffect(() => {
     window.addEventListener('resize', setCenter);
@@ -35,14 +35,18 @@ const BandList = ({ bands }) => {
         transition: 'left, 1s'
       }}
     >
-      {bands.map(band => (
-        <BandItem
-          key={band.name}
-          name={band.name}
-          url={band.url}
-          points={band.points}
-        />
-      ))}
+      {bands.map(band =>
+        band.url ? (
+          <BandItem
+            key={band.name}
+            name={band.name}
+            url={band.url}
+            points={band.points}
+          />
+        ) : (
+          <BandItem key="failed" name={band.name} mode={band.mode} />
+        )
+      )}
     </div>
   );
 };

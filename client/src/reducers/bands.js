@@ -10,6 +10,16 @@ export default (state = [], action) => {
           points: action.points
         }
       ];
+    case 'ADD_FAILED_BAND':
+      console.log(action.payload.name);
+      console.log(action.payload.mode)
+      return [
+        ...state,
+        {
+          name: action.payload.name,
+          mode: action.payload.mode
+        }
+      ];
     case 'RESET_BANDS':
       return [];
     default:

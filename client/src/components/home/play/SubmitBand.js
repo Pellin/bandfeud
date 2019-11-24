@@ -42,6 +42,7 @@ export const SubmitBand = props => {
     <>
       {props.os !== 'desktop' && (
           <Counter
+            band={band}
             submitted={props.submitted}
             inGame={props.inGame}
             used={props.used}

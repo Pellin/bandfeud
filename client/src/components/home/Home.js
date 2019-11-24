@@ -128,6 +128,7 @@ export const Home = ({
       </div>
       {inGame && <Play releaseButton={releaseButton} history={history} />}
       <ShowBandlistModal
+        lastRound={true}
         bands={bands}
         closeModal={closeModal}
         showModal={showModal}
