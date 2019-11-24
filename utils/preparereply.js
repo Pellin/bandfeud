@@ -92,6 +92,7 @@ const prepareReply = async (albums, previous, used) => {
       bandArray[i].name === 'nile' ||
       bandArray[i].name === 'neil' ||
       bandArray[i].name === 'otis' ||
+      bandArray[i].name === 'page' ||
       bandArray[i].name === 'petshopboys' ||
       bandArray[i].name === 'rollingstones' ||
       bandArray[i].name === 'ubu' ||
