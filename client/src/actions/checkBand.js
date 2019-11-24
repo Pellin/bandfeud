@@ -4,7 +4,6 @@ import setMessage from './setMessage';
 import { gameOver } from './gameStatus';
 import { addToScore } from './addToScore';
 import addProBand from './addProBand';
-import theFix from '../utils/theFix';
 import getClientProxy from '../utils/getClientProxy';
 import calcExtraPoints from '../utils/calcExtraPoints';
 
@@ -13,19 +12,28 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
   getState
 ) => {
   dispatch({ type: 'SUBMITTED:_TRUE' });
-  previous = theFix(band, previous);
-
+  console.log(band);
   if (
     used.includes(band) ||
     used.includes(`the ${band}`) ||
     used.includes(band.slice(4))
   ) {
     return setTimeout(() => {
+      dispatch({ type: 'ADD_FAILED_BAND', payload: {name: band, mode: 'Already used'}})
       dispatch(gameOver('Already used!', score));
     }, 250);
   }
-  if (band[0] !== previous.previous1 && band[0] !== previous.previous2) {
+
+  if (band.match(/^the /)) {
+    if (band[4] !== previous.previous1 && band[4] !== previous.previous2) {
+      return setTimeout(() => {
+        dispatch({ type: 'ADD_FAILED_BAND', payload: {name: band, mode: 'Wrong letter'}})
+        dispatch(gameOver('Wrong letter!', score));
+      }, 250);
+    }
+  } else if (band[0] !== previous.previous1 && band[0] !== previous.previous2) {
     return setTimeout(() => {
+      dispatch({ type: 'ADD_FAILED_BAND', payload: { name: band, mode: 'Wrong letter'}})
       dispatch(gameOver('Wrong letter!', score));
     }, 250);
   }
@@ -89,7 +97,9 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     );
     return;
   } catch (e) {
+ 
     return setTimeout(() => {
+      dispatch({ type: 'ADD_FAILED_BAND', payload: { name: band, mode: 'No match'}})
       dispatch(gameOver('Sorry, no match.', score));
     }, 250);
   }
