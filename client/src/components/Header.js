@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Counter from '../components/home/play/Counter';
@@ -38,9 +38,9 @@ export const Header = ({
             transition={{ duration: 1.5 }}
             variants={visibleVariants}
           >
-            <NavLink to="/about" exact className="i-link">
+            <Link to="/about" exact>
               <I />
-            </NavLink>
+            </Link>
           </motion.div>
         )}
         {inGame && !submitted && !message && os === 'desktop' && (
@@ -71,9 +71,9 @@ export const Header = ({
             transition={{ duration: 1.5 }}
             variants={visibleVariants}
           >
-            <NavLink to="/highscores/" className="crown-link">
+            <Link to="/highscores/">
               <Crown className="crown-right" />
-            </NavLink>
+            </Link>
           </motion.div>
         )}
         {inGame && os === 'desktop' && (
