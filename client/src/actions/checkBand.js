@@ -12,7 +12,6 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
   getState
 ) => {
   dispatch({ type: 'SUBMITTED:_TRUE' });
-  console.log(band);
   if (
     used.includes(band) ||
     used.includes(`the ${band}`) ||
