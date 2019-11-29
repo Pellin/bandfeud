@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 import moment from 'moment';
 
-import Stopwatch from '../../icons/Stopwatch';
+import BfGoA from '../../icons/BfGoA';
 
 Modal.setAppElement(document.getElementById('root'));
 
@@ -46,10 +46,13 @@ const ShowBandlistModal = props => {
             </div>
             <div className="header-player">
               <div className="header-stopwatch">
-                <Stopwatch />
+                <BfGoA />
               </div>
               {props.playerInfo.player}
-              <p>{props.bands.length / 2} bands</p>
+              <p>
+                {props.bands.length / 2 - 0.5}{' '}
+                {props.bands.length / 2 - 0.5 === 1 ? 'band' : 'bands'}
+              </p>
             </div>
             <div className="modal-header-right">{props.playerInfo.score}p</div>
           </>
@@ -81,7 +84,7 @@ const ShowBandlistModal = props => {
                   />
                 ) : (
                   <div className="fail-svg">
-                    <Stopwatch />
+                    <BfGoA />
                   </div>
                 )}
               </div>
