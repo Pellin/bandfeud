@@ -11,8 +11,6 @@ export default (state = [], action) => {
         }
       ];
     case 'ADD_FAILED_BAND':
-      console.log(action.payload.name);
-      console.log(action.payload.mode)
       return [
         ...state,
         {
