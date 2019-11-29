@@ -38,7 +38,7 @@ export const Header = ({
             transition={{ duration: 1.5 }}
             variants={visibleVariants}
           >
-            <Link to="/about" exact>
+            <Link to="/about/">
               <I />
             </Link>
           </motion.div>
