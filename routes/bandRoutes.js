@@ -1,8 +1,9 @@
-const checkBand = require('../utils/checkband');
+const checkBand = require('../utils/checkband').default;
 const treatChecked = require('../utils/treatchecked');
 const getBand = require('../utils/getband');
 const getImg = require('../utils/getimg');
 const setProBand = require('../utils/setProBand');
+const removeBand = require('../utils/removeBand');
 
 module.exports = app => {
   app.get('/api/checkband', async (req, res) => {
@@ -37,13 +38,19 @@ module.exports = app => {
     }
   });
 
-  app.post('/api/addProBand', async (req, res) => {
+  app.post('/api/addproband', async (req, res) => {
     try {
-      await setProBand(
-        req.body.name,
-        req.body.imgUrl,
-        req.body.discogsId
-      );
+      await setProBand(req.body.name, req.body.imgUrl, req.body.discogsId);
+      res.status(200).send();
+    } catch (e) {
+      console.log(e.message);
+      res.status(400).send(e.message);
+    }
+  });
+
+  app.post('/api/removeband', async (req, res) => {
+    try {
+      await removeBand(req.body.name);
       res.status(200).send();
     } catch (e) {
       console.log(e.message);

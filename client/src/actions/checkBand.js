@@ -3,7 +3,7 @@ import getBand from './getBand';
 import setMessage from './setMessage';
 import { gameOver } from './gameStatus';
 import { addToScore } from './addToScore';
-import addProBand from './addProBand';
+import addProBand from '../utils/addProBand';
 import getClientProxy from '../utils/getClientProxy';
 import calcExtraPoints from '../utils/calcExtraPoints';
 

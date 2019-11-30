@@ -1,4 +1,5 @@
 const addProBand = (name, imgUrl, discogsId) => {
+  console.log('Adding', name);
   if (name.match(/^the /)) {
     let str = name.slice(4, name.length);
     name = str + ', the';
@@ -10,7 +11,7 @@ const addProBand = (name, imgUrl, discogsId) => {
     discogsId
   };
 
-  fetch(`/api/addProBand`, {
+  fetch(`/api/addproband`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

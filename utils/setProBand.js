@@ -1,4 +1,4 @@
-const { ProBand} = require('../db/mongoose');
+const { ProBand } = require('../db/mongoose');
 
 const setProBand = async (name, imgUrl, discogsId) => {
   try {
@@ -12,6 +12,6 @@ const setProBand = async (name, imgUrl, discogsId) => {
   } catch (e) {
     return e;
   }
-}
+};
 
 module.exports = setProBand;
