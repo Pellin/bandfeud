@@ -1,4 +1,4 @@
-const checkBand = require('../utils/checkband').default;
+const checkBand = require('../utils/checkband');
 const treatChecked = require('../utils/treatchecked');
 const getBand = require('../utils/getband');
 const getImg = require('../utils/getimg');
