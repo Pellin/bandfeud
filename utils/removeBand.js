@@ -1,7 +1,6 @@
 const { Band } = require('../db/mongoose');
 
 const removeBand = async name => {
-  console.log(name)
   try {
     await Band.deleteOne({ name });
     return true;

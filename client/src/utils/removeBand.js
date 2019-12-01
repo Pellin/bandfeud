@@ -1,5 +1,4 @@
 const removeBand = name => {
-  console.log('removing', name);
   if (name.match(/^the /)) {
     let str = name.slice(4, name.length);
     name = str + ', the';
