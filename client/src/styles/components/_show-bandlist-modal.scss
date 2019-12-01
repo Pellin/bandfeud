@@ -84,11 +84,6 @@
   }
 }
 
-// .header-stopwatch {
-//   width: 20vh;
-//   height: auto;
-// }
-
 .header-player {
   align-items: center;
   color: $gold;
@@ -202,7 +197,11 @@
 .fail-svg {
   height: auto;
   margin-bottom: 5vh;
-  width: 20vw;
+  width: 50vw;
+
+  @media (min-width: $desktop-breakpoint) {
+    width: 20vw;
+  }
 }
 
 .band-points {

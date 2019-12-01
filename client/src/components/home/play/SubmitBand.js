@@ -42,6 +42,7 @@ export const SubmitBand = props => {
     <>
       {props.os !== 'desktop' && (
           <Counter
+            addFailedBand={props.onAddFailedBand}
             submitted={props.submitted}
             inGame={props.inGame}
             used={props.used}
@@ -94,6 +95,11 @@ export const SubmitBand = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
+   onAddFailedBand: band =>
+    dispatch({
+      type: 'ADD_FAILED_BAND',
+      payload: { name: band, mode: 'Out of time' }
+    }),
   onCheckBand: (band, previous, used, bandBank, score, difficulty) =>
     dispatch(checkBand(band, previous, used, bandBank, score, difficulty)),
   onSetDifficulty: usedLength => dispatch(setDifficulty(usedLength))

@@ -10,6 +10,7 @@ import I from '../icons/I';
 import Crown from '../icons/Crown';
 
 export const Header = ({
+  onAddFailedBand,
   buttonPressed,
   inGame,
   submitted,
@@ -46,6 +47,7 @@ export const Header = ({
         {inGame && !submitted && !message && os === 'desktop' && (
           <div className="counter-container">
             <Counter
+              addFailedBand={onAddFailedBand}
               submitted={submitted}
               inGame={inGame}
               used={used}
@@ -96,4 +98,12 @@ const mapStateToProps = state => ({
   os: state.os
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+  onAddFailedBand: band =>
+   dispatch({
+     type: 'ADD_FAILED_BAND',
+     payload: { name: band, mode: 'Out of time' }
+   }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
