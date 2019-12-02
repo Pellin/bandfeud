@@ -44,6 +44,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
       `/api/checkband?name=${encodeURIComponent(band)}`
     );
     const checkedBand = await reply.json();
+   
     used.push(band);
     addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
 
@@ -79,7 +80,8 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     const extraPoints = calcExtraPoints(
       state.currentPoints,
       checkedBand.name,
-      difficulty
+      difficulty,
+      state.os
     );
     const totalPoints = state.currentPoints + extraPoints;
 
