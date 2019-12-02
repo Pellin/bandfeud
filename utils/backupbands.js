@@ -2,7 +2,7 @@ const { Band } = require('../db/mongoose');
 
 const backupBands = async (previous, newBands, used) => {
   let answer = {};
-  const expression = '^' + previous + '[ws,-]*';
+  const expression = '^\W*' + previous + '[ws,-\.]*';
   const regex = new RegExp(expression, 'i');
 
   return new Promise(async (resolve, reject) => {
