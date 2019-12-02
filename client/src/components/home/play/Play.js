@@ -19,6 +19,11 @@ export const Play = props => {
     }
   };
   useEffect(() => {
+    props.history.listen(() => {
+      abortGame();
+    });
+  });
+  useEffect(() => {
     const listener =
       props.os === 'desktop' &&
       (/Firefox/gi.test(navigator.userAgent) ||
