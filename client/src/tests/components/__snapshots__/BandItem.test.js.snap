@@ -11,7 +11,7 @@ exports[`should render BandItem correctly 1`] = `
       className="band-item-image"
     >
       <img
-        alt="\\"[object Object]\\""
+        alt="\\"one\\""
         className="img"
         src="www.1img.com"
       />

@@ -12,7 +12,7 @@ exports[`should render Points correctly 1`] = `
           1,
           0,
         ],
-        "scale": 4.5,
+        "scale": 3,
       }
     }
     className="points"
@@ -100,7 +100,7 @@ exports[`should render Points correctly 1`] = `
             1,
             0,
           ],
-          "scale": 4.5,
+          "scale": 3,
         }
       }
       controls={
@@ -108,7 +108,7 @@ exports[`should render Points correctly 1`] = `
           "activeOverrides": Set {},
           "baseTarget": Object {
             "opacity": 0,
-            "scale": 4.5,
+            "scale": 3,
           },
           "defaultTransition": Object {
             "duration": 2,
@@ -132,7 +132,7 @@ exports[`should render Points correctly 1`] = `
                 1,
                 0,
               ],
-              "scale": 4.5,
+              "scale": 3,
             },
             "children": Array [
               "+",

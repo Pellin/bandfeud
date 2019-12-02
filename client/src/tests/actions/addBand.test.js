@@ -23,14 +23,15 @@ it('should dispatch correct actions for "computer"', async () => {
   const url = 'www.img.com';
 
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
+  fetchMock.post(`/api/addproband`, 200);
 
   const computerActions = [
-    { type: 'ADD_BAND', name, url },
+    { type: 'ADD_BAND', name: 'kiss', url: 'www.img.com' },
     { type: 'SUBMITTED:_FALSE' },
     { type: 'SET_MESSAGE', payload: '' }
   ];
 
-  await store.dispatch(addBand(name, url, 'computer'));
+  await store.dispatch(addBand(name, url, 12345, 'computer'));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(computerActions);
@@ -43,12 +44,18 @@ it('should dispatch correct actions for "user"', async () => {
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
 
   const userActions = [
-    { type: 'ADD_BAND', name: 'kiss', points: 26, url: 'www.img.com' },
+    {
+      type: 'ADD_BAND',
+      name: 'kiss',
+      url: 'www.img.com',
+      discogsId: 12345,
+      points: 26
+    },
     { type: 'SET_MESSAGE', payload: 'Good!' },
     { type: 'SET_MESSAGE', payload: 'Get ready...' }
   ];
 
-  await store.dispatch(addBand(name, url, 'user', 26));
+  await store.dispatch(addBand(name, url, 12345, 'user', 26));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(userActions);
@@ -59,8 +66,9 @@ it('should call fetch(getImg) if "computer" turn', async () => {
   const url = 'www.img.com';
 
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
+  fetchMock.post(`/api/addproband`, 200);
 
-  await store.dispatch(addBand(name, url, 'computer'));
+  await store.dispatch(addBand(name, url, 12345, 'computer'));
   jest.runAllTimers();
 
   expect(fetchMock.called()).toBeTruthy();
@@ -72,7 +80,7 @@ it('should not call fetch(getImg) if "user" turn', async () => {
 
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
 
-  await store.dispatch(addBand(name, url, 'user', 21));
+  await store.dispatch(addBand(name, url, 12345, 'user', 21));
   jest.runAllTimers();
 
   expect(fetchMock.called()).toBeFalsy();

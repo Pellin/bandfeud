@@ -2,10 +2,39 @@
 
 exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clicked 1`] = `
 <div>
+  <Connect(Header)
+    buttonPressed={false}
+  />
   <div>
     <div
-      className="buttons-container"
+      className="home-container"
     >
+      <ForwardRef(MotionComponent)
+        animate="show"
+        className="logo-square"
+        initial={
+          Object {
+            "opacity": 0,
+          }
+        }
+        transition={
+          Object {
+            "duration": 2,
+          }
+        }
+        variants={
+          Object {
+            "hide": Object {
+              "opacity": 0,
+            },
+            "show": Object {
+              "opacity": 1,
+            },
+          }
+        }
+      >
+        <SvgLogoSquare />
+      </ForwardRef(MotionComponent)>
       <div
         className="new-game-button"
         onClick={[Function]}
@@ -23,10 +52,10 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
           onClick={[Function]}
           transition={
             Object {
-              "duration": 1,
+              "duration": 1.2,
               "times": Array [
                 0,
-                0.3,
+                0.4,
                 1,
               ],
             }
@@ -58,15 +87,19 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
             }
           }
         >
-          <SvgBfPlayA />
+          <SvgPlayIcon />
         </ForwardRef(MotionComponent)>
       </div>
-      <button
-        className="show-modal-button"
-        onClick={[Function]}
+      <div
+        className="footer"
       >
-        REVIEW LAST ROUND
-      </button>
+        <button
+          className="show-modal-button"
+          onClick={[Function]}
+        >
+          REVIEW LAST ROUND
+        </button>
+      </div>
     </div>
   </div>
   <ShowBandlistModal
@@ -87,6 +120,7 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
       ]
     }
     closeModal={[Function]}
+    lastRound={true}
     showModal={true}
   />
 </div>
@@ -94,12 +128,16 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
 
 exports[`should render with <Play /> when inGame is true 1`] = `
 <div>
+  <Connect(Header)
+    buttonPressed={false}
+  />
   <div />
   <Connect(Play)
     releaseButton={[Function]}
   />
   <ShowBandlistModal
     closeModal={[Function]}
+    lastRound={true}
     showModal={false}
   />
 </div>
@@ -107,10 +145,39 @@ exports[`should render with <Play /> when inGame is true 1`] = `
 
 exports[`should render with PLAY <button> and Review... <button> when inGame is false and bands.length > 0 1`] = `
 <div>
+  <Connect(Header)
+    buttonPressed={false}
+  />
   <div>
     <div
-      className="buttons-container"
+      className="home-container"
     >
+      <ForwardRef(MotionComponent)
+        animate="show"
+        className="logo-square"
+        initial={
+          Object {
+            "opacity": 0,
+          }
+        }
+        transition={
+          Object {
+            "duration": 2,
+          }
+        }
+        variants={
+          Object {
+            "hide": Object {
+              "opacity": 0,
+            },
+            "show": Object {
+              "opacity": 1,
+            },
+          }
+        }
+      >
+        <SvgLogoSquare />
+      </ForwardRef(MotionComponent)>
       <div
         className="new-game-button"
         onClick={[Function]}
@@ -128,10 +195,10 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
           onClick={[Function]}
           transition={
             Object {
-              "duration": 1,
+              "duration": 1.2,
               "times": Array [
                 0,
-                0.3,
+                0.4,
                 1,
               ],
             }
@@ -163,15 +230,19 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
             }
           }
         >
-          <SvgBfPlayA />
+          <SvgPlayIcon />
         </ForwardRef(MotionComponent)>
       </div>
-      <button
-        className="show-modal-button"
-        onClick={[Function]}
+      <div
+        className="footer"
       >
-        REVIEW LAST ROUND
-      </button>
+        <button
+          className="show-modal-button"
+          onClick={[Function]}
+        >
+          REVIEW LAST ROUND
+        </button>
+      </div>
     </div>
   </div>
   <ShowBandlistModal
@@ -192,6 +263,7 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
       ]
     }
     closeModal={[Function]}
+    lastRound={true}
     showModal={false}
   />
 </div>
@@ -199,10 +271,39 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
 
 exports[`should render with PLAY <button> when inGame is false 1`] = `
 <div>
+  <Connect(Header)
+    buttonPressed={false}
+  />
   <div>
     <div
-      className="buttons-container"
+      className="home-container"
     >
+      <ForwardRef(MotionComponent)
+        animate="show"
+        className="logo-square"
+        initial={
+          Object {
+            "opacity": 0,
+          }
+        }
+        transition={
+          Object {
+            "duration": 2,
+          }
+        }
+        variants={
+          Object {
+            "hide": Object {
+              "opacity": 0,
+            },
+            "show": Object {
+              "opacity": 1,
+            },
+          }
+        }
+      >
+        <SvgLogoSquare />
+      </ForwardRef(MotionComponent)>
       <div
         className="new-game-button"
         onClick={[Function]}
@@ -220,10 +321,10 @@ exports[`should render with PLAY <button> when inGame is false 1`] = `
           onClick={[Function]}
           transition={
             Object {
-              "duration": 1,
+              "duration": 1.2,
               "times": Array [
                 0,
-                0.3,
+                0.4,
                 1,
               ],
             }
@@ -255,19 +356,24 @@ exports[`should render with PLAY <button> when inGame is false 1`] = `
             }
           }
         >
-          <SvgBfPlayA />
+          <SvgPlayIcon />
         </ForwardRef(MotionComponent)>
       </div>
-      <button
-        className="show-modal-button-invisible"
+      <div
+        className="footer"
       >
-        NOT SHOWING
-      </button>
+        <button
+          className="show-modal-button-invisible"
+        >
+          NOT SHOWING
+        </button>
+      </div>
     </div>
   </div>
   <ShowBandlistModal
     bands={Array []}
     closeModal={[Function]}
+    lastRound={true}
     showModal={false}
   />
 </div>

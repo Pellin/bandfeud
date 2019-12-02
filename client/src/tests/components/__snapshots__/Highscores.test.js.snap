@@ -1,10 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render component correctly with highscores 1`] = `
-<div>
+<ForwardRef(MotionComponent)
+  animate={
+    Object {
+      "opacity": 1,
+    }
+  }
+  initial={
+    Object {
+      "opacity": 0,
+    }
+  }
+  transition={
+    Object {
+      "duration": 1,
+    }
+  }
+>
   <div
     className="highscore-container"
   >
+    <SvgLogoSquare
+      className="background-logo-square"
+    />
     <HighscoreList
       highscores={
         Array [
@@ -36,19 +55,38 @@ exports[`should render component correctly with highscores 1`] = `
       }
     />
   </div>
-</div>
+</ForwardRef(MotionComponent)>
 `;
 
 exports[`should render component correctly without highscores 1`] = `
-<div>
+<ForwardRef(MotionComponent)
+  animate={
+    Object {
+      "opacity": 1,
+    }
+  }
+  initial={
+    Object {
+      "opacity": 0,
+    }
+  }
+  transition={
+    Object {
+      "duration": 1,
+    }
+  }
+>
   <div
     className="highscore-container"
   >
+    <SvgLogoSquare
+      className="background-logo-square"
+    />
     <div
       className="load-message"
     >
       Loading highscores...
     </div>
   </div>
-</div>
+</ForwardRef(MotionComponent)>
 `;

@@ -7,45 +7,75 @@ exports[`should render Header correctly when inGame is false 1`] = `
   <div
     className="header-side"
   >
-    <div
-      className="link"
+    <ForwardRef(MotionComponent)
+      animate="show"
+      className="i-link"
+      initial={
+        Object {
+          "opacity": 0,
+        }
+      }
+      transition={
+        Object {
+          "duration": 1.5,
+        }
+      }
+      variants={
+        Object {
+          "hide": Object {
+            "opacity": 0,
+          },
+          "show": Object {
+            "opacity": 1,
+          },
+        }
+      }
     >
-      <NavLink
-        activeClassName="active-link"
-        exact={true}
-        to="/"
+      <Link
+        to="/about/"
       >
-        Play
-      </NavLink>
-    </div>
+        <SvgI />
+      </Link>
+    </ForwardRef(MotionComponent)>
   </div>
   <div
     className="header-center"
-  >
-    <NavLink
-      to="/about/"
-    >
-      <div
-        className="header-logo-link"
-        title="About Bandfeud"
-      >
-        <BFLogo />
-      </div>
-    </NavLink>
-  </div>
+  />
   <div
     className="header-side"
   >
-    <div
-      className="link"
+    <ForwardRef(MotionComponent)
+      animate="show"
+      className="crown-link"
+      initial={
+        Object {
+          "opacity": 0,
+        }
+      }
+      transition={
+        Object {
+          "duration": 1.5,
+        }
+      }
+      variants={
+        Object {
+          "hide": Object {
+            "opacity": 0,
+          },
+          "show": Object {
+            "opacity": 1,
+          },
+        }
+      }
     >
-      <NavLink
-        activeClassName="active-link"
+      <Link
         to="/highscores/"
       >
-        Highscores
-      </NavLink>
-    </div>
+        <SvgCrown
+          className="crown-right"
+        />
+      </Link>
+    </ForwardRef(MotionComponent)>
   </div>
 </div>
 `;

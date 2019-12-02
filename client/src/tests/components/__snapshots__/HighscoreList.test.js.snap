@@ -3,9 +3,19 @@
 exports[`should render HighscoreList correctly 1`] = `
 <Fragment>
   <div
-    className="highscore-title"
+    className="title-container"
   >
-    HIGHSCORES
+    <SvgCrown
+      className="crown-left"
+    />
+    <div
+      className="highscore-title"
+    >
+      HIGHSCORES
+    </div>
+    <SvgCrown
+      className="crown-right"
+    />
   </div>
   <table>
     <tbody
@@ -77,6 +87,12 @@ exports[`should render HighscoreList correctly 1`] = `
       </tr>
     </tbody>
   </table>
+  <Link
+    className="back-button"
+    to="/"
+  >
+    BACK
+  </Link>
   <ShowBandlistModal
     bands={Array []}
     closeModal={[Function]}

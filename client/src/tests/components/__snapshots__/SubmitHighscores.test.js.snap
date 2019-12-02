@@ -4,6 +4,9 @@ exports[`should render component correctly 1`] = `
 <div
   className="submit-view"
 >
+  <SvgCrown
+    className="submit-highscore-crown"
+  />
   <div
     className="highscore-message"
   >

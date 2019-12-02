@@ -4,12 +4,13 @@ import { act } from 'react-dom/test-utils';
 
 import { Counter } from '../../components/home/play/Counter';
 
-let onSetCurrentPointsSpy, onGameOverSpy;
+let onSetCurrentPointsSpy, onGameOverSpy, addFailedBandSpy;
 
 beforeEach(() => {
   jest.useFakeTimers();
   onGameOverSpy = jest.fn();
   onSetCurrentPointsSpy = jest.fn();
+  addFailedBandSpy = jest.fn();
 });
 
 afterEach(() => {
@@ -21,10 +22,12 @@ it('should render correctly with different difficulty props', () => {
   act(() => {
     wrapper = mount(
       <Counter
+        addFailedBand={addFailedBandSpy}
         onGameOver={onGameOverSpy}
         onSetCurrentPoints={onSetCurrentPointsSpy}
         difficulty={20}
         inGame={true}
+        score={45}
         submitted={false}
       />
     );
@@ -37,10 +40,12 @@ it('should render correctly with different difficulty props', () => {
   act(() => {
     wrapper = mount(
       <Counter
+        addFailedBand={addFailedBandSpy}
         onGameOver={onGameOverSpy}
         onSetCurrentPoints={onSetCurrentPointsSpy}
         difficulty={15}
         inGame={true}
+        score={45}
         submitted={false}
       />
     );
@@ -56,10 +61,12 @@ it('should start counting when mounted', () => {
   act(() => {
     wrapper = mount(
       <Counter
+        addFailedBand={addFailedBandSpy}
         submitted={false}
         inGame={true}
         onGameOver={onGameOverSpy}
         difficulty={20}
+        score={45}
         onSetCurrentPoints={onSetCurrentPointsSpy}
       />
     );
@@ -87,10 +94,12 @@ it('should dispatch gameOver when time is out', () => {
   act(() => {
     wrapper = mount(
       <Counter
+        addFailedBand={addFailedBandSpy}
         submitted={false}
         inGame={true}
         onGameOver={onGameOverSpy}
         difficulty={20}
+        score={45}
         onSetCurrentPoints={onSetCurrentPointsSpy}
       />
     );
@@ -111,10 +120,12 @@ it('should set current points before unmounting', () => {
   act(() => {
     wrapper = mount(
       <Counter
+        addFailedBand={addFailedBandSpy}
         submitted={false}
         inGame={true}
         onGameOver={onGameOverSpy}
         difficulty={20}
+        score={45}
         onSetCurrentPoints={onSetCurrentPointsSpy}
       />
     );

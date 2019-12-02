@@ -21,149 +21,157 @@ exports[`should render component correctly 1`] = `
     className="modal-header"
   >
     <div
-      className="header-date"
+      className="modal-header-left"
     >
       04/10/2019
        
     </div>
-     
     <div
       className="header-player"
     >
+      <div
+        className="header-stopwatch"
+      >
+        <SvgBfGoA />
+      </div>
       Falle
       <p>
-        2
-         bands
+        1.5
+         
+        bands
       </p>
     </div>
-     
     <div
-      className="header-points"
+      className="modal-header-right"
     >
       297
       p
     </div>
   </div>
   <div
-    className="band-info"
-    key="one"
+    className="modal-flow"
   >
     <div
-      className="band-image-container"
-    >
-      <img
-        alt="one"
-        className="band-image"
-        onClick={[Function]}
-        src="www.1img.com"
-        title="Open Discogs page for ONE "
-      />
-    </div>
-    <div
-      className="band-name-container"
+      className="band-info"
+      key="one"
     >
       <div
-        className="band-name"
+        className="band-image-container"
       >
-        one
+        <img
+          alt="one"
+          className="band-image"
+          onClick={[Function]}
+          src="www.1img.com"
+          title="Open Discogs page for ONE "
+        />
+      </div>
+      <div
+        className="band-name-container"
+      >
+        <div
+          className="band-points"
+        >
+          12
+          p
+        </div>
+        <div
+          className="band-name"
+        >
+          one
+        </div>
       </div>
     </div>
     <div
-      className="band-points"
-    >
-      12
-      p
-    </div>
-  </div>
-  <div
-    className="band-info"
-    key="two"
-  >
-    <div
-      className="band-image-container"
-    >
-      <img
-        alt="two"
-        className="band-image"
-        onClick={[Function]}
-        src="www.2img.com"
-        title="Open Discogs page for TWO "
-      />
-    </div>
-    <div
-      className="band-name-container"
+      className="band-info"
+      key="two"
     >
       <div
-        className="band-name-computer"
+        className="band-image-container"
       >
-        two
+        <img
+          alt="two"
+          className="band-image"
+          onClick={[Function]}
+          src="www.2img.com"
+          title="Open Discogs page for TWO "
+        />
+      </div>
+      <div
+        className="band-name-container"
+      >
+        <div
+          className="no-band-points"
+        >
+          No points
+        </div>
+        <div
+          className="band-name-computer"
+        >
+          two
+        </div>
       </div>
     </div>
     <div
-      className="no-band-points"
-    >
-      No points
-    </div>
-  </div>
-  <div
-    className="band-info"
-    key="three"
-  >
-    <div
-      className="band-image-container"
-    >
-      <img
-        alt="three"
-        className="band-image"
-        onClick={[Function]}
-        src="www.3img.com"
-        title="Open Discogs page for THREE "
-      />
-    </div>
-    <div
-      className="band-name-container"
+      className="band-info"
+      key="three"
     >
       <div
-        className="band-name"
+        className="band-image-container"
       >
-        three
+        <img
+          alt="three"
+          className="band-image"
+          onClick={[Function]}
+          src="www.3img.com"
+          title="Open Discogs page for THREE "
+        />
+      </div>
+      <div
+        className="band-name-container"
+      >
+        <div
+          className="band-points"
+        >
+          31
+          p
+        </div>
+        <div
+          className="band-name"
+        >
+          three
+        </div>
       </div>
     </div>
     <div
-      className="band-points"
-    >
-      31
-      p
-    </div>
-  </div>
-  <div
-    className="band-info"
-    key="four"
-  >
-    <div
-      className="band-image-container"
-    >
-      <img
-        alt="four"
-        className="band-image"
-        onClick={[Function]}
-        src="www.4img.com"
-        title="Open Discogs page for FOUR "
-      />
-    </div>
-    <div
-      className="band-name-container"
+      className="band-info"
+      key="four"
     >
       <div
-        className="band-name-computer"
+        className="band-image-container"
       >
-        four
+        <img
+          alt="four"
+          className="band-image"
+          onClick={[Function]}
+          src="www.4img.com"
+          title="Open Discogs page for FOUR "
+        />
       </div>
-    </div>
-    <div
-      className="no-band-points"
-    >
-      No points
+      <div
+        className="band-name-container"
+      >
+        <div
+          className="no-band-points"
+        >
+          No points
+        </div>
+        <div
+          className="band-name-computer"
+        >
+          four
+        </div>
+      </div>
     </div>
   </div>
 </Modal>
