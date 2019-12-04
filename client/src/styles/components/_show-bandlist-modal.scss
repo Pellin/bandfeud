@@ -30,7 +30,7 @@
   text-align: center;
 }
 
-.overlay { 
+.overlay {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -53,6 +53,7 @@
   align-self: flex-start;
   display: flex;
   flex-direction: row;
+  padding: 0 3vh 0 3vh;
 }
 
 .modal-back-button {
