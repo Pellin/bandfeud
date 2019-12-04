@@ -1,4 +1,5 @@
 node_modules/
+unused/
 config/config.json
 client/src/components/Testarea.js
 client/src/styles/components/_test.scss

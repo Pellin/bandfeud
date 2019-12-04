@@ -71,7 +71,7 @@ exports[`should render Header correctly when inGame is false 1`] = `
       <Link
         to="/highscores/"
       >
-        <SvgCrown
+        <CrownSvg
           className="crown-right"
         />
       </Link>

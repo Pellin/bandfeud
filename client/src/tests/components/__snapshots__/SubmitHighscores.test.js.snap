@@ -4,7 +4,7 @@ exports[`should render component correctly 1`] = `
 <div
   className="submit-view"
 >
-  <SvgCrown
+  <CrownSvg
     className="submit-highscore-crown"
   />
   <div
@@ -49,7 +49,7 @@ exports[`should set highscore and render confirmation 1`] = `
     >
       OK✓
     </div>
-    <SvgCrown
+    <CrownSvg
       className="goto-highscore-crown"
       onClick={[Function]}
     />

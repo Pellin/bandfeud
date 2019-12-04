@@ -35,7 +35,10 @@ const treatChecked = async (userBand, bands) => {
 
     for (let i = 0; i < bands.length; i++) {
       bands[i].title = bands[i].title.toLowerCase();
-      if (bands[i].title === userBand || getProxy(bands[i].title) === userBand )  {
+      if (
+        bands[i].title === userBand ||
+        getProxy(bands[i].title) === userBand
+      ) {
         nameMatches.push(bands[i].title);
         imgMatches.push(bands[i].cover_image);
         idMatches.push(bands[i].id);
