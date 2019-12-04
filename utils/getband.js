@@ -1,7 +1,7 @@
 const { Band } = require('../db/mongoose');
 
 const getBand = async (previous, used) => {
-  const expression = '^\W*' + previous + '[ws,-.]*';
+  const expression = '^\\W*' + previous + '[ws,-.]*';
   const regexp = new RegExp(expression, 'i');
 
   return new Promise(async (resolve, reject) => {
