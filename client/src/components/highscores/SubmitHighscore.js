@@ -88,11 +88,12 @@ export const SubmitHighscore = props => {
           <div className="highscore-message">Highscore set!</div>
           <div className="highscore-link-container">
             <div className="link-button" onClick={goToPlay}>
-              Ok
+              OK✓
             </div>
-            <div className="link-button" onClick={goToHighscores}>
-              Go to highscores
-            </div>
+            <Crown
+              className="goto-highscore-crown"
+              onClick={goToHighscores}
+            />
           </div>
         </>
       )}

@@ -7,7 +7,7 @@
   margin: auto;
   position: fixed;
   width: 100vw;
-  
+
   @media (min-width: $desktop-breakpoint) {
     height: 100vh;
   }
@@ -44,7 +44,7 @@
 
 .hs-row {
   font-size: 2vh;
-  
+
   @media (min-width: $desktop-breakpoint) {
     font-size: 2.5vh;
   }

@@ -14,13 +14,14 @@
 }
 
 .highscore-message {
-  font-size: 2rem;
+  font-size: 3vh;
   font-weight: 700;
   letter-spacing: 1px;
-  margin: 1rem 0 1rem;
+  margin: 1rem 0 8vh;
 
-  @media(min-width: $desktop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
     font-size: 3rem;
+    margin: 1rem 0 8vh;
   }
 }
 
@@ -60,15 +61,36 @@
 }
 
 .link-button {
-  border-radius: 25px;
-  background: $off-white;
-  color: $off-black;
+  transform: rotate(-15deg);
+  align-self: baseline;
+  margin-right: 5vh;
+  color: $gold;
   cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 2rem;
-  padding: 1.5rem;
+  font-size: 4vh;
+  font-weight: 800;
+  letter-spacing: 1px;
   text-decoration: none;
   outline: none;
-  width: 10rem;
+  width: 8vh;
+
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 4vh;
+    width: 5vh;
+    align-self: flex-end;
+  }
+}
+
+.goto-highscore-crown {
+  align-self: center;
+  cursor: pointer;
+  transform: rotate(15deg);
+  stroke: $gold;
+  fill: $gold;
+  width: 7vw;
+  height: auto;
+  margin-left: 5vh;
+  @media (min-width: $desktop-breakpoint) {
+    width: 5vh;
+    transform: rotate(10deg);
+  }
 }
