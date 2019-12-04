@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgLogoSquare = props => (
+const LogoSquareSvg = props => (
   <svg
     viewBox="-176 0 700 270"
     data-name="Lager 1"
@@ -136,4 +136,4 @@ const SvgLogoSquare = props => (
   </svg>
 );
 
-export default SvgLogoSquare;
+export default LogoSquareSvg;

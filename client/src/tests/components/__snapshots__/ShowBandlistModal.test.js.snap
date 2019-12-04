@@ -32,7 +32,7 @@ exports[`should render component correctly 1`] = `
       <div
         className="header-stopwatch"
       >
-        <SvgBfGoA />
+        <GameOverSvg />
       </div>
       Falle
       <p>

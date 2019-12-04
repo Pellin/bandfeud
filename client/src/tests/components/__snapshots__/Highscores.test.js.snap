@@ -21,7 +21,7 @@ exports[`should render component correctly with highscores 1`] = `
   <div
     className="highscore-container"
   >
-    <SvgLogoSquare
+    <LogoSquareSvg
       className="background-logo-square"
     />
     <HighscoreList
@@ -79,7 +79,7 @@ exports[`should render component correctly without highscores 1`] = `
   <div
     className="highscore-container"
   >
-    <SvgLogoSquare
+    <LogoSquareSvg
       className="background-logo-square"
     />
     <div

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgI = props => (
+const ISvg = props => (
   <svg viewBox="0 0 3.969 5.292" {...props}>
     <g
       style={{
@@ -36,4 +36,4 @@ const SvgI = props => (
   </svg>
 );
 
-export default SvgI;
+export default ISvg;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const BFLogo = props => (
+const BFLogoSvg = props => (
   <svg
     id="bf_c_svg__Lager_1"
     data-name="Lager 1"
@@ -48,4 +48,4 @@ const BFLogo = props => (
   </svg>
 );
 
-export default BFLogo;
+export default BFLogoSvg;

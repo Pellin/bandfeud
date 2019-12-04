@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
-import Crown from '../../icons/Crown';
+import CrownSvg from '../../icons/CrownSvg';
 
 const HighscoreList = ({ highscores }) => {
   const [showModal, setShowModal] = useState(false);
@@ -28,9 +28,9 @@ const HighscoreList = ({ highscores }) => {
   return (
     <>
       <div className="title-container">
-        <Crown className="crown-left" />
+        <CrownSvg className="crown-left" />
         <div className="highscore-title">HIGHSCORES</div>
-        <Crown className="crown-right" />
+        <CrownSvg className="crown-right" />
       </div>
       <table>
         <tbody className="highscore-body">

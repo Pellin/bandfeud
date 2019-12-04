@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 
 import Counter from '../components/home/play/Counter';
 import Score from '../components/home/play/Score';
-import BFLogo from '../icons/BFLogo';
-import I from '../icons/I';
-import Crown from '../icons/Crown';
+import BFLogoSvg from '../icons/BFLogoSvg';
+import ISvg from '../icons/ISvg';
+import CrownSvg from '../icons/CrownSvg';
 
 export const Header = ({
   onAddFailedBand,
@@ -40,7 +40,7 @@ export const Header = ({
             variants={visibleVariants}
           >
             <Link to="/about/">
-              <I />
+              <ISvg />
             </Link>
           </motion.div>
         )}
@@ -60,7 +60,7 @@ export const Header = ({
       <div className="header-center">
         {inGame && (
           <div className="header-logo">
-            <BFLogo />
+            <BFLogoSvg />
           </div>
         )}
       </div>
@@ -74,7 +74,7 @@ export const Header = ({
             variants={visibleVariants}
           >
             <Link to="/highscores/">
-              <Crown className="crown-right" />
+              <CrownSvg className="crown-right" />
             </Link>
           </motion.div>
         )}

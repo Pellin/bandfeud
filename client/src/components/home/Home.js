@@ -6,8 +6,8 @@ import Header from '../Header';
 import Play from '../home/play/Play';
 import ShowBandlistModal from '../highscores/ShowBandlistModal';
 import MessageBox from '../home/MessageBox';
-import PlayIcon from '../../icons/PlayIcon';
-import LogoSquare from '../../icons/LogoSquare';
+import PlayIconSvg from '../../icons/PlayIconSvg';
+import LogoSquareSvg from '../../icons/LogoSquareSvg';
 
 import getHighscores from '../../actions/getHighscores';
 import setMessage from '../../actions/setMessage';
@@ -91,7 +91,7 @@ export const Home = ({
               transition={{ duration: 2 }}
               variants={logoVariants}
             >
-              <LogoSquare />
+              <LogoSquareSvg />
             </motion.div>
 
             <div
@@ -107,7 +107,7 @@ export const Home = ({
                 variants={buttonVariants}
                 onClick={startGame}
               >
-                <PlayIcon />
+                <PlayIconSvg />
               </motion.div>
             </div>
             {bands.length > 0 && !message ? (

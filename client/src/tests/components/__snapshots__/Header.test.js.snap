@@ -34,7 +34,7 @@ exports[`should render Header correctly when inGame is false 1`] = `
       <Link
         to="/about/"
       >
-        <SvgI />
+        <ISvg />
       </Link>
     </ForwardRef(MotionComponent)>
   </div>
@@ -93,7 +93,7 @@ exports[`should render Header correctly when inGame is true 1`] = `
     <div
       className="header-logo"
     >
-      <BFLogo />
+      <BFLogoSvg />
     </div>
   </div>
   <div

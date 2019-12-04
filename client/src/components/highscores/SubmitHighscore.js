@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import Crown from '../../icons/Crown';
+import CrownSvg from '../../icons/CrownSvg';
 
 import getHighscores from '../../actions/getHighscores';
 
@@ -65,7 +65,7 @@ export const SubmitHighscore = props => {
           <div className="highscore-message">Setting highscore...</div>
         ) : (
           <>
-            <Crown className="submit-highscore-crown" />
+            <CrownSvg className="submit-highscore-crown" />
             <div className="highscore-message">
               {props.score} points! That's a highscore.
             </div>
@@ -90,7 +90,7 @@ export const SubmitHighscore = props => {
             <div className="link-button" onClick={goToPlay}>
               OK✓
             </div>
-            <Crown
+            <CrownSvg
               className="goto-highscore-crown"
               onClick={goToHighscores}
             />

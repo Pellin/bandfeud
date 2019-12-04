@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 
 import HighscoreList from '../highscores/HighscoreList';
-import BFLogo from '../../icons/BFLogo';
-import LogoSquare from '../../icons/LogoSquare';
+import BFLogoSvg from '../../icons/BFLogoSvg';
+import LogoSquareSvg from '../../icons/LogoSquareSvg';
 
 import getHighscores from '../../actions/getHighscores';
 
@@ -22,9 +22,9 @@ export const Highscores = ({ highscores, os, onGetHighscores }) => {
     >
       <div className="highscore-container">
         {os === 'desktop' ? (
-          <BFLogo className="background-logo" />
+          <BFLogoSvg className="background-logo" />
         ) : (
-          <LogoSquare className="background-logo-square" />
+          <LogoSquareSvg className="background-logo-square" />
         )}
 
         {highscores.length ? (

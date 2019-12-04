@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import BFLogo from '../icons/BFLogo';
-import LogoSquare from '../icons/LogoSquare';
+import BFLogoSvg from '../icons/BFLogoSvg';
+import LogoSquareSvg from '../icons/LogoSquareSvg';
 
 const About = ({ os }) => {
   return (
@@ -15,9 +15,9 @@ const About = ({ os }) => {
       transition={{ duration: 1 }}
     >
       {os === 'desktop' ? (
-        <BFLogo className="background-logo" />
+        <BFLogoSvg className="background-logo" />
       ) : (
-        <LogoSquare className="background-logo-square" />
+        <LogoSquareSvg className="background-logo-square" />
       )}
       <div className="info">
         <h1>How to play</h1>

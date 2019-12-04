@@ -33,7 +33,7 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
           }
         }
       >
-        <SvgLogoSquare />
+        <LogoSquareSvg />
       </ForwardRef(MotionComponent)>
       <div
         className="new-game-button"
@@ -87,7 +87,7 @@ exports[`should render ShowBandlistModal when "REVIEW LAST ROUND" button is clic
             }
           }
         >
-          <SvgPlayIcon />
+          <PlayIconSvg />
         </ForwardRef(MotionComponent)>
       </div>
       <div
@@ -176,7 +176,7 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
           }
         }
       >
-        <SvgLogoSquare />
+        <LogoSquareSvg />
       </ForwardRef(MotionComponent)>
       <div
         className="new-game-button"
@@ -230,7 +230,7 @@ exports[`should render with PLAY <button> and Review... <button> when inGame is 
             }
           }
         >
-          <SvgPlayIcon />
+          <PlayIconSvg />
         </ForwardRef(MotionComponent)>
       </div>
       <div
@@ -302,7 +302,7 @@ exports[`should render with PLAY <button> when inGame is false 1`] = `
           }
         }
       >
-        <SvgLogoSquare />
+        <LogoSquareSvg />
       </ForwardRef(MotionComponent)>
       <div
         className="new-game-button"
@@ -356,7 +356,7 @@ exports[`should render with PLAY <button> when inGame is false 1`] = `
             }
           }
         >
-          <SvgPlayIcon />
+          <PlayIconSvg />
         </ForwardRef(MotionComponent)>
       </div>
       <div

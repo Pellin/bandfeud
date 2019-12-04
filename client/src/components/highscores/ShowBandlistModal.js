@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 import moment from 'moment';
 
-import BfGoA from '../../icons/BfGoA';
+import GameOverSvg from '../../icons/GameOverSvg';
 
 Modal.setAppElement(document.getElementById('root'));
 
@@ -46,7 +46,7 @@ const ShowBandlistModal = props => {
             </div>
             <div className="header-player">
               <div className="header-stopwatch">
-                <BfGoA />
+                <GameOverSvg />
               </div>
               {props.playerInfo.player}
               <p>
@@ -84,7 +84,7 @@ const ShowBandlistModal = props => {
                   />
                 ) : (
                   <div className="fail-svg">
-                    <BfGoA />
+                    <GameOverSvg />
                   </div>
                 )}
               </div>

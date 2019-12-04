@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgPlayIcon = props => (
+const PlayIconSvg = props => (
   <svg viewBox="0 0 79.375 79.375" height={props.height} width={props.width} {...props}>
     <g transform="matrix(.47998 0 0 .47153 78.836 1.814)" strokeWidth={2.102}>
       <ellipse
@@ -21,4 +21,4 @@ const SvgPlayIcon = props => (
   </svg>
 );
 
-export default SvgPlayIcon;
+export default PlayIconSvg;
