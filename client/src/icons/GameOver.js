@@ -1,6 +1,6 @@
 import React from "react";
 
-const GameOverSvg = props => (
+const GameOver = props => (
   <svg
     id="bf_go_a_svg__Lager_1"
     data-name="Lager 1"
@@ -18,4 +18,4 @@ const GameOverSvg = props => (
   </svg>
 );
 
-export default GameOverSvg;
+export default GameOver;

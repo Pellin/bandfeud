@@ -6,7 +6,7 @@ import SubmitBand from './SubmitBand';
 import BandList from './BandList';
 import MessageBox from '../MessageBox';
 import Score from './Score';
-import GameOverSvg from '../../../icons/GameOverSvg';
+import GameOver from '../../../icons/GameOver';
 
 import SubmitHighscore from '../../highscores/SubmitHighscore';
 import { gameAborted } from '../../../actions/gameStatus';
@@ -51,7 +51,7 @@ export const Play = props => {
               animate={{ scale: 1, rotate: [30, 0], y: 0, opacity: 1 }}
               transition={{ ease: 'backOut', duration: 1, type: 'tween' }}
             >
-              <GameOverSvg />
+              <GameOver />
             </motion.div>
           </div>
           <div className="footer">
