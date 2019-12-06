@@ -47,7 +47,7 @@ exports[`should set highscore and render confirmation 1`] = `
       className="link-button"
       onClick={[Function]}
     >
-      OK✓
+      ✓
     </div>
     <CrownSvg
       className="goto-highscore-crown"

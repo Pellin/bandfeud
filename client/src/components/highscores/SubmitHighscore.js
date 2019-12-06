@@ -88,7 +88,7 @@ export const SubmitHighscore = props => {
           <div className="highscore-message">Highscore set!</div>
           <div className="highscore-link-container">
             <div className="link-button" onClick={goToPlay}>
-              OK✓
+              ✓
             </div>
             <CrownSvg
               className="goto-highscore-crown"
