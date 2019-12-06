@@ -1,7 +1,7 @@
 import setMessage from './setMessage';
 
-import addProBand from '../utils/addProBand';
-import removeBand from '../utils/removeBand';
+// import addProBand from '../utils/addProBand';
+// import removeBand from '../utils/removeBand';
 
 const addBand = (name, url, discogsId, turn, points) => async (
   dispatch,
@@ -11,22 +11,8 @@ const addBand = (name, url, discogsId, turn, points) => async (
   if (!state.inGame) return;
 
   if (turn === 'computer') {
-    const response = await fetch(`/api/getimg?name=${name}`);
-    let imageUrl = await response.json();
-    if (
-      !imageUrl.match(/^.*spacer\.gif$/) &&
-      !imageUrl.match(/discogs-white/)
-    ) {
-      url = imageUrl;
-      addProBand(name, url);
-    } else {
-      removeBand(name);
-    }
-  }
-
-  if (turn === 'computer') {
     return setTimeout(() => {
-      dispatch({ type: 'ADD_BAND', name, url });
+      dispatch({ type: 'ADD_BAND', name, url, discogsId });
       setTimeout(() => {
         dispatch({ type: 'SUBMITTED:_FALSE' });
         dispatch(setMessage(''));
