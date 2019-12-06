@@ -1,4 +1,4 @@
-const { Band } = require('../db/mongoose');
+const { ProBand } = require('../db/mongoose');
 
 const getBand = async (previous, used) => {
   const expression = '^\\W*' + previous + '[ws,-.]*';
@@ -6,7 +6,7 @@ const getBand = async (previous, used) => {
 
   return new Promise(async (resolve, reject) => {
     try {
-      let bands = await Band.find({ name: regexp });
+      let bands = await ProBand.find({ name: regexp });
       console.log(bands.length);
       for (let band of bands) {
         if (band.name.match(/.*, the$/)) {
@@ -17,11 +17,12 @@ const getBand = async (previous, used) => {
       }
       bands = bands.filter(band => !used.includes(band.name));
       const rnd = Math.floor(Math.random() * bands.length);
-      const { name, url } = bands[rnd];
+      const { name, imgUrl, discogsId } = bands[rnd];
 
       resolve({
         name,
-        url
+        imgUrl, 
+        discogsId
       });
     } catch (e) {
       console.log(e.message);
