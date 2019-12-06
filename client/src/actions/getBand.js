@@ -1,18 +1,28 @@
 import addBand from '../actions/addBand';
+import getClientProxy from '../utils/getClientProxy';
 
 const getBand = (previous, used) => async dispatch => {
   try {
     const reply = await fetch(
       `/api/getband?previous=${previous}&used=${JSON.stringify(used)}`
     );
-    const answer = await reply.json();
+    let { name, imgUrl, discogsId } = await reply.json();
 
+    let proxy;
+    if (name[name.length - 1].match(/\W/)) {
+      proxy = getClientProxy(name);
+      console.log(proxy);
+      let str = proxy.match(/[a-z0-9 ]/g);
+      proxy = str.join('');
+    } else {
+      proxy = name;
+    }
     setTimeout(() => {
-      dispatch(addBand(answer.name, answer.url, undefined, 'computer'));
-      dispatch({ type: 'ADD_TO_USED', payload: answer.name });
+      dispatch(addBand(name, imgUrl, discogsId, 'computer'));
+      dispatch({ type: 'ADD_TO_USED', payload: name });
       dispatch({
         type: 'SET_PREVIOUS',
-        payload: answer.name
+        payload: proxy
       });
     }, 2000);
   } catch (e) {

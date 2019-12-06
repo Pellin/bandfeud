@@ -29,38 +29,34 @@ it('should call api/getband', async () => {
   const getbandURL = `/api/getband?previous=${previous}&used=${JSON.stringify(
     used
   )}`;
-  const getimgURL = `/api/getimg?name=${reply.name}`;
 
-  fetchMock
-    .get(getbandURL, JSON.stringify(reply))
-    .get(getimgURL, JSON.stringify(reply.url));
+  fetchMock.get(getbandURL, JSON.stringify(reply));
 
   await store.dispatch(getBand(previous, used));
   jest.runAllTimers();
 
-  expect(fetchMock.done(getbandURL, getimgURL)).toBeTruthy();
-  expect(fetchMock.lastUrl()).toBe(getimgURL);
+  expect(fetchMock.done(getbandURL)).toBeTruthy();
 });
 
 it('dispatches the expected actions ', async () => {
   const previous = 'o';
-  const reply = { name: 'one', url: 'www.1img.com' };
+  const reply = { name: 'one', imgUrl: 'www.1img.com', discogsId: 12345 };
 
   let used = [];
 
   const expectedActions = [
     { type: 'ADD_TO_USED', payload: 'one' },
-    { type: 'SET_PREVIOUS', payload: 'one' }
+    { type: 'SET_PREVIOUS', payload: 'one' },
+    { type: 'ADD_BAND', name: 'one', url: 'www.1img.com', discogsId: 12345 },
+    { type: 'SUBMITTED:_FALSE' },
+    { type: 'SET_MESSAGE', payload: '' }
   ];
 
   const getbandURL = `/api/getband?previous=${previous}&used=${JSON.stringify(
     used
   )}`;
-  const getimgURL = `/api/getimg?name=${reply.name}`;
 
-  fetchMock
-    .get(getbandURL, JSON.stringify(reply))
-    .get(getimgURL, JSON.stringify(reply.url));
+  fetchMock.get(getbandURL, JSON.stringify(reply));
 
   await store.dispatch(getBand(previous, used));
   jest.runAllTimers();
