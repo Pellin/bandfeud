@@ -41,7 +41,7 @@ it('should dispatch expected actions if "band" matches', async () => {
   const addProBandURL = `/api/addproband`;
 
   const reply = {
-    answer: { name: 'one', url: 'www.1img.com' },
+    answer: { name: 'one', url: 'www.1img.com', id: 12345 },
     serverBandBank: [
       { name: 'two', url: 'www.2img.com' },
       { name: 'three', url: 'www.3img.com' }
