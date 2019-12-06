@@ -4,14 +4,14 @@
 
 Uses the <a href="https://www.discogs.com/developers"><strong>Discogs API</strong></a> to validate user input and fetch new bands
 
-Uses <a href="https://www.mongodb.com/cloud/atlas"><strong>Mongodb Atlas</strong></a> to store highscores and a backup bands database
+Uses <a href="https://www.mongodb.com/cloud/atlas"><strong>Mongodb</strong></a> to store highscores and a band database
 
 ## How to play
 
 ### Your turn
 Type in a band or an artist <strong>beginning with the letter visible under the input field</strong>.
 
-Band or artist names must contain at least two letters or numbers. It must begin and end with a letter between a and z or a number.
+Band or artist names must contain at least two letters or numbers. It must begin and end with a letter between <strong>a</strong> and <strong>z</strong> or a <strong>number</strong>.
 
 Wait while the app checks if the name exists in the Discogs database.
 
