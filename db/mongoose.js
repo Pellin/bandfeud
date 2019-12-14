@@ -11,8 +11,13 @@ const Band = mongoose.model('Band', {
     type: String,
     unique: true
   },
-  url: {
+  imgUrl: {
     type: String
+  },
+  discogsId: {
+    type: Number,
+    required: true,
+    unique: true
   }
 });
 

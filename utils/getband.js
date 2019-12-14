@@ -1,4 +1,4 @@
-const { ProBand } = require('../db/mongoose');
+const { Band } = require('../db/mongoose');
 
 const getBand = async (previous, used) => {
   const expression = '^\\W*' + previous + '[ws,-.]*';
@@ -6,8 +6,7 @@ const getBand = async (previous, used) => {
 
   return new Promise(async (resolve, reject) => {
     try {
-      let bands = await ProBand.find({ name: regexp });
-      console.log(bands.length);
+      let bands = await Band.find({ name: regexp });
       for (let band of bands) {
         if (band.name.match(/.*, the$/)) {
           let split = band.name.split(',');

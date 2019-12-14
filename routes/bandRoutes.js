@@ -2,7 +2,7 @@ const checkBand = require('../utils/checkband');
 const treatChecked = require('../utils/treatchecked');
 const getBand = require('../utils/getband');
 const getImg = require('../utils/getimg');
-const setProBand = require('../utils/setProBand');
+const setBand = require('../utils/setBand');
 const removeBand = require('../utils/removeBand');
 
 module.exports = app => {
@@ -38,9 +38,9 @@ module.exports = app => {
     }
   });
 
-  app.post('/api/addproband', async (req, res) => {
+  app.post('/api/addband', async (req, res) => {
     try {
-      await setProBand(req.body.name, req.body.imgUrl, req.body.discogsId);
+      await setBand(req.body.name, req.body.imgUrl, req.body.discogsId);
       res.status(200).send();
     } catch (e) {
       console.log(e.message);

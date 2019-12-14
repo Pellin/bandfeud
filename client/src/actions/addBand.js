@@ -1,8 +1,5 @@
 import setMessage from './setMessage';
 
-// import addProBand from '../utils/addProBand';
-// import removeBand from '../utils/removeBand';
-
 const addBand = (name, url, discogsId, turn, points) => async (
   dispatch,
   getState

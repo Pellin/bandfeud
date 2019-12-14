@@ -1,8 +1,8 @@
-const { Band } = require('../db/mongoose');
+const { ProBand } = require('../db/mongoose');
 
 const removeBand = async name => {
   try {
-    await Band.deleteOne({ name });
+    await ProBand.deleteOne({ name });
     return true;
   } catch (e) {
     console.log(e.message);

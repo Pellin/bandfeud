@@ -1,14 +1,16 @@
-const removeBand = name => {
+const addDbBand = (name, imgUrl, discogsId) => {
   if (name.match(/^the /)) {
     let str = name.slice(4, name.length);
     name = str + ', the';
   }
 
   const data = {
-    name
+    name,
+    imgUrl,
+    discogsId
   };
 
-  fetch(`/api/removeband`, {
+  fetch(`/api/addband`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -17,4 +19,4 @@ const removeBand = name => {
   });
 };
 
-export default removeBand;
+export default addDbBand;

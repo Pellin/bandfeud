@@ -3,11 +3,11 @@ import getBand from './getBand';
 import setMessage from './setMessage';
 import { gameOver } from './gameStatus';
 import { addToScore } from './addToScore';
-import addProBand from '../utils/addProBand';
+import addDbBand from '../utils/addDbBand';
 import getClientProxy from '../utils/getClientProxy';
 import calcExtraPoints from '../utils/calcExtraPoints';
 
-const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
+const checkBand = (band, previous, used, score, difficulty) => async (
   dispatch,
   getState
 ) => {
@@ -46,11 +46,10 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     const checkedBand = await reply.json();
    
     used.push(band);
-    addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
+    addDbBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
 
     if (checkedBand.name !== band) {
       used.push(checkedBand.name);
-      addProBand(checkedBand.name, checkedBand.imgUrl, checkedBand.discogsId);
     }
     let previous;
     let proxy;
@@ -86,7 +85,7 @@ const checkBand = (band, previous, used, bandBank, score, difficulty) => async (
     const totalPoints = state.currentPoints + extraPoints;
 
     dispatch(addToScore(totalPoints));
-    dispatch(getBand(previous, used, bandBank));
+    dispatch(getBand(previous, used));
     dispatch(
       addBand(
         checkedBand.name,
