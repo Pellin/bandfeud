@@ -7,11 +7,9 @@ const getBand = (previous, used) => async dispatch => {
       `/api/getband?previous=${previous}&used=${JSON.stringify(used)}`
     );
     let { name, imgUrl, discogsId } = await reply.json();
-
     let proxy;
     if (name[name.length - 1].match(/\W/)) {
       proxy = getClientProxy(name);
-      console.log(proxy);
       let str = proxy.match(/[a-z0-9 ]/g);
       proxy = str.join('');
     } else {

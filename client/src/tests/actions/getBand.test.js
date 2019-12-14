@@ -22,7 +22,8 @@ it('should call api/getband', async () => {
   const previous = 'o';
   const reply = {
     name: 'one',
-    url: 'www.1img.com'
+    imgUrl: 'www.1img.com',
+    discogsId: 12345
   };
   let used = [];
 

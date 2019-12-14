@@ -36,7 +36,7 @@ it('should dispatch expected actions if "band" matches', async () => {
   const addBandURL = `/api/addband`;
 
   const reply = {
-    answer: { name: 'one', url: 'www.1img.com', id: 12345 },
+    answer: { name: 'one', imgUrl: 'www.1img.com', discogsId: 12345 },
   };
 
   const expectedActions = [
@@ -172,10 +172,10 @@ it('should dispatch expected actions if highscore', async () => {
 
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
 
-  fetchMock.get(checkhighscoreURL, 200);
+  fetchMock.get(checkhighscoreURL, 202);
 
   await store.dispatch(checkBand(band, previous, used, score));
   jest.runAllTimers();
-  console.log(store.getActions());
+
   expect(store.getActions()).toEqual(expectedActions);
 });
