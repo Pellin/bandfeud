@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 import { SubmitBand } from '../../components/home/play/SubmitBand';
 
 let onCheckBandSpy, onSetDifficultySpy;
-let previous, used, bandBank, score, difficulty;
+let previous, used, score, difficulty;
 let wrapper;
 
 beforeEach(() => {
@@ -13,11 +13,6 @@ beforeEach(() => {
   onSetDifficultySpy = jest.fn();
   previous = { previous1: 'o', previous2: '' };
   used = ['two', 'three', 'four'];
-  bandBank = [
-    { name: 'five', url: 'www.5img.com' },
-    { name: 'six', url: 'www.6img.com' },
-    { name: 'seven', url: 'www.7img.com' }
-  ];
   score = 23;
   difficulty = 20;
 
@@ -27,7 +22,6 @@ beforeEach(() => {
       onSetDifficulty={onSetDifficultySpy}
       previous={previous}
       used={used}
-      bandBank={bandBank}
       score={score}
       difficulty={difficulty}
     />
@@ -46,7 +40,6 @@ it('should render component correctly with value for previous2', () => {
       onSetDifficulty={onSetDifficultySpy}
       previous={previous}
       used={used}
-      bandBank={bandBank}
       score={score}
       difficulty={difficulty}
     />
@@ -81,7 +74,6 @@ it('should call onCheckBand if valid band name is submitted', () => {
     'one',
     previous,
     used,
-    bandBank,
     score,
     difficulty
   );

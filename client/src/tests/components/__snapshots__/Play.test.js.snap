@@ -159,22 +159,6 @@ exports[`should show bands in band-list 1`] = `
           className="submit-band"
         >
           <Connect(SubmitBand)
-            bandBank={
-              Array [
-                Object {
-                  "name": "",
-                  "url": "",
-                },
-                Object {
-                  "name": "",
-                  "url": "",
-                },
-                Object {
-                  "name": "",
-                  "url": "",
-                },
-              ]
-            }
             difficulty={20}
             inGame={true}
             previous="r"
@@ -224,22 +208,6 @@ exports[`should show submitform when submitted is falsy 1`] = `
           className="submit-band"
         >
           <Connect(SubmitBand)
-            bandBank={
-              Array [
-                Object {
-                  "name": "",
-                  "url": "",
-                },
-                Object {
-                  "name": "",
-                  "url": "",
-                },
-                Object {
-                  "name": "",
-                  "url": "",
-                },
-              ]
-            }
             difficulty={20}
             inGame={true}
             previous="a"

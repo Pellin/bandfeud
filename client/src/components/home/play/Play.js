@@ -91,7 +91,6 @@ export const Play = props => {
                   <div className="submit-band">
                     {props.inGame && !props.submitted && !props.message && (
                       <SubmitBand
-                        bandBank={props.bandBank}
                         difficulty={props.difficulty}
                         inGame={props.inGame}
                         previous={props.previous}
@@ -117,7 +116,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  bandBank: state.bandBank,
   used: state.used,
   submitted: state.submitted,
   previous: state.previous,

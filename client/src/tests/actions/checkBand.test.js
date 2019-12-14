@@ -29,23 +29,14 @@ it('should dispatch expected actions if "band" matches', async () => {
   const band = 'seven';
   const previous = { previous1: 's', previous2: '' };
   const used = ['one', 'two', 'three'];
-  const bandBank = [
-    { name: 'four', url: 'www.4img.com' },
-    { name: 'five', url: 'www.5img.com' },
-    { name: 'six', url: 'www.6img.com' }
-  ];
   const score = 23;
   const difficulty = 20;
   const checkbandURL = `/api/checkband?name=${encodeURIComponent(band)}`;
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
-  const addProBandURL = `/api/addproband`;
+  const addBandURL = `/api/addband`;
 
   const reply = {
     answer: { name: 'one', url: 'www.1img.com', id: 12345 },
-    serverBandBank: [
-      { name: 'two', url: 'www.2img.com' },
-      { name: 'three', url: 'www.3img.com' }
-    ]
   };
 
   const expectedActions = [
@@ -73,10 +64,10 @@ it('should dispatch expected actions if "band" matches', async () => {
       `/api/getband?previous=n&used=${JSON.stringify([...used, band])}`,
       JSON.stringify(reply)
     )
-    .post(addProBandURL, 200);
+    .post(addBandURL, 200);
 
   await store.dispatch(
-    checkBand(band, previous, used, bandBank, score, difficulty)
+    checkBand(band, previous, used, score, difficulty)
   );
   jest.runAllTimers();
 
@@ -87,11 +78,6 @@ it("should dispatch expected actions if 'band' doesn't match", async () => {
   const band = 'seven';
   const previous = { previous1: 's', previous2: '' };
   const used = ['one', 'two', 'three'];
-  const bandBank = [
-    { name: 'four', url: 'www.4img.com' },
-    { name: 'five', url: 'www.5img.com' },
-    { name: 'six', url: 'www.6img.com' }
-  ];
   const score = 23;
   const checkbandURL = `/api/checkband?name=${encodeURIComponent(band)}`;
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
@@ -107,7 +93,7 @@ it("should dispatch expected actions if 'band' doesn't match", async () => {
 
   fetchMock.get(checkbandURL, 200).get(checkhighscoreURL, 204);
 
-  await store.dispatch(checkBand(band, previous, used, bandBank, score));
+  await store.dispatch(checkBand(band, previous, used, score));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(expectedActions);
@@ -117,11 +103,6 @@ it('should dispatch game over if band was already used', async () => {
   const band = 'seven';
   const previous = { previous1: 's', previous2: '' };
   const used = ['one', 'two', 'three', 'seven'];
-  const bandBank = [
-    { name: 'four', url: 'www.4img.com' },
-    { name: 'five', url: 'www.5img.com' },
-    { name: 'six', url: 'www.6img.com' }
-  ];
   const score = 23;
 
   const expectedActions = [
@@ -139,7 +120,7 @@ it('should dispatch game over if band was already used', async () => {
 
   fetchMock.get(checkhighscoreURL, 204);
 
-  await store.dispatch(checkBand(band, previous, used, bandBank, score));
+  await store.dispatch(checkBand(band, previous, used, score));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(expectedActions);
@@ -149,11 +130,6 @@ it('should dispatch game over if band has incorrect first letter', async () => {
   const band = 'seven';
   const previous = { previous1: 'm', previous2: '' };
   const used = ['one', 'two', 'three'];
-  const bandBank = [
-    { name: 'four', url: 'www.4img.com' },
-    { name: 'five', url: 'www.5img.com' },
-    { name: 'six', url: 'www.6img.com' }
-  ];
   const score = 23;
 
   const expectedActions = [
@@ -171,7 +147,7 @@ it('should dispatch game over if band has incorrect first letter', async () => {
 
   fetchMock.get(checkhighscoreURL, 204);
 
-  await store.dispatch(checkBand(band, previous, used, bandBank, score));
+  await store.dispatch(checkBand(band, previous, used, score));
   jest.runAllTimers();
 
   expect(store.getActions()).toEqual(expectedActions);
@@ -181,11 +157,6 @@ it('should dispatch expected actions if highscore', async () => {
   const band = 'seven';
   const previous = { previous1: 'm', previous2: '' };
   const used = ['one', 'two', 'three'];
-  const bandBank = [
-    { name: 'four', url: 'www.4img.com' },
-    { name: 'five', url: 'www.5img.com' },
-    { name: 'six', url: 'www.6img.com' }
-  ];
   const score = 23;
 
   const expectedActions = [
@@ -201,10 +172,10 @@ it('should dispatch expected actions if highscore', async () => {
 
   const checkhighscoreURL = `/api/checkhighscore?score=${score}`;
 
-  fetchMock.get(checkhighscoreURL, 202);
+  fetchMock.get(checkhighscoreURL, 200);
 
-  await store.dispatch(checkBand(band, previous, used, bandBank, score));
+  await store.dispatch(checkBand(band, previous, used, score));
   jest.runAllTimers();
-
+  console.log(store.getActions());
   expect(store.getActions()).toEqual(expectedActions);
 });

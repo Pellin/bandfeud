@@ -41,7 +41,6 @@ it('(gameOver) should dispatch expected actions', async () => {
     { type: 'HIDE_GAME_OVER' },
     { type: 'GAME_OVER' },
     { type: 'RESET_SCORE' },
-    { type: 'RESET_BANDBANK' },
     { type: 'RESET_DIFFICULTY' }
   ];
 
@@ -79,7 +78,6 @@ it('(gameAborted) should dispatch expected actions', async () => {
     { type: 'GAME_OVER' },
     { type: 'RESET_USED' },
     { type: 'RESET_SCORE' },
-    { type: 'RESET_BANDBANK' },
     { type: 'RESET_DIFFICULTY' }
   ];
   await store.dispatch(gameAborted());

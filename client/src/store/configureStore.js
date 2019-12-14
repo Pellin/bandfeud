@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import bandBankReducer from '../reducers/bandBank';
 import bandsReducer from '../reducers/bands';
 import currentPointsReducer from '../reducers/currentPoints';
 import difficultyReducer from '../reducers/difficulty';
@@ -19,7 +18,6 @@ import usedReducer from '../reducers/used';
 export default () => {
   const store = createStore(
     combineReducers({
-      bandBank: bandBankReducer,
       bands: bandsReducer,
       currentPoints: currentPointsReducer,
       difficulty: difficultyReducer,

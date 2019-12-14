@@ -26,7 +26,6 @@ const gameOver = (message, score) => async dispatch => {
       dispatch({ type: 'HIDE_GAME_OVER' });
       dispatch({ type: 'GAME_OVER' });
       dispatch({ type: 'RESET_SCORE' });
-      dispatch({ type: 'RESET_BANDBANK' });
       dispatch({ type: 'RESET_DIFFICULTY' });
     }, 2500);
   }
@@ -38,7 +37,6 @@ const gameAborted = () => dispatch => {
   dispatch({ type: 'GAME_OVER' });
   dispatch({ type: 'RESET_USED' });
   dispatch({ type: 'RESET_SCORE' });
-  dispatch({ type: 'RESET_BANDBANK' });
   dispatch({ type: 'RESET_DIFFICULTY' });
 };
 

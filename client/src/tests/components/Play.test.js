@@ -3,22 +3,16 @@ import { shallow } from 'enzyme';
 
 import { Play } from '../../components/home/play/Play';
 
-let used, previous, bandBank;
+let used, previous;
 
 beforeEach(() => {
   used = ['one', 'two', 'three'];
   previous = 'a';
-  bandBank = [
-    { name: '', url: '' },
-    { name: '', url: '' },
-    { name: '', url: '' }
-  ];
 });
 
 it('should render Play correctly with get ready message', () => {
   const wrapper = shallow(
     <Play
-      bandBank={bandBank}
       used={[]}
       submitted={true}
       previous={previous}
@@ -37,7 +31,6 @@ it('should render Play correctly with get ready message', () => {
 it('should show submitform when submitted is falsy', () => {
   const wrapper = shallow(
     <Play
-      bandBank={bandBank}
       used={[]}
       submitted={false}
       previous={previous}
@@ -57,7 +50,6 @@ it('should show submitform when submitted is falsy', () => {
 it('should not show submitform and counter when submitted is true', () => {
   const wrapper = shallow(
     <Play
-      bandBank={bandBank}
       used={[]}
       submitted={true}
       previous={previous}
@@ -78,7 +70,6 @@ it('should not show submitform and counter when submitted is true', () => {
 it('should show bands in band-list', () => {
   const wrapper = shallow(
     <Play
-      bandBank={bandBank}
       used={used}
       submitted={false}
       previous={'r'}
@@ -114,7 +105,6 @@ it('should show bands in band-list', () => {
 it('should show SubmitHighscore instead if state is right', () => {
   const wrapper = shallow(
     <Play
-      bandBank={bandBank}
       history={() => {}}
       used={used}
       submitted={false}

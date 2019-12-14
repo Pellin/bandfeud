@@ -45,7 +45,6 @@ export const SubmitHighscore = props => {
     props.onHighscoreSet();
     props.onResetUsed();
     props.onResetScore();
-    props.onResetBandBank();
     props.onResetDifficulty();
     props.onGameOver();
   };
@@ -53,7 +52,6 @@ export const SubmitHighscore = props => {
     props.onHighscoreSet();
     props.onResetUsed();
     props.onResetScore();
-    props.onResetBandBank();
     props.onResetDifficulty();
     props.onGameOver();
     props.history.push('/highscores');
@@ -112,12 +110,9 @@ const mapDispatchToProps = dispatch => ({
   onResetUsed: () => dispatch({ type: 'RESET_USED' }),
   onSubmittedTrue: () => dispatch({ type: 'SUBMITTED:_TRUE' }),
   onResetScore: () => dispatch({ type: 'RESET_SCORE' }),
-  onResetBandBank: () => dispatch({ type: 'RESET_BANDBANK' }),
   onResetDifficulty: () => dispatch({ type: 'RESET_DIFFICULTY' }),
   onResetBands: () => dispatch({ type: 'RESET_BANDS' }),
   onGameOver: () => dispatch({ type: 'GAME_OVER' })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubmitHighscore);
-
-/* <label className="submit-label">Enter your name:</label> */

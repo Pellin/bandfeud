@@ -11,7 +11,6 @@ let bands,
   onHighscoreSetSpy,
   onResetUsedSpy,
   onResetScoreSpy,
-  onResetBandBankSpy,
   onResetDifficultySpy,
   onGameOverSpy,
   history,
@@ -29,7 +28,6 @@ beforeEach(() => {
   onHighscoreSetSpy = jest.fn();
   onResetUsedSpy = jest.fn();
   onResetScoreSpy = jest.fn();
-  onResetBandBankSpy = jest.fn();
   onResetDifficultySpy = jest.fn();
   onGameOverSpy = jest.fn();
   history = jest.fn();
@@ -43,7 +41,6 @@ beforeEach(() => {
       onHighscoreSet={onHighscoreSetSpy}
       onResetUsed={onResetUsedSpy}
       onResetScore={onResetScoreSpy}
-      onResetBandBank={onResetBandBankSpy}
       onResetDifficulty={onResetDifficultySpy}
       onGameOver={onGameOverSpy}
       history={history}
