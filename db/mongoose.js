@@ -46,6 +46,5 @@ const Highscore = mongoose.model('Highscore', {
 
 module.exports = {
   Band,
-  ProBand,
   Highscore
 };
