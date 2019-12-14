@@ -21,21 +21,6 @@ const Band = mongoose.model('Band', {
   }
 });
 
-const ProBand = mongoose.model('ProBand', {
-  name: {
-    type: String,
-    unique: true,
-    required: true
-  },
-  imgUrl: {
-    type: String,
-    required: true
-  },
-  discogsId: {
-    type: Number
-  }
-});
-
 const Highscore = mongoose.model('Highscore', {
   score: {
     type: Number,

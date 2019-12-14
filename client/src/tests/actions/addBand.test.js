@@ -23,7 +23,7 @@ it('should dispatch correct actions for "computer"', async () => {
   const url = 'www.img.com';
 
   fetchMock.get(`/api/getimg?name=${name}`, JSON.stringify('www.img.com'));
-  fetchMock.post(`/api/addproband`, 200);
+  fetchMock.post(`/api/addband`, 200);
 
   const computerActions = [
     { type: 'ADD_BAND', name: 'kiss', url: 'www.img.com', discogsId: 12345 },
