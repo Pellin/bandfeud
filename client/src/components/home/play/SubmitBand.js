@@ -67,6 +67,7 @@ export const SubmitBand = props => {
           autoFocus={props.os !== 'desktop' ? false : true}
           maxLength="50"
           onChange={onBandChange}
+          onBlur={props.os !== 'desktop' && band.length > 1 ? onSubmit : null}
           onFocus={() => onRemovePlaceholder()}
           placeholder={props.os !== 'desktop' ? iosPlaceHold : undefined}
           spellCheck={false}
